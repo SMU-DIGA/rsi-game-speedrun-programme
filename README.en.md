@@ -1,4 +1,4 @@
-# RSI Speedrun Ladder
+# RSI Game Speedrun Ladder
 
 [中文](README.md)
 
@@ -6,7 +6,7 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="ladder.en.dark.svg">
-  <img alt="RSI Speedrun Ladder" src="ladder.en.svg">
+  <img alt="RSI Game Speedrun Ladder" src="ladder.en.svg">
 </picture>
 
 | Rung | Game | | Segments | Cleared |

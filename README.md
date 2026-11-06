@@ -1,4 +1,6 @@
-# RSI 速通天梯
+# RSI Game Speedrun Ladder
+
+RSI 游戏速通天梯
 
 [English](README.en.md)
 
@@ -6,7 +8,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="ladder.dark.svg">
-  <img alt="RSI 速通天梯" src="ladder.svg">
+  <img alt="RSI Game Speedrun Ladder · 游戏速通天梯" src="ladder.svg">
 </picture>
 
 | 档 | 游戏 | 说明 | 分段 | 已通关 |
