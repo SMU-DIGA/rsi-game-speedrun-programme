@@ -18,7 +18,7 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 | 04 | Doom (1993) | Ultra-Violence · pistol start | 9 | 0 |
 | 03 | Celeste Classic | PICO-8 | 31 | 3 |
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
-| 01 | Super Mario Bros. | NES | 32 | 7 |
+| 01 | Super Mario Bros. | NES | 32 | 8 |
 
 ## Super Mario Bros. · closed-loop results (60 FPS)
 
@@ -31,7 +31,7 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 | 2-1 | 1389 | 23.1 | 5/5 |
 | 2-2 | 2720 | 45.3 | 5/5 |
 | 2-3 | 1339 | 22.3 | 5/5 |
-| 2-4 | — | — | best 4/5 |
+| 2-4 | 1264 | 21.1 | 5/5 |
 
 ## Celeste Classic · open-loop results (30 FPS)
 
