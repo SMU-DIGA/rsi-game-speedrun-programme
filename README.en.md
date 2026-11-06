@@ -11,6 +11,7 @@
 - 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
 - 🔴 **Sekiro**: from the crawl space on to the cliff and tower (live on Windows). _(since 11-06 11:19)_
 
+- **2026-11-06 16:31** **Stardew Valley**: day 5 with no human input at all, from the house down to floor 3 of the Mines (out of energy). Recording under Recordings & results (live on Windows).
 - **2026-11-06 16:00** **Stardew Valley**: one unbroken run from a new save: clears a path across the farm on day 1, and on day 5, after the parsnips, walks through the Backwoods into the Mines and reaches floor 1 (out of energy) (live on Windows).
 - **2026-11-06 14:40** **Super Mario Bros. 4-2 and 4-4** (castle) cleared: 1885 / 1226 frames, both 5/5. 3-2, 3-3, 4-1 and 4-3 improved to 1188 / 991 / 1425 / 880 frames. Only 3-1 and 3-4 are left in worlds 3 and 4.
 - **2026-11-06 13:00** **Super Mario Bros. 3-2, 3-3, 4-1 and 4-3** cleared: 1269 / 1244 / 1624 / 940 frames, all 5/5. Left in worlds 3 and 4: 3-1, 3-4, 4-2, 4-4.
