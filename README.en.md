@@ -6,11 +6,12 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Super Mario Bros. 3-1 and 3-4**: the last two levels of worlds 3 and 4. _(since 11-06 15:12)_
+- 🔴 **Super Mario Bros. 3-4** (castle): the last level left in worlds 3 and 4. _(since 11-06 15:12)_
 - 🔴 **Doom E1M1**: going for a clear of the whole map. _(since 11-06 16:58)_
 - 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
 - 🔴 **Sekiro**: from the crawl space on to the cliff and tower (live on Windows). _(since 11-06 11:19)_
 
+- **2026-11-06 18:05** **Super Mario Bros. 3-1** cleared: 2166 frames, 5/5. Only 3-4 is left in worlds 3 and 4.
 - **2026-11-06 16:31** **Stardew Valley**: day 5 with no human input at all, from the house down to floor 3 of the Mines (out of energy). Recording under Recordings & results (live on Windows).
 - **2026-11-06 16:00** **Stardew Valley**: one unbroken run from a new save: clears a path across the farm on day 1, and on day 5, after the parsnips, walks through the Backwoods into the Mines and reaches floor 1 (out of energy) (live on Windows).
 - **2026-11-06 14:40** **Super Mario Bros. 4-2 and 4-4** (castle) cleared: 1885 / 1226 frames, both 5/5. 3-2, 3-3, 4-1 and 4-3 improved to 1188 / 991 / 1425 / 880 frames. Only 3-1 and 3-4 are left in worlds 3 and 4.
@@ -42,7 +43,7 @@
 | 04 | Doom (1993) | Ultra-Violence · pistol start | 9 | 0 |
 | 03 | Celeste Classic | PICO-8 | 31 | 3 |
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
-| 01 | Super Mario Bros. | NES | 32 | 14 |
+| 01 | Super Mario Bros. | NES | 32 | 15 |
 
 ## Super Mario Bros. · Results (60 FPS)
 
@@ -56,6 +57,7 @@
 | 2-2 | 2720 | 45.3 | 5/5 |
 | 2-3 | 1339 | 22.3 | 5/5 |
 | 2-4 | 1264 | 21.1 | 5/5 |
+| 3-1 | 2166 | 36.1 | 5/5 |
 | 3-2 | 1188 | 19.8 | 5/5 |
 | 3-3 | 991 | 16.5 | 5/5 |
 | 4-1 | 1425 | 23.8 | 5/5 |
