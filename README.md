@@ -4,7 +4,10 @@
 
 让 AI 编程智能体（Claude Code）为游戏写通关程序，并在“只有更快才保留”的自我改进循环里不断刷新成绩。每一格是一个评测分段；绿色格子是智能体写的闭环策略在 5 个没见过的随机变体上全部通关的成绩（帧数，取最慢一局）。
 
-![RSI 速通天梯](ladder.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="ladder.dark.svg">
+  <img alt="RSI 速通天梯" src="ladder.svg">
+</picture>
 
 | 档 | 游戏 | 说明 | 分段 | 已通关 |
 |---|---|---|---|---|

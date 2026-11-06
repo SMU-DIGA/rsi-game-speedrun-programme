@@ -4,7 +4,10 @@
 
 An AI coding agent (Claude Code) writes programs that play games, and a self-improvement loop keeps a new version only if it is faster. Each cell is one scored segment; a green cell means the agent's closed-loop policy finished all 5 unseen random variants (number = frames of the slowest run).
 
-![RSI Speedrun Ladder](ladder.en.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="ladder.en.dark.svg">
+  <img alt="RSI Speedrun Ladder" src="ladder.en.svg">
+</picture>
 
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
