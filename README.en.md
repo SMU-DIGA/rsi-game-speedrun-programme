@@ -7,7 +7,6 @@
 **🔴 LIVE · On Air Now**
 
 - 🔴 **Super Mario Bros. 3-4** (castle): the last level left in worlds 3 and 4. _(since 11-06 15:12)_
-- 🔴 **Doom E1M1**: going for a clear of the whole map. _(since 11-06 16:58)_
 - 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
 - 🔴 **Sekiro**: from the crawl space on to the cliff and tower (live on Windows). _(since 11-06 11:19)_
 
