@@ -40,4 +40,4 @@
 
 规则：闭环策略每帧读取屏幕像素再决定按键，不使用固定按键序列；游戏开启随机模式，裁判在 5 个没见过的变体上运行，全部通关才算，成绩取最慢一局。格内数字是通关帧数，越小越好。
 
-游戏标志来自 Wikimedia Commons（多为公有领域；Celeste 标志为 CC BY-SA 4.0），商标归各自权利人所有，仅用于标识游戏。MiniPlat 图标为原创像素画。
+游戏标志来自 Wikimedia Commons（多为公有领域；Celeste 标志 © Maddy Makes Games，CC BY-SA 4.0：https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png），商标归各自权利人所有，仅用于标识游戏。MiniPlat 图标为原创像素画。
