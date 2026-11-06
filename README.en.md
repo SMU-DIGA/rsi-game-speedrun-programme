@@ -4,7 +4,7 @@
 
 ## Dispatches
 
-**🔴 LIVE · On air now**
+**🔴 LIVE · On Air Now**
 
 - 🔴 **Super Mario Bros. 3-1 and 3-4**: the last two levels of worlds 3 and 4. _(since 11-06 15:12)_
 - 🔴 **Doom E1M1**: going for a clear of the whole map. _(since 11-06 16:58)_
