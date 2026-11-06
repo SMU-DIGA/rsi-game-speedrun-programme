@@ -1,6 +1,4 @@
-<p align="center"><img src="logos/emblem.svg" width="110" alt=""></p>
-
-# RSI Game Speedrun Ladder
+# <img src="logos/emblem.svg" width="46" align="absmiddle" alt=""> RSI Game Speedrun Ladder
 
 [中文](README.md)
 
@@ -13,15 +11,14 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
-| 09 | Sekiro: Shadows Die Twice | real time on Windows | 8 | 4 |
-| 08 | Minecraft | survival | 11 | 1 |
-| 07 | Stardew Valley | 1.6 · real time on Windows | 9 | 4 |
-| 06 | Quake | Easy skill | 8 | 0 |
-| 05 | Doom (1993) | Ultra-Violence · pistol start | 9 | 0 |
-| 04 | Celeste Classic | PICO-8 | 31 | 3 |
-| 03 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
-| 02 | Super Mario Bros. | NES | 32 | 7 |
-| 01 | MiniPlat | original platformer | 4 | 1 |
+| 08 | Sekiro: Shadows Die Twice | real time on Windows | 8 | 4 |
+| 07 | Minecraft | survival | 11 | 1 |
+| 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 4 |
+| 05 | Quake | Easy skill | 8 | 0 |
+| 04 | Doom (1993) | Ultra-Violence · pistol start | 9 | 0 |
+| 03 | Celeste Classic | PICO-8 | 31 | 3 |
+| 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
+| 01 | Super Mario Bros. | NES | 32 | 7 |
 
 ## Super Mario Bros. · closed-loop results (60 FPS)
 
@@ -46,4 +43,4 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 
 Rules: a closed-loop policy reads the screen pixels every frame and then chooses keys; no fixed key sequence. Games run in random mode and the referee runs the policy on 5 variants it has never seen; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better.
 
-Game logos from Wikimedia Commons (mostly public domain; Celeste logo © Maddy Makes Games, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png). Trademarks belong to their owners and are used only to identify the games. Stardew Valley logo © ConcernedApe, taken from the game's cover art. The MiniPlat icon is original pixel art.
+Game logos from Wikimedia Commons (mostly public domain; Celeste logo © Maddy Makes Games, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png). Trademarks belong to their owners and are used only to identify the games. Stardew Valley logo © ConcernedApe, taken from the game's cover art. The ladder emblem is an original design.

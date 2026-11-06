@@ -1,6 +1,4 @@
-<p align="center"><img src="logos/emblem.svg" width="110" alt=""></p>
-
-# RSI Game Speedrun Ladder
+# <img src="logos/emblem.svg" width="46" align="absmiddle" alt=""> RSI Game Speedrun Ladder
 
 RSI 游戏速通天梯
 
@@ -15,15 +13,14 @@ RSI 游戏速通天梯
 
 | 档 | 游戏 | 说明 | 分段 | 已通关 |
 |---|---|---|---|---|
-| 09 | 只狼：影逝二度 Sekiro: Shadows Die Twice | Windows 实时 | 8 | 4 |
-| 08 | 我的世界 Minecraft | 生存模式 | 11 | 1 |
-| 07 | 星露谷物语 Stardew Valley | 1.6 · Windows 实时 | 9 | 4 |
-| 06 | 雷神之锤 Quake | Easy 难度 | 8 | 0 |
-| 05 | 毁灭战士 Doom (1993) | UV 难度 · 手枪开局 | 9 | 0 |
-| 04 | 蔚蓝经典版 Celeste Classic | PICO-8 | 31 | 3 |
-| 03 | 超级马里奥兄弟：失落的关卡 Super Mario Bros.: The Lost Levels | NES ROM 版 | 16 | 1 |
-| 02 | 超级马里奥兄弟 Super Mario Bros. | NES | 32 | 7 |
-| 01 | MiniPlat | 原创平台跳跃 | 4 | 1 |
+| 08 | 只狼：影逝二度 Sekiro: Shadows Die Twice | Windows 实时 | 8 | 4 |
+| 07 | 我的世界 Minecraft | 生存模式 | 11 | 1 |
+| 06 | 星露谷物语 Stardew Valley | 1.6 · Windows 实时 | 9 | 4 |
+| 05 | 雷神之锤 Quake | Easy 难度 | 8 | 0 |
+| 04 | 毁灭战士 Doom (1993) | UV 难度 · 手枪开局 | 9 | 0 |
+| 03 | 蔚蓝经典版 Celeste Classic | PICO-8 | 31 | 3 |
+| 02 | 超级马里奥兄弟：失落的关卡 Super Mario Bros.: The Lost Levels | NES ROM 版 | 16 | 1 |
+| 01 | 超级马里奥兄弟 Super Mario Bros. | NES | 32 | 7 |
 
 ## 超级马里奥兄弟 · 闭环成绩（60 FPS）
 
@@ -48,4 +45,4 @@ RSI 游戏速通天梯
 
 规则：闭环策略每帧读取屏幕像素再决定按键，不使用固定按键序列；游戏开启随机模式，裁判在 5 个没见过的变体上运行，全部通关才算，成绩取最慢一局。格内数字是通关帧数，越小越好。
 
-游戏标志来自 Wikimedia Commons（多为公有领域；Celeste 标志 © Maddy Makes Games，CC BY-SA 4.0：https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png），商标归各自权利人所有，仅用于标识游戏。星露谷物语标志 © ConcernedApe，取自游戏封面。MiniPlat 图标为原创像素画。
+游戏标志来自 Wikimedia Commons（多为公有领域；Celeste 标志 © Maddy Makes Games，CC BY-SA 4.0：https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png），商标归各自权利人所有，仅用于标识游戏。星露谷物语标志 © ConcernedApe，取自游戏封面。天梯徽章为原创设计。
