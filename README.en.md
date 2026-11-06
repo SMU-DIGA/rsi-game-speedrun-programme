@@ -6,6 +6,8 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 
 ## Dispatches
 
+- **2026-11-06 11:40** **Stardew Valley**: into the Mines; the closed-loop bot breaks rocks, finds ladders and goes down from floor 1 to 3 (live on Windows, exploration save).
+- **2026-11-06 11:19** **Sekiro**: from the wall corner into the grass, waiting out the talking guards, on to the crawl space (following a reference video, live on Windows).
 - **2026-11-06 11:10** **Super Mario Bros. 2-4** (castle) cleared closed-loop: 1264 frames, 5/5 unseen variants. Worlds 1 and 2 are complete.
 - **2026-11-06 10:00** **Super Mario Bros. 2-2** (underwater) cleared: 2720 frames, 5/5. 1-4 improved to 771 frames and 2-1 to 1389.
 - **2026-11-06 08:28** **Super Mario Bros. 1-4, 2-1 and 2-3** cleared: 886 / 1760 / 1339 frames, all 5/5.
@@ -24,9 +26,9 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
-| 08 | Sekiro: Shadows Die Twice | real time on Windows | 8 | 4 |
+| 08 | Sekiro: Shadows Die Twice | real time on Windows | 8 | 5 |
 | 07 | Minecraft | survival | 11 | 1 |
-| 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 4 |
+| 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 5 |
 | 05 | Quake | Easy skill | 8 | 0 |
 | 04 | Doom (1993) | Ultra-Violence · pistol start | 9 | 0 |
 | 03 | Celeste Classic | PICO-8 | 31 | 3 |
