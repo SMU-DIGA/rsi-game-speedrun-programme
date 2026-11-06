@@ -11,14 +11,14 @@
 
 | 档 | 游戏 | 说明 | 分段 | 已通关 |
 |---|---|---|---|---|
-| 09 | Sekiro: Shadows Die Twice | 只狼：影逝二度 · Windows 实时 | 8 | 4 |
-| 08 | Minecraft | 我的世界 · 生存 | 11 | 1 |
-| 07 | Stardew Valley | 星露谷物语 1.6 · Windows 实时 | 9 | 4 |
-| 06 | Quake | 雷神之锤 | 8 | 0 |
-| 05 | Doom | 毁灭战士 · UV 难度 · 手枪开局 | 9 | 0 |
-| 04 | Celeste Classic | 蔚蓝经典版（PICO-8） | 31 | 3 |
-| 03 | Super Mario Bros.: The Lost Levels | 马里奥：失落的关卡 | 16 | 1 |
-| 02 | Super Mario Bros. | 超级马里奥兄弟（NES） | 32 | 7 |
+| 09 | 只狼：影逝二度 Sekiro: Shadows Die Twice | Windows 实时 | 8 | 4 |
+| 08 | 我的世界 Minecraft | 生存模式 | 11 | 1 |
+| 07 | 星露谷物语 Stardew Valley | 1.6 · Windows 实时 | 9 | 4 |
+| 06 | 雷神之锤 Quake | Easy 难度 | 8 | 0 |
+| 05 | 毁灭战士 Doom (1993) | UV 难度 · 手枪开局 | 9 | 0 |
+| 04 | 蔚蓝经典版 Celeste Classic | PICO-8 | 31 | 3 |
+| 03 | 超级马里奥兄弟：失落的关卡 Super Mario Bros.: The Lost Levels | NES ROM 版 | 16 | 1 |
+| 02 | 超级马里奥兄弟 Super Mario Bros. | NES | 32 | 7 |
 | 01 | MiniPlat | 原创平台跳跃 | 4 | 1 |
 
 ## 超级马里奥兄弟 · 闭环成绩（60 FPS）

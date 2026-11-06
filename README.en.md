@@ -15,9 +15,9 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 | 08 | Minecraft | survival | 11 | 1 |
 | 07 | Stardew Valley | 1.6 · real time on Windows | 9 | 4 |
 | 06 | Quake | Easy skill | 8 | 0 |
-| 05 | Doom | Ultra-Violence · pistol start | 9 | 0 |
+| 05 | Doom (1993) | Ultra-Violence · pistol start | 9 | 0 |
 | 04 | Celeste Classic | PICO-8 | 31 | 3 |
-| 03 | Super Mario Bros.: The Lost Levels | Lost Levels | 16 | 1 |
+| 03 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
 | 02 | Super Mario Bros. | NES | 32 | 7 |
 | 01 | MiniPlat | original platformer | 4 | 1 |
 
