@@ -44,7 +44,7 @@
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
 | 01 | Super Mario Bros. | NES | 32 | 14 |
 
-## Super Mario Bros. · results (60 FPS)
+## Super Mario Bros. · Results (60 FPS)
 
 | Level | Frames | Seconds | Variants |
 |---|---|---|---|
@@ -63,7 +63,7 @@
 | 4-3 | 880 | 14.7 | 5/5 |
 | 4-4 | 1226 | 20.4 | 5/5 |
 
-## Celeste Classic · results (30 FPS)
+## Celeste Classic · Results (30 FPS)
 
 | Room | Frames | Seconds |
 |---|---|---|
