@@ -10,7 +10,7 @@
 - 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
 - 🔴 **Sekiro**: from the crawl space on to the cliff and tower (live on Windows). _(since 11-06 11:19)_
 
-- **2026-11-06 20:15** **Sekiro**: a recording of the stretch from the Ashina Reservoir wall corner to the crawl space under the floor is now under Recordings & Results (live on Windows).
+- **2026-11-06 20:30** **Sekiro**: a recording of the Ashina Reservoir stretch from the wall to the crawl space, including hiding under the floor until a guard's alert drops, is now under Recordings & Results (live on Windows).
 - **2026-11-06 18:05** **Super Mario Bros. 3-1** cleared: 2166 frames, 5/5. Only 3-4 is left in worlds 3 and 4.
 - **2026-11-06 16:31** **Stardew Valley**: day 5 with no human input at all, from the house down to floor 3 of the Mines (out of energy). Recording under Recordings & results (live on Windows).
 - **2026-11-06 16:00** **Stardew Valley**: one unbroken run from a new save: clears a path across the farm on day 1, and on day 5, after the parsnips, walks through the Backwoods into the Mines and reaches floor 1 (out of energy) (live on Windows).
