@@ -54,7 +54,7 @@ h1{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,5.4vw,58px)
 .stat+.stat{border-left:1px solid var(--line)}
 .stat b{display:block;font-family:var(--f-display);font-size:30px;font-weight:400;line-height:1.15;color:var(--red)}
 .stat small{color:var(--muted);font-size:12px;letter-spacing:.06em;white-space:nowrap}
-.legend{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px 20px;font-size:12.5px;color:var(--ink);margin:0 0 18px}
+.legend{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px 18px;font-size:12.5px;color:var(--ink);margin:0 0 18px}
 html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 #news-h,#ladder-h,#vids-h{scroll-margin-top:64px}
 .jump{position:sticky;top:0;z-index:20;display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:-14px 0 26px;padding:10px 0;
@@ -165,7 +165,7 @@ footer div{color:#e7d9bd;overflow-wrap:anywhere}
  .grid{grid-template-columns:repeat(auto-fill,minmax(78px,1fr))}
  .ladder{padding-left:40px}.ladder::before{left:0;width:30px}.rung::before{left:-22px;width:18px}.rung::after{left:-28px}
  .emblem{width:48px}
- .news{padding:16px}.news li{grid-template-columns:36px minmax(0,1fr);gap:4px 10px}.news time{grid-column:1/-1}.nlogo{width:36px}.onairbox{padding:10px 12px 6px}.jump{flex-wrap:nowrap;gap:6px;padding:8px 0}.jump a{font-size:11px;letter-spacing:.05em;padding:5px 9px;white-space:nowrap}.vids{padding:16px}.rtabs{margin:0 0 16px;padding:0 2px}.rtabs label{padding:8px 11px 7px 9px;font-size:13.5px;gap:7px}.rtabs label .nlogo{width:30px;height:18px}.rp{grid-template-columns:1fr;gap:18px}.rr{contain:none;min-height:0}.rtw{flex:none;max-height:360px}.onairbox li{grid-template-columns:auto 36px minmax(0,1fr);gap:4px 10px}.onairbox time{grid-column:1/-1}
+ .news{padding:16px}.news li{grid-template-columns:36px minmax(0,1fr);gap:4px 10px}.news time{grid-column:1/-1}.nlogo{width:36px}.onairbox{padding:10px 12px 6px}.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}.legend span{white-space:normal}.jump{flex-wrap:nowrap;gap:6px;padding:8px 0}.jump a{font-size:11px;letter-spacing:.05em;padding:5px 9px;white-space:nowrap}.vids{padding:16px}.rtabs{margin:0 0 16px;padding:0 2px}.rtabs label{padding:8px 11px 7px 9px;font-size:13.5px;gap:7px}.rtabs label .nlogo{width:30px;height:18px}.rp{grid-template-columns:1fr;gap:18px}.rr{contain:none;min-height:0}.rtw{flex:none;max-height:360px}.onairbox li{grid-template-columns:auto 36px minmax(0,1fr);gap:4px 10px}.onairbox time{grid-column:1/-1}
  .stat{padding:6px 12px;flex:1 1 45%}.stat:nth-child(3){border-left:0}
 }
 
@@ -184,8 +184,8 @@ footer div{color:#e7d9bd;overflow-wrap:anywhere}
 <h2 class="lh" id="ladder-h">Ladder</h2>
 <div class="legend"><span><i style="background:var(--done-bg);border-color:var(--done)"></i>Cleared · 5/5 random variants</span>
  <span><i style="background:var(--old-bg);border-color:var(--old)"></i>Cleared (fixed seed)</span>
- <span><i style="background:var(--live-bg);border-color:var(--live)"></i>Done in a live real-time run (Windows, single run)</span>
- <span><i style="background:var(--part-bg);border-color:var(--part)"></i>Some variants cleared</span>
+ <span><i style="background:var(--live-bg);border-color:var(--live)"></i>Live run on Windows</span>
+ <span><i style="background:var(--part-bg);border-color:var(--part)"></i>Some variants</span>
  <span><i style="background:var(--try-bg);border-color:var(--try)"></i>In progress</span><span><i></i>Not started</span></div>
 <main class="ladder"><section class="rung summit now">
  <div class="meta"><div class="head"><span class="tier">08</span><img class="logo mono" src="../logos/sekiro.png" alt="Sekiro: Shadows Die Twice"></div>
