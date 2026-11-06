@@ -6,6 +6,14 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 
 ## Dispatches
 
+**🔴 LIVE · On air now**
+
+- 🔴 **Super Mario Bros. 3-1 to 4-4**: all 8 levels of worlds 3 and 4 at once, closed-loop in random mode. _(since 11-06 11:35)_
+- 🔴 **Doom E1M1**: route learned from human playthrough videos; stuck on the fights along the way. _(since 11-06 10:37)_
+- 🔴 **Quake e1m1**: also stuck on combat; aiming and fighting back are being reworked. _(since 11-06 09:58)_
+- 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
+- 🔴 **Sekiro**: from the crawl space on to the cliff and tower (live on Windows). _(since 11-06 11:19)_
+
 - **2026-11-06 11:40** **Stardew Valley**: into the Mines; the closed-loop bot breaks rocks, finds ladders and goes down from floor 1 to 3 (live on Windows, exploration save).
 - **2026-11-06 11:19** **Sekiro**: from the wall corner into the grass, waiting out the talking guards, on to the crawl space (following a reference video, live on Windows).
 - **2026-11-06 11:10** **Super Mario Bros. 2-4** (castle) cleared closed-loop: 1264 frames, 5/5 unseen variants. Worlds 1 and 2 are complete.

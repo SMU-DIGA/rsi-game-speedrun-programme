@@ -99,10 +99,19 @@ h1{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,5.4vw,58px)
 .news ol{list-style:none;margin:0;padding:0;display:grid}
 .news li{display:grid;grid-template-columns:150px 44px minmax(0,1fr);gap:12px;align-items:center;padding:9px 0;border-top:1px dashed var(--line);font-size:14px}
 .news li:first-child{border-top:0}
-.news li:first-child span::before{content:"NEW";font-family:var(--f-data);font-size:10.5px;letter-spacing:.12em;color:var(--paper);background:var(--red);padding:1px 6px;margin-right:8px;vertical-align:1px}
+.news ol li:first-child span::before{content:"NEW";font-family:var(--f-data);font-size:10.5px;letter-spacing:.12em;color:var(--paper);background:var(--red);padding:1px 6px;margin-right:8px;vertical-align:1px}
 .news time{font-family:var(--f-data);font-size:12.5px;color:var(--muted);letter-spacing:.03em}
 .nlogo{width:44px;height:24px;object-fit:contain}.nlogo.mono{filter:var(--logo-filter)}
 .news b{color:var(--red);font-weight:700}
+.onairbox{margin:0 0 16px;padding:0 0 12px;border-bottom:1px solid var(--rule)}
+.onairbox h3{font-family:var(--f-data);font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.onairbox ul{list-style:none;margin:0;padding:0;display:grid}
+.onairbox li{display:grid;grid-template-columns:78px 44px minmax(0,1fr) auto;gap:12px;align-items:center;padding:7px 0;font-size:14px}
+.onair{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-data);font-size:10.5px;letter-spacing:.12em;color:var(--paper);background:var(--red);padding:2px 7px;border-radius:2px;justify-self:start}
+.onair i{width:7px;height:7px;border-radius:50%;background:var(--paper);animation:onair 1.6s ease-in-out infinite}
+@keyframes onair{0%,100%{opacity:1}50%{opacity:.2}}
+@media (prefers-reduced-motion:reduce){.onair i{animation:none}}
+.onairbox time{font-family:var(--f-data);font-size:12px;color:var(--muted);white-space:nowrap}
 .lh{text-align:left;margin:0 0 14px;padding-bottom:6px;border-bottom:3px double var(--rule)}
 .tables{margin-top:38px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:26px}
 .tables h2{font-family:var(--f-body);font-size:16px;margin:0 0 10px;padding-bottom:6px;border-bottom:3px double var(--rule)}
@@ -114,13 +123,13 @@ td.n{font-family:var(--f-data)}
 footer{margin-top:40px;font-size:12.5px;color:var(--paper);display:grid;gap:6px;padding-block:22px 30px;position:relative;z-index:0}
 footer::before{content:"";position:absolute;left:50%;transform:translateX(-50%);width:100vw;top:0;bottom:0;z-index:-1;background:var(--foot);background-image:var(--noise);
  border-top:3px double var(--gold)}
-footer div{color:#e7d9bd}
+footer div{color:#e7d9bd;overflow-wrap:anywhere}
 @media (max-width:760px){
  .rung{grid-template-columns:minmax(0,1fr);padding:18px 16px}
  .grid{grid-template-columns:repeat(auto-fill,minmax(78px,1fr))}
  .ladder{padding-left:40px}.ladder::before{left:0;width:30px}.rung::before{left:-22px;width:18px}.rung::after{left:-28px}
  .emblem{width:48px}
- .news{padding:16px}.news li{grid-template-columns:36px minmax(0,1fr);gap:4px 10px}.news time{grid-column:1/-1}.nlogo{width:36px}
+ .news{padding:16px}.news li{grid-template-columns:36px minmax(0,1fr);gap:4px 10px}.news time{grid-column:1/-1}.nlogo{width:36px}.onairbox li{grid-template-columns:auto 36px minmax(0,1fr);gap:4px 10px}.onairbox time{grid-column:1/-1}
  .stat{padding:6px 12px;flex:1 1 45%}.stat:nth-child(3){border-left:0}
 }
 
@@ -137,6 +146,7 @@ footer div{color:#e7d9bd}
  <span><i style="background:var(--try-bg);border-color:var(--try)"></i>In progress</span><span><i></i>Not started</span></div>
 </header>
 <section class="news" aria-labelledby="news-h"><h2 id="news-h">Dispatches <small>latest clears</small></h2>
+<div class="onairbox" aria-label="LIVE"><h3>On air now</h3><ul><li><span class="onair"><i aria-hidden="true"></i>LIVE</span><img src="../logos/mario.png" alt="" class="nlogo"><span><b>Super Mario Bros. 3-1 to 4-4</b>: all 8 levels of worlds 3 and 4 at once, closed-loop in random mode.</span><time>since 11-06 11:35</time></li><li><span class="onair"><i aria-hidden="true"></i>LIVE</span><img src="../logos/doom.svg" alt="" class="nlogo mono"><span><b>Doom E1M1</b>: route learned from human playthrough videos; stuck on the fights along the way.</span><time>since 11-06 10:37</time></li><li><span class="onair"><i aria-hidden="true"></i>LIVE</span><img src="../logos/quake.png" alt="" class="nlogo"><span><b>Quake e1m1</b>: also stuck on combat; aiming and fighting back are being reworked.</span><time>since 11-06 09:58</time></li><li><span class="onair"><i aria-hidden="true"></i>LIVE</span><img src="../logos/stardew.png" alt="" class="nlogo"><span><b>Stardew Valley</b>: going down the Mines, next target floor 5 (live on Windows).</span><time>since 11-06 11:40</time></li><li><span class="onair"><i aria-hidden="true"></i>LIVE</span><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>Sekiro</b>: from the crawl space on to the cliff and tower (live on Windows).</span><time>since 11-06 11:19</time></li></ul></div>
 <ol><li><time>2026-11-06 11:40</time><img src="../logos/stardew.png" alt="" class="nlogo"><span><b>Stardew Valley</b>: into the Mines; the closed-loop bot breaks rocks, finds ladders and goes down from floor 1 to 3 (live on Windows, exploration save).</span></li><li><time>2026-11-06 11:19</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>Sekiro</b>: from the wall corner into the grass, waiting out the talking guards, on to the crawl space (following a reference video, live on Windows).</span></li><li><time>2026-11-06 11:10</time><img src="../logos/mario.png" alt="" class="nlogo"><span><b>Super Mario Bros. 2-4</b> (castle) cleared closed-loop: 1264 frames, 5/5 unseen variants. Worlds 1 and 2 are complete.</span></li><li><time>2026-11-06 10:00</time><img src="../logos/mario.png" alt="" class="nlogo"><span><b>Super Mario Bros. 2-2</b> (underwater) cleared: 2720 frames, 5/5. 1-4 improved to 771 frames and 2-1 to 1389.</span></li><li><time>2026-11-06 08:28</time><img src="../logos/mario.png" alt="" class="nlogo"><span><b>Super Mario Bros. 1-4, 2-1 and 2-3</b> cleared: 886 / 1760 / 1339 frames, all 5/5.</span></li><li><time>2026-11-06 07:41</time><img src="../logos/stardew.png" alt="" class="nlogo"><span><b>Stardew Valley</b>: a screen-only keyboard-and-mouse bot goes from a new save to the first 5 parsnips on Spring 5 (live on Windows).</span></li><li><time>2026-11-06 00:23</time><img src="../logos/mario.png" alt="" class="nlogo"><span><b>Super Mario Bros. 1-3</b> cleared: 1017 frames, 5/5; 1-2 improved to 1347 frames.</span></li><li><time>2026-11-05 23:16</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>Sekiro</b>: following reference frames from a human run, past the opening pit, the Ashina Reservoir rock face and the wall corner (live on Windows).</span></li><li><time>2026-11-05 22:54</time><img src="../logos/mario.png" alt="" class="nlogo"><span><b>Super Mario Bros. 1-2</b> first closed-loop clear: 1545 frames, 5/5.</span></li><li><time>2026-11-05 09:30</time><img src="../logos/mario.png" alt="" class="nlogo"><span><b>Super Mario Bros. 1-1</b>: first closed-loop clear in random mode, 1485 frames, 5/5 (1482 by noon).</span></li><li><time>2026-11-04 21:12</time><img src="../logos/celeste.png" alt="" class="nlogo"><span><b>Celeste Classic</b> rooms 1–3 cleared: 334 / 145 / 229 frames (30 FPS).</span></li><li><time>2026-11-04</time><img src="../logos/minecraft.svg" alt="" class="nlogo"><span>First batch: <b>Minecraft</b> gets wood (402 frames); <b>Lost Levels</b> 1-1 cleared open-loop (1592 frames).</span></li></ol></section>
 <h2 class="lh">The ladder</h2>
 <main class="ladder"><section class="rung summit now">
