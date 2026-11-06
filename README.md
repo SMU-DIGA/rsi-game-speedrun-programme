@@ -1,3 +1,5 @@
+<p align="center"><img src="logos/emblem.svg" width="110" alt=""></p>
+
 # RSI Game Speedrun Ladder
 
 RSI 游戏速通天梯
