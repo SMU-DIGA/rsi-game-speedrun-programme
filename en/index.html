@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RSI Speedrun Ladder</title><meta name="description" content="An AI coding agent (Claude Code) writes programs that play games, and a self-improvement loop keeps a new version only i">
+<link rel="icon" href="../logos/miniplat.svg">
+<link rel="alternate" hreflang="zh-CN" href="../">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#e9edf3;--panel:#f8fafc;--ink:#14202e;--muted:#5d6b7c;--rail:#a7b3c2;--line:#d3dae3;
+ --done:#1f9d6b;--done-bg:#d6f2e6;--part:#b7790a;--part-bg:#fbedcc;--try:#d2553f;--try-bg:#f9dcd5;
+ --old:#3f7fc4;--old-bg:#d9e7f6;--todo-bg:#eef1f5;--accent:#2b4a7a;
+ --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+ --f-data:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;--logo-filter:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1621;--panel:#162131;--ink:#e6edf6;--muted:#93a2b5;--rail:#41536a;--line:#273648;
+ --done:#3fcf93;--done-bg:#163b30;--part:#f0b64a;--part-bg:#3d3118;--try:#f27b65;--try-bg:#432420;--old:#79aef0;--old-bg:#1b3150;--todo-bg:#1b2738;--accent:#8fb3ec;--logo-filter:invert(1);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1621;--panel:#162131;--ink:#e6edf6;--muted:#93a2b5;--rail:#41536a;--line:#273648;
+ --done:#3fcf93;--done-bg:#163b30;--part:#f0b64a;--part-bg:#3d3118;--try:#f27b65;--try-bg:#432420;--old:#79aef0;--old-bg:#1b3150;--todo-bg:#1b2738;--accent:#8fb3ec;--logo-filter:invert(1);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.55;font-size:14px}
+.wrap{max-width:1100px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:grid;gap:14px;margin-bottom:26px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.eyebrow{font-family:var(--f-data);font-size:12px;letter-spacing:.08em;color:var(--muted)}
+.lang{font-size:13px;color:var(--accent);text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:3px 10px;background:var(--panel)}
+.lang:hover,.lang:focus-visible{border-color:var(--accent)}
+h1{font-weight:700;font-size:clamp(26px,4vw,38px);margin:0;text-wrap:balance;letter-spacing:.01em}
+.lede{margin:0;color:var(--muted);max-width:68ch}
+.stats{display:flex;flex-wrap:wrap;gap:10px 32px;font-variant-numeric:tabular-nums}
+.stat b{display:block;font-family:var(--f-data);font-size:26px;font-weight:500}
+.stat small{color:var(--muted);font-size:12px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:3px;border:1px solid var(--line);background:var(--todo-bg)}
+.ladder{position:relative;display:grid;gap:14px;padding-left:40px}
+.ladder::before,.ladder::after{content:"";position:absolute;top:0;bottom:0;width:4px;border-radius:2px;background:var(--rail)}
+.ladder::before{left:6px}.ladder::after{left:26px}
+.rung{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;
+ display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:18px}
+.rung::before{content:"";position:absolute;left:-36px;top:30px;width:34px;height:4px;border-radius:2px;background:var(--rail)}
+.rung.summit{border-style:dashed}
+.rung.now{border-color:var(--try)}
+.meta{min-width:0;display:grid;gap:6px;align-content:start}
+.head{display:flex;align-items:center;gap:10px;min-height:40px}
+.tier{flex:none;font-family:var(--f-data);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 5px}
+.logo{display:block;height:36px;width:auto;max-width:200px;object-fit:contain;object-position:left center}
+.logo.mono{filter:var(--logo-filter)}
+.gname{font-weight:700;font-size:15px}
+.sub{font-size:13px;color:var(--muted)}
+.bar{height:8px;border-radius:4px;background:var(--todo-bg);overflow:hidden;border:1px solid var(--line);margin-top:4px}
+.bar span{display:block;height:100%;background:var(--done)}
+.count{font-family:var(--f-data);font-size:12px;font-variant-numeric:tabular-nums}
+.note{font-size:12.5px;line-height:1.55}
+.note .tag{display:inline-block;font-size:11px;padding:0 6px;border-radius:4px;background:var(--try-bg);color:var(--try);margin-right:6px}
+.grid{display:grid;gap:5px;align-content:start;min-width:0;grid-template-columns:repeat(var(--cols),minmax(0,1fr))}
+.cell{border-radius:5px;border:1px solid var(--line);background:var(--todo-bg);min-height:44px;padding:4px 6px;min-width:0;
+ display:flex;flex-direction:column;justify-content:space-between;font-family:var(--f-data);font-variant-numeric:tabular-nums}
+.cell .id{font-size:11px;color:var(--muted);overflow-wrap:anywhere;line-height:1.25}
+.cell .v{font-size:12.5px;font-weight:500;line-height:1.3}
+.cell.done{background:var(--done-bg);border-color:var(--done)}.cell.done .v{color:var(--done)}
+.cell.part{background:var(--part-bg);border-color:var(--part)}.cell.part .v{color:var(--part)}
+.cell.try{background:var(--try-bg);border-color:var(--try)}.cell.try .v{color:var(--try);font-family:var(--f-body)}
+.cell.old{background:var(--old-bg);border-color:var(--old)}.cell.old .v{color:var(--old)}
+.tables{margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:22px}
+.tables h2{font-size:16px;margin:0 0 8px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:13.5px;background:var(--panel);border:1px solid var(--line);width:100%}
+th,td{padding:6px 12px;border-bottom:1px solid var(--line);text-align:left}
+th{color:var(--muted);font-weight:500;font-size:12px}
+td.n{font-family:var(--f-data)}
+footer{margin-top:28px;font-size:12px;color:var(--muted);display:grid;gap:6px;max-width:90ch}
+@media (max-width:760px){
+ .rung{grid-template-columns:minmax(0,1fr)}
+ .grid{grid-template-columns:repeat(min(var(--cols),4),minmax(0,1fr))}
+ .ladder{padding-left:28px}.ladder::before{left:2px}.ladder::after{left:16px}.rung::before{left:-26px;width:24px}
+}
+</style></head><body><div class="wrap">
+<header>
+ <div class="top"><div class="eyebrow">RSI-Game-Speedrun · updated 2026-11-06</div><a class="lang" href="../">中文</a></div>
+ <h1>RSI Speedrun Ladder</h1><p class="lede">An AI coding agent (Claude Code) writes programs that play games, and a self-improvement loop keeps a new version only if it is faster. Each cell is one scored segment; a green cell means the agent's closed-loop policy finished all 5 unseen random variants (number = frames of the slowest run).</p>
+ <div class="stats"><div class="stat"><b>13</b><small>segments cleared</small></div><div class="stat"><b>7</b><small>closed-loop, all variants</small></div>
+ <div class="stat"><b>112</b><small>segments on the ladder</small></div><div class="stat"><b>8</b><small>games</small></div></div>
+ <div class="legend"><span><i style="background:var(--done-bg);border-color:var(--done)"></i>Closed-loop clear 5/5</span>
+ <span><i style="background:var(--old-bg);border-color:var(--old)"></i>Open-loop clear (deterministic / fixed seed)</span>
+ <span><i style="background:var(--part-bg);border-color:var(--part)"></i>Some variants cleared</span>
+ <span><i style="background:var(--try-bg);border-color:var(--try)"></i>In progress</span><span><i></i>Not started</span></div>
+</header>
+<main class="ladder"><section class="rung summit">
+ <div class="meta"><div class="head"><span class="tier">08</span><img class="logo mono" src="../logos/sekiro.png" alt="Sekiro: Shadows Die Twice"></div>
+ <div class="sub">Sekiro · the final rung</div>
+ <div class="bar" role="img" aria-label="0/1"><span style="width:0.0%"></span></div>
+ <div class="count">0 / 1 cleared</div></div>
+ <div class="grid" style="--cols:6"><div class="cell todo" title="Final"><span class="id">Final</span><span class="v"></span></div></div></section><section class="rung">
+ <div class="meta"><div class="head"><span class="tier">07</span><img class="logo" src="../logos/minecraft.svg" alt="Minecraft"></div>
+ <div class="sub">survival · milestones up to the Ender Dragon</div>
+ <div class="bar" role="img" aria-label="1/11"><span style="width:9.1%"></span></div>
+ <div class="count">1 / 11 cleared</div></div>
+ <div class="grid" style="--cols:6"><div class="cell old" title="Wood: 402 frames"><span class="id">Wood</span><span class="v">402</span></div><div class="cell todo" title="Table: not started"><span class="id">Table</span><span class="v"></span></div><div class="cell todo" title="W. pick: not started"><span class="id">W. pick</span><span class="v"></span></div><div class="cell todo" title="S. pick: not started"><span class="id">S. pick</span><span class="v"></span></div><div class="cell todo" title="Iron: not started"><span class="id">Iron</span><span class="v"></span></div><div class="cell todo" title="Diamond: not started"><span class="id">Diamond</span><span class="v"></span></div><div class="cell todo" title="Nether: not started"><span class="id">Nether</span><span class="v"></span></div><div class="cell todo" title="Blaze rod: not started"><span class="id">Blaze rod</span><span class="v"></span></div><div class="cell todo" title="Ender eye: not started"><span class="id">Ender eye</span><span class="v"></span></div><div class="cell todo" title="Stronghold: not started"><span class="id">Stronghold</span><span class="v"></span></div><div class="cell todo" title="Dragon: not started"><span class="id">Dragon</span><span class="v"></span></div></div></section><section class="rung now">
+ <div class="meta"><div class="head"><span class="tier">06</span><img class="logo" src="../logos/quake.png" alt="Quake"></div>
+ <div class="sub">Easy skill · episode 1, 8 maps</div>
+ <div class="bar" role="img" aria-label="0/8"><span style="width:0.0%"></span></div>
+ <div class="count">0 / 8 cleared</div><div class="note"><span class="tag">Blocker</span>Buttons and doors are found; the route to the exit is not solved yet.</div></div>
+ <div class="grid" style="--cols:8"><div class="cell try" title="e1m1: Trying"><span class="id">e1m1</span><span class="v">Trying</span></div><div class="cell todo" title="e1m2: not started"><span class="id">e1m2</span><span class="v"></span></div><div class="cell todo" title="e1m3: not started"><span class="id">e1m3</span><span class="v"></span></div><div class="cell todo" title="e1m4: not started"><span class="id">e1m4</span><span class="v"></span></div><div class="cell todo" title="e1m5: not started"><span class="id">e1m5</span><span class="v"></span></div><div class="cell todo" title="e1m6: not started"><span class="id">e1m6</span><span class="v"></span></div><div class="cell todo" title="e1m7: not started"><span class="id">e1m7</span><span class="v"></span></div><div class="cell todo" title="e1m8: not started"><span class="id">e1m8</span><span class="v"></span></div></div></section><section class="rung now">
+ <div class="meta"><div class="head"><span class="tier">05</span><img class="logo mono" src="../logos/doom.svg" alt="Doom"></div>
+ <div class="sub">Ultra-Violence · pistol start · episode 1, 9 maps</div>
+ <div class="bar" role="img" aria-label="0/9"><span style="width:0.0%"></span></div>
+ <div class="count">0 / 9 cleared</div><div class="note"><span class="tag">Blocker</span>Pixels only, no map data: the agent must find the exit in a 3D map and survive random monster behaviour. Next: learn the route from keyframes of human playthrough videos.</div></div>
+ <div class="grid" style="--cols:9"><div class="cell try" title="E1M1: Trying"><span class="id">E1M1</span><span class="v">Trying</span></div><div class="cell todo" title="E1M2: not started"><span class="id">E1M2</span><span class="v"></span></div><div class="cell todo" title="E1M3: not started"><span class="id">E1M3</span><span class="v"></span></div><div class="cell todo" title="E1M4: not started"><span class="id">E1M4</span><span class="v"></span></div><div class="cell todo" title="E1M5: not started"><span class="id">E1M5</span><span class="v"></span></div><div class="cell todo" title="E1M6: not started"><span class="id">E1M6</span><span class="v"></span></div><div class="cell todo" title="E1M7: not started"><span class="id">E1M7</span><span class="v"></span></div><div class="cell todo" title="E1M8: not started"><span class="id">E1M8</span><span class="v"></span></div><div class="cell todo" title="E1M9: not started"><span class="id">E1M9</span><span class="v"></span></div></div></section><section class="rung">
+ <div class="meta"><div class="head"><span class="tier">04</span><img class="logo" src="../logos/celeste.png" alt="Celeste Classic"></div>
+ <div class="sub">PICO-8 · 31 rooms</div>
+ <div class="bar" role="img" aria-label="3/31"><span style="width:9.7%"></span></div>
+ <div class="count">3 / 31 cleared</div></div>
+ <div class="grid" style="--cols:8"><div class="cell old" title="1: 334 frames"><span class="id">1</span><span class="v">334</span></div><div class="cell old" title="2: 145 frames"><span class="id">2</span><span class="v">145</span></div><div class="cell old" title="3: 229 frames"><span class="id">3</span><span class="v">229</span></div><div class="cell todo" title="4: not started"><span class="id">4</span><span class="v"></span></div><div class="cell todo" title="5: not started"><span class="id">5</span><span class="v"></span></div><div class="cell todo" title="6: not started"><span class="id">6</span><span class="v"></span></div><div class="cell todo" title="7: not started"><span class="id">7</span><span class="v"></span></div><div class="cell todo" title="8: not started"><span class="id">8</span><span class="v"></span></div><div class="cell todo" title="9: not started"><span class="id">9</span><span class="v"></span></div><div class="cell todo" title="10: not started"><span class="id">10</span><span class="v"></span></div><div class="cell todo" title="11: not started"><span class="id">11</span><span class="v"></span></div><div class="cell todo" title="12: not started"><span class="id">12</span><span class="v"></span></div><div class="cell todo" title="13: not started"><span class="id">13</span><span class="v"></span></div><div class="cell todo" title="14: not started"><span class="id">14</span><span class="v"></span></div><div class="cell todo" title="15: not started"><span class="id">15</span><span class="v"></span></div><div class="cell todo" title="16: not started"><span class="id">16</span><span class="v"></span></div><div class="cell todo" title="17: not started"><span class="id">17</span><span class="v"></span></div><div class="cell todo" title="18: not started"><span class="id">18</span><span class="v"></span></div><div class="cell todo" title="19: not started"><span class="id">19</span><span class="v"></span></div><div class="cell todo" title="20: not started"><span class="id">20</span><span class="v"></span></div><div class="cell todo" title="21: not started"><span class="id">21</span><span class="v"></span></div><div class="cell todo" title="22: not started"><span class="id">22</span><span class="v"></span></div><div class="cell todo" title="23: not started"><span class="id">23</span><span class="v"></span></div><div class="cell todo" title="24: not started"><span class="id">24</span><span class="v"></span></div><div class="cell todo" title="25: not started"><span class="id">25</span><span class="v"></span></div><div class="cell todo" title="26: not started"><span class="id">26</span><span class="v"></span></div><div class="cell todo" title="27: not started"><span class="id">27</span><span class="v"></span></div><div class="cell todo" title="28: not started"><span class="id">28</span><span class="v"></span></div><div class="cell todo" title="29: not started"><span class="id">29</span><span class="v"></span></div><div class="cell todo" title="30: not started"><span class="id">30</span><span class="v"></span></div><div class="cell todo" title="31: not started"><span class="id">31</span><span class="v"></span></div></div></section><section class="rung">
+ <div class="meta"><div class="head"><span class="tier">03</span><img class="logo" src="../logos/lost.png" alt="Super Mario Bros.: The Lost Levels"></div>
+ <div class="sub">Lost Levels · worlds 1–4 in this ROM (16 levels)</div>
+ <div class="bar" role="img" aria-label="1/16"><span style="width:6.2%"></span></div>
+ <div class="count">1 / 16 cleared</div></div>
+ <div class="grid" style="--cols:8"><div class="cell old" title="1-1: 1592 frames"><span class="id">1-1</span><span class="v">1592</span></div><div class="cell todo" title="1-2: not started"><span class="id">1-2</span><span class="v"></span></div><div class="cell todo" title="1-3: not started"><span class="id">1-3</span><span class="v"></span></div><div class="cell todo" title="1-4: not started"><span class="id">1-4</span><span class="v"></span></div><div class="cell todo" title="2-1: not started"><span class="id">2-1</span><span class="v"></span></div><div class="cell todo" title="2-2: not started"><span class="id">2-2</span><span class="v"></span></div><div class="cell todo" title="2-3: not started"><span class="id">2-3</span><span class="v"></span></div><div class="cell todo" title="2-4: not started"><span class="id">2-4</span><span class="v"></span></div><div class="cell todo" title="3-1: not started"><span class="id">3-1</span><span class="v"></span></div><div class="cell todo" title="3-2: not started"><span class="id">3-2</span><span class="v"></span></div><div class="cell todo" title="3-3: not started"><span class="id">3-3</span><span class="v"></span></div><div class="cell todo" title="3-4: not started"><span class="id">3-4</span><span class="v"></span></div><div class="cell todo" title="4-1: not started"><span class="id">4-1</span><span class="v"></span></div><div class="cell todo" title="4-2: not started"><span class="id">4-2</span><span class="v"></span></div><div class="cell todo" title="4-3: not started"><span class="id">4-3</span><span class="v"></span></div><div class="cell todo" title="4-4: not started"><span class="id">4-4</span><span class="v"></span></div></div></section><section class="rung now">
+ <div class="meta"><div class="head"><span class="tier">02</span><img class="logo" src="../logos/mario.png" alt="Super Mario Bros."></div>
+ <div class="sub">NES · 32 levels · goal: beat 8-4</div>
+ <div class="bar" role="img" aria-label="7/32"><span style="width:21.9%"></span></div>
+ <div class="count">7 / 32 cleared</div><div class="note">Closed-loop pixel policies in random mode. 1-1 to 2-3 cleared on all variants; 2-4 in progress.</div></div>
+ <div class="grid" style="--cols:8"><div class="cell done" title="1-1: 1343 frames, 5/5"><span class="id">1-1</span><span class="v">1343</span></div><div class="cell done" title="1-2: 1347 frames, 5/5"><span class="id">1-2</span><span class="v">1347</span></div><div class="cell done" title="1-3: 1017 frames, 5/5"><span class="id">1-3</span><span class="v">1017</span></div><div class="cell done" title="1-4: 771 frames, 5/5"><span class="id">1-4</span><span class="v">771</span></div><div class="cell done" title="2-1: 1389 frames, 5/5"><span class="id">2-1</span><span class="v">1389</span></div><div class="cell done" title="2-2: 2720 frames, 5/5"><span class="id">2-2</span><span class="v">2720</span></div><div class="cell done" title="2-3: 1339 frames, 5/5"><span class="id">2-3</span><span class="v">1339</span></div><div class="cell part" title="2-4: best 4/5"><span class="id">2-4</span><span class="v">4/5</span></div><div class="cell todo" title="3-1: not started"><span class="id">3-1</span><span class="v"></span></div><div class="cell todo" title="3-2: not started"><span class="id">3-2</span><span class="v"></span></div><div class="cell todo" title="3-3: not started"><span class="id">3-3</span><span class="v"></span></div><div class="cell todo" title="3-4: not started"><span class="id">3-4</span><span class="v"></span></div><div class="cell todo" title="4-1: not started"><span class="id">4-1</span><span class="v"></span></div><div class="cell todo" title="4-2: not started"><span class="id">4-2</span><span class="v"></span></div><div class="cell todo" title="4-3: not started"><span class="id">4-3</span><span class="v"></span></div><div class="cell todo" title="4-4: not started"><span class="id">4-4</span><span class="v"></span></div><div class="cell todo" title="5-1: not started"><span class="id">5-1</span><span class="v"></span></div><div class="cell todo" title="5-2: not started"><span class="id">5-2</span><span class="v"></span></div><div class="cell todo" title="5-3: not started"><span class="id">5-3</span><span class="v"></span></div><div class="cell todo" title="5-4: not started"><span class="id">5-4</span><span class="v"></span></div><div class="cell todo" title="6-1: not started"><span class="id">6-1</span><span class="v"></span></div><div class="cell todo" title="6-2: not started"><span class="id">6-2</span><span class="v"></span></div><div class="cell todo" title="6-3: not started"><span class="id">6-3</span><span class="v"></span></div><div class="cell todo" title="6-4: not started"><span class="id">6-4</span><span class="v"></span></div><div class="cell todo" title="7-1: not started"><span class="id">7-1</span><span class="v"></span></div><div class="cell todo" title="7-2: not started"><span class="id">7-2</span><span class="v"></span></div><div class="cell todo" title="7-3: not started"><span class="id">7-3</span><span class="v"></span></div><div class="cell todo" title="7-4: not started"><span class="id">7-4</span><span class="v"></span></div><div class="cell todo" title="8-1: not started"><span class="id">8-1</span><span class="v"></span></div><div class="cell todo" title="8-2: not started"><span class="id">8-2</span><span class="v"></span></div><div class="cell todo" title="8-3: not started"><span class="id">8-3</span><span class="v"></span></div><div class="cell todo" title="8-4: not started"><span class="id">8-4</span><span class="v"></span></div></div></section><section class="rung">
+ <div class="meta"><div class="head"><span class="tier">01</span><img class="logo" src="../logos/miniplat.svg" alt="MiniPlat"><span class="gname">MiniPlat</span></div>
+ <div class="sub">original platformer · 4 segments</div>
+ <div class="bar" role="img" aria-label="1/4"><span style="width:25.0%"></span></div>
+ <div class="count">1 / 4 cleared</div></div>
+ <div class="grid" style="--cols:4"><div class="cell old" title="1: 390 frames"><span class="id">1</span><span class="v">390</span></div><div class="cell todo" title="2: not started"><span class="id">2</span><span class="v"></span></div><div class="cell todo" title="3: not started"><span class="id">3</span><span class="v"></span></div><div class="cell todo" title="4: not started"><span class="id">4</span><span class="v"></span></div></div></section></main>
+<div class="tables">
+ <div><h2>Super Mario Bros. · closed-loop results (60 FPS)</h2><div class="tw"><table><tr><th>Level</th><th>Frames</th><th>Seconds</th><th>Variants</th></tr><tr><td>1-1</td><td class="n">1343</td><td class="n">22.4</td><td class="n">30/30</td></tr><tr><td>1-2</td><td class="n">1347</td><td class="n">22.4</td><td class="n">5/5</td></tr><tr><td>1-3</td><td class="n">1017</td><td class="n">16.9</td><td class="n">5/5</td></tr><tr><td>1-4</td><td class="n">771</td><td class="n">12.8</td><td class="n">5/5</td></tr><tr><td>2-1</td><td class="n">1389</td><td class="n">23.1</td><td class="n">5/5</td></tr><tr><td>2-2</td><td class="n">2720</td><td class="n">45.3</td><td class="n">5/5</td></tr><tr><td>2-3</td><td class="n">1339</td><td class="n">22.3</td><td class="n">5/5</td></tr><tr><td>2-4</td><td class="n">—</td><td class="n">—</td><td class="n">best 4/5</td></tr></table></div></div>
+ <div><h2>Celeste Classic · open-loop results (30 FPS)</h2><div class="tw"><table><tr><th>Room</th><th>Frames</th><th>Seconds</th></tr><tr><td>1</td><td class="n">334</td><td class="n">11.13</td></tr><tr><td>2</td><td class="n">145</td><td class="n">4.83</td></tr><tr><td>3</td><td class="n">229</td><td class="n">7.63</td></tr></table></div></div>
+</div>
+<footer><div>Rules: a closed-loop policy reads the screen pixels every frame and then chooses keys; no fixed key sequence. Games run in random mode and the referee runs the policy on 5 variants it has never seen; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better.</div><div>Game logos from Wikimedia Commons (mostly public domain; the Celeste logo is CC BY-SA 4.0). Trademarks belong to their owners and are used only to identify the games. The MiniPlat icon is original pixel art.</div></footer>
+</div></body></html>
