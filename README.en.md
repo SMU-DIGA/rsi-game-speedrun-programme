@@ -6,10 +6,10 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Super Mario Bros. 3-4** (castle): the last level left in worlds 3 and 4. _(since 11-06 15:12)_
 - 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
 - 🔴 **Sekiro**: from the crawl space on to the cliff and tower (live on Windows). _(since 11-06 11:19)_
 
+- **2026-11-07 01:00** **Super Mario Bros. 3-4** (castle) finished for the first time, but not yet stably: 2 of 5 unseen random variants (fastest 1524 frames), so it is marked unstable. A recording of all 16 levels of worlds 1-4 back to back is under Recordings & Results.
 - **2026-11-06 20:30** **Sekiro**: a recording of the Ashina Reservoir stretch from the wall to the crawl space, including hiding under the floor until a guard's alert drops, is now under Recordings & Results (live on Windows).
 - **2026-11-06 18:05** **Super Mario Bros. 3-1** cleared: 2166 frames, 5/5. Only 3-4 is left in worlds 3 and 4.
 - **2026-11-06 16:31** **Stardew Valley**: day 5 with no human input at all, from the house down to floor 3 of the Mines (out of energy). Recording under Recordings & results (live on Windows).
@@ -60,6 +60,7 @@
 | 3-1 | 2166 | 36.1 | 5/5 |
 | 3-2 | 1188 | 19.8 | 5/5 |
 | 3-3 | 991 | 16.5 | 5/5 |
+| 3-4 | — | — | 2/5 · Unstable |
 | 4-1 | 1425 | 23.8 | 5/5 |
 | 4-2 | 1885 | 31.4 | 5/5 |
 | 4-3 | 880 | 14.7 | 5/5 |
