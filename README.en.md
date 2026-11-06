@@ -2,30 +2,27 @@
 
 [中文](README.md)
 
-An AI coding agent (Claude Code) writes programs that play games, and a self-improvement loop keeps a new version only if it is faster. Each cell is one scored segment; a green cell means the agent's closed-loop policy finished all 5 unseen random variants (number = frames of the slowest run).
-
 ## Dispatches
 
 **🔴 LIVE · On air now**
 
-- 🔴 **Super Mario Bros. 3-1 to 4-4**: all 8 levels of worlds 3 and 4 at once, closed-loop in random mode. _(since 11-06 11:35)_
-- 🔴 **Doom E1M1**: route learned from human playthrough videos; stuck on the fights along the way. _(since 11-06 10:37)_
-- 🔴 **Quake e1m1**: also stuck on combat; aiming and fighting back are being reworked. _(since 11-06 09:58)_
+- 🔴 **Super Mario Bros. 3-1 to 4-4**: all 8 levels of worlds 3 and 4 at once. _(since 11-06 11:35)_
+- 🔴 **Doom E1M1**: first, the stretch through the nukage hall in the middle of the map. _(since 11-06 13:10)_
 - 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
 - 🔴 **Sekiro**: from the crawl space on to the cliff and tower (live on Windows). _(since 11-06 11:19)_
 
-- **2026-11-06 11:40** **Stardew Valley**: into the Mines; the closed-loop bot breaks rocks, finds ladders and goes down from floor 1 to 3 (live on Windows, exploration save).
-- **2026-11-06 11:19** **Sekiro**: from the wall corner into the grass, waiting out the talking guards, on to the crawl space (following a reference video, live on Windows).
-- **2026-11-06 11:10** **Super Mario Bros. 2-4** (castle) cleared closed-loop: 1264 frames, 5/5 unseen variants. Worlds 1 and 2 are complete.
+- **2026-11-06 11:40** **Stardew Valley**: into the Mines; breaks rocks, finds ladders and goes down from floor 1 to 3 (live on Windows, exploration save).
+- **2026-11-06 11:19** **Sekiro**: from the wall corner into the grass, waiting out the talking guards, on to the crawl space (live on Windows).
+- **2026-11-06 11:10** **Super Mario Bros. 2-4** (castle) cleared: 1264 frames, 5/5 unseen variants. Worlds 1 and 2 are complete.
 - **2026-11-06 10:00** **Super Mario Bros. 2-2** (underwater) cleared: 2720 frames, 5/5. 1-4 improved to 771 frames and 2-1 to 1389.
 - **2026-11-06 08:28** **Super Mario Bros. 1-4, 2-1 and 2-3** cleared: 886 / 1760 / 1339 frames, all 5/5.
-- **2026-11-06 07:41** **Stardew Valley**: a screen-only keyboard-and-mouse bot goes from a new save to the first 5 parsnips on Spring 5 (live on Windows).
+- **2026-11-06 07:41** **Stardew Valley**: from a new save to the first 5 parsnips on Spring 5 (live on Windows).
 - **2026-11-06 00:23** **Super Mario Bros. 1-3** cleared: 1017 frames, 5/5; 1-2 improved to 1347 frames.
-- **2026-11-05 23:16** **Sekiro**: following reference frames from a human run, past the opening pit, the Ashina Reservoir rock face and the wall corner (live on Windows).
-- **2026-11-05 22:54** **Super Mario Bros. 1-2** first closed-loop clear: 1545 frames, 5/5.
-- **2026-11-05 09:30** **Super Mario Bros. 1-1**: first closed-loop clear in random mode, 1485 frames, 5/5 (1482 by noon).
+- **2026-11-05 23:16** **Sekiro**: past the opening pit, the Ashina Reservoir rock face and the wall corner (live on Windows).
+- **2026-11-05 22:54** **Super Mario Bros. 1-2** first clear: 1545 frames, 5/5.
+- **2026-11-05 09:30** **Super Mario Bros. 1-1**: first clear on random variants, 1485 frames, 5/5 (1482 by noon).
 - **2026-11-04 21:12** **Celeste Classic** rooms 1–3 cleared: 334 / 145 / 229 frames (30 FPS).
-- **2026-11-04** First batch: **Minecraft** gets wood (402 frames); **Lost Levels** 1-1 cleared open-loop (1592 frames).
+- **2026-11-04** First batch: **Minecraft** gets wood (402 frames); **Lost Levels** 1-1 cleared (fixed seed, 1592 frames).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="ladder.en.dark.svg">
@@ -43,7 +40,7 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
 | 01 | Super Mario Bros. | NES | 32 | 8 |
 
-## Super Mario Bros. · closed-loop results (60 FPS)
+## Super Mario Bros. · results (60 FPS)
 
 | Level | Frames | Seconds | Variants |
 |---|---|---|---|
@@ -56,7 +53,7 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 | 2-3 | 1339 | 22.3 | 5/5 |
 | 2-4 | 1264 | 21.1 | 5/5 |
 
-## Celeste Classic · open-loop results (30 FPS)
+## Celeste Classic · results (30 FPS)
 
 | Room | Frames | Seconds |
 |---|---|---|
@@ -64,6 +61,6 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 | 2 | 145 | 4.83 |
 | 3 | 229 | 7.63 |
 
-Rules: a closed-loop policy reads the screen pixels every frame and then chooses keys; no fixed key sequence. Games run in random mode and the referee runs the policy on 5 variants it has never seen; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better.
+Rules: the referee runs on 5 random variants never seen before; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better.
 
 Game logos from Wikimedia Commons (mostly public domain; Celeste logo © Maddy Makes Games, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png). Trademarks belong to their owners and are used only to identify the games. Stardew Valley logo © ConcernedApe, taken from the game's cover art. The ladder emblem is an original design.
