@@ -11,8 +11,9 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
-| 08 | Sekiro: Shadows Die Twice | Sekiro | 1 | 0 |
-| 07 | Minecraft | survival | 11 | 1 |
+| 09 | Sekiro: Shadows Die Twice | real time on Windows | 8 | 4 |
+| 08 | Minecraft | survival | 11 | 1 |
+| 07 | Stardew Valley | 1.6 · real time on Windows | 9 | 4 |
 | 06 | Quake | Easy skill | 8 | 0 |
 | 05 | Doom | Ultra-Violence · pistol start | 9 | 0 |
 | 04 | Celeste Classic | PICO-8 | 31 | 3 |
@@ -43,4 +44,4 @@ An AI coding agent (Claude Code) writes programs that play games, and a self-imp
 
 Rules: a closed-loop policy reads the screen pixels every frame and then chooses keys; no fixed key sequence. Games run in random mode and the referee runs the policy on 5 variants it has never seen; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better.
 
-Game logos from Wikimedia Commons (mostly public domain; Celeste logo © Maddy Makes Games, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png). Trademarks belong to their owners and are used only to identify the games. The MiniPlat icon is original pixel art.
+Game logos from Wikimedia Commons (mostly public domain; Celeste logo © Maddy Makes Games, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png). Trademarks belong to their owners and are used only to identify the games. The MiniPlat and Stardew Valley icons are original pixel art (no freely licensed Stardew Valley logo exists).

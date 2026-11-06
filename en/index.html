@@ -8,13 +8,13 @@
 <style>
 :root{--bg:#e9edf3;--panel:#f8fafc;--ink:#14202e;--muted:#5d6b7c;--rail:#a7b3c2;--line:#d3dae3;
  --done:#1f9d6b;--done-bg:#d6f2e6;--part:#b7790a;--part-bg:#fbedcc;--try:#d2553f;--try-bg:#f9dcd5;
- --old:#3f7fc4;--old-bg:#d9e7f6;--todo-bg:#eef1f5;--accent:#2b4a7a;
+ --old:#3f7fc4;--old-bg:#d9e7f6;--live:#7b4fc4;--live-bg:#ebe1fa;--todo-bg:#eef1f5;--accent:#2b4a7a;
  --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
  --f-data:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;--logo-filter:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1621;--panel:#162131;--ink:#e6edf6;--muted:#93a2b5;--rail:#41536a;--line:#273648;
- --done:#3fcf93;--done-bg:#163b30;--part:#f0b64a;--part-bg:#3d3118;--try:#f27b65;--try-bg:#432420;--old:#79aef0;--old-bg:#1b3150;--todo-bg:#1b2738;--accent:#8fb3ec;--logo-filter:invert(1);color-scheme:dark}}
+ --done:#3fcf93;--done-bg:#163b30;--part:#f0b64a;--part-bg:#3d3118;--try:#f27b65;--try-bg:#432420;--old:#79aef0;--old-bg:#1b3150;--live:#b998f2;--live-bg:#2c2248;--todo-bg:#1b2738;--accent:#8fb3ec;--logo-filter:invert(1);color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#0f1621;--panel:#162131;--ink:#e6edf6;--muted:#93a2b5;--rail:#41536a;--line:#273648;
- --done:#3fcf93;--done-bg:#163b30;--part:#f0b64a;--part-bg:#3d3118;--try:#f27b65;--try-bg:#432420;--old:#79aef0;--old-bg:#1b3150;--todo-bg:#1b2738;--accent:#8fb3ec;--logo-filter:invert(1);color-scheme:dark}
+ --done:#3fcf93;--done-bg:#163b30;--part:#f0b64a;--part-bg:#3d3118;--try:#f27b65;--try-bg:#432420;--old:#79aef0;--old-bg:#1b3150;--live:#b998f2;--live-bg:#2c2248;--todo-bg:#1b2738;--accent:#8fb3ec;--logo-filter:invert(1);color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.55;font-size:14px}
 .wrap{max-width:1100px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -57,6 +57,7 @@ h1{font-weight:700;font-size:clamp(26px,4vw,38px);margin:0;text-wrap:balance;let
 .count{font-family:var(--f-data);font-size:12px;font-variant-numeric:tabular-nums}
 .note{font-size:13px;line-height:1.6;grid-column:1/-1;border-top:1px dashed var(--line);padding-top:10px}
 .note .tag{display:inline-block;font-size:11px;padding:0 6px;border-radius:4px;background:var(--try-bg);color:var(--try);margin-right:6px}
+.note .tag.prog{background:var(--live-bg);color:var(--live)}
 .grid{display:grid;gap:5px;align-content:start;min-width:0;grid-template-columns:repeat(var(--cols),minmax(0,1fr))}
 .cell{border-radius:5px;border:1px solid var(--line);background:var(--todo-bg);min-height:44px;padding:4px 6px;min-width:0;
  display:flex;flex-direction:column;justify-content:space-between;font-family:var(--f-data);font-variant-numeric:tabular-nums}
@@ -66,6 +67,7 @@ h1{font-weight:700;font-size:clamp(26px,4vw,38px);margin:0;text-wrap:balance;let
 .cell.part{background:var(--part-bg);border-color:var(--part)}.cell.part .v{color:var(--part)}
 .cell.try{background:var(--try-bg);border-color:var(--try)}.cell.try .v{color:var(--try);font-family:var(--f-body)}
 .cell.old{background:var(--old-bg);border-color:var(--old)}.cell.old .v{color:var(--old)}
+.cell.live{background:var(--live-bg);border-color:var(--live)}.cell.live .v{color:var(--live);font-family:var(--f-body)}
 .tables{margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:22px}
 .tables h2{font-size:16px;margin:0 0 8px}
 .tw{overflow-x:auto}
@@ -83,24 +85,30 @@ footer{margin-top:28px;font-size:12.5px;color:var(--muted);display:grid;gap:6px}
 <header>
  <div class="top"><div class="eyebrow">RSI-Game-Speedrun · updated 2026-11-06</div><div class="ctl"><div class="theme" role="group" aria-label="Theme"><button type="button" data-t="light">Light</button><button type="button" data-t="auto">Auto</button><button type="button" data-t="dark">Dark</button></div><a class="lang" href="../">中文</a></div></div>
  <h1>RSI Speedrun Ladder</h1><p class="lede">An AI coding agent (Claude Code) writes programs that play games, and a self-improvement loop keeps a new version only if it is faster. Each cell is one scored segment; a green cell means the agent's closed-loop policy finished all 5 unseen random variants (number = frames of the slowest run).</p>
- <div class="stats"><div class="stat"><b>13</b><small>segments cleared</small></div><div class="stat"><b>7</b><small>closed-loop, all variants</small></div>
- <div class="stat"><b>112</b><small>segments on the ladder</small></div><div class="stat"><b>8</b><small>games</small></div></div>
+ <div class="stats"><div class="stat"><b>21</b><small>segments cleared</small></div><div class="stat"><b>7</b><small>closed-loop, all variants</small></div>
+ <div class="stat"><b>128</b><small>segments on the ladder</small></div><div class="stat"><b>9</b><small>games</small></div></div>
  <div class="legend"><span><i style="background:var(--done-bg);border-color:var(--done)"></i>Closed-loop clear 5/5</span>
  <span><i style="background:var(--old-bg);border-color:var(--old)"></i>Open-loop clear (deterministic / fixed seed)</span>
+ <span><i style="background:var(--live-bg);border-color:var(--live)"></i>Done in a live real-time run (Windows, single run)</span>
  <span><i style="background:var(--part-bg);border-color:var(--part)"></i>Some variants cleared</span>
  <span><i style="background:var(--try-bg);border-color:var(--try)"></i>In progress</span><span><i></i>Not started</span></div>
 </header>
-<main class="ladder"><section class="rung summit">
- <div class="meta"><div class="head"><span class="tier">08</span><img class="logo mono" src="../logos/sekiro.png" alt="Sekiro: Shadows Die Twice"></div>
- <div class="sub">Sekiro · the final rung</div>
- <div class="bar" role="img" aria-label="0/1"><span style="width:0.0%"></span></div>
- <div class="count">0 / 1 cleared</div></div>
- <div class="grid" style="--cols:6"><div class="cell todo" title="Final"><span class="id">Final</span><span class="v"></span></div></div></section><section class="rung">
- <div class="meta"><div class="head"><span class="tier">07</span><img class="logo" src="../logos/minecraft.svg" alt="Minecraft"></div>
+<main class="ladder"><section class="rung summit now">
+ <div class="meta"><div class="head"><span class="tier">09</span><img class="logo mono" src="../logos/sekiro.png" alt="Sekiro: Shadows Die Twice"></div>
+ <div class="sub">real time on Windows · the final rung: new game to the final boss</div>
+ <div class="bar" role="img" aria-label="4/8"><span style="width:50.0%"></span></div>
+ <div class="count">4 / 8 cleared</div></div>
+ <div class="grid" style="--cols:8"><div class="cell live" title="Opening: walk out, pick up the letter"><span class="id">Opening</span><span class="v">done</span></div><div class="cell live" title="Wall-jump pit: two wall jumps out of the opening pit"><span class="id">Wall-jump pit</span><span class="v">done</span></div><div class="cell live" title="Reservoir: Ashina Reservoir rock face via reference checkpoints"><span class="id">Reservoir</span><span class="v">done</span></div><div class="cell live" title="Wall corner: hug the wall around the outer corner (reference-frame following)"><span class="id">Wall corner</span><span class="v">done</span></div><div class="cell todo" title="Stealth grass: not started"><span class="id">Stealth grass</span><span class="v"></span></div><div class="cell todo" title="Cliff + tower: not started"><span class="id">Cliff + tower</span><span class="v"></span></div><div class="cell todo" title="Tutorial boss: not started"><span class="id">Tutorial boss</span><span class="v"></span></div><div class="cell todo" title="Final boss: not started"><span class="id">Final boss</span><span class="v"></span></div></div><div class="note"><span class="tag prog">Progress</span>Follows reference frames from a human playthrough (gradient-orientation histograms, no neural model): past the opening pit, the Ashina Reservoir rock face and the wall corner.</div></section><section class="rung">
+ <div class="meta"><div class="head"><span class="tier">08</span><img class="logo" src="../logos/minecraft.svg" alt="Minecraft"></div>
  <div class="sub">survival · milestones up to the Ender Dragon</div>
  <div class="bar" role="img" aria-label="1/11"><span style="width:9.1%"></span></div>
  <div class="count">1 / 11 cleared</div></div>
  <div class="grid" style="--cols:6"><div class="cell old" title="Wood: 402 frames"><span class="id">Wood</span><span class="v">402</span></div><div class="cell todo" title="Table: not started"><span class="id">Table</span><span class="v"></span></div><div class="cell todo" title="W. pick: not started"><span class="id">W. pick</span><span class="v"></span></div><div class="cell todo" title="S. pick: not started"><span class="id">S. pick</span><span class="v"></span></div><div class="cell todo" title="Iron: not started"><span class="id">Iron</span><span class="v"></span></div><div class="cell todo" title="Diamond: not started"><span class="id">Diamond</span><span class="v"></span></div><div class="cell todo" title="Nether: not started"><span class="id">Nether</span><span class="v"></span></div><div class="cell todo" title="Blaze rod: not started"><span class="id">Blaze rod</span><span class="v"></span></div><div class="cell todo" title="Ender eye: not started"><span class="id">Ender eye</span><span class="v"></span></div><div class="cell todo" title="Stronghold: not started"><span class="id">Stronghold</span><span class="v"></span></div><div class="cell todo" title="Dragon: not started"><span class="id">Dragon</span><span class="v"></span></div></div></section><section class="rung now">
+ <div class="meta"><div class="head"><span class="tier">07</span><img class="logo" src="../logos/stardew.svg" alt="Stardew Valley"><span class="gname">Stardew Valley</span></div>
+ <div class="sub">1.6 · real time on Windows · milestones (draft): first crop to the bottom of the Mines</div>
+ <div class="bar" role="img" aria-label="4/9"><span style="width:44.4%"></span></div>
+ <div class="count">4 / 9 cleared</div></div>
+ <div class="grid" style="--cols:9"><div class="cell live" title="New save: new save + character"><span class="id">New save</span><span class="v">done</span></div><div class="cell live" title="Seeds: 15 parsnip seeds from the chest"><span class="id">Seeds</span><span class="v">done</span></div><div class="cell live" title="Plant: hoe, plant and water 5 tiles"><span class="id">Plant</span><span class="v">done</span></div><div class="cell live" title="Harvest: 5 parsnips harvested, Spring 5 6:40am"><span class="id">Harvest</span><span class="v">done</span></div><div class="cell todo" title="Mines: not started"><span class="id">Mines</span><span class="v"></span></div><div class="cell todo" title="Mines 5: not started"><span class="id">Mines 5</span><span class="v"></span></div><div class="cell todo" title="Mines 40: not started"><span class="id">Mines 40</span><span class="v"></span></div><div class="cell todo" title="Mines 80: not started"><span class="id">Mines 80</span><span class="v"></span></div><div class="cell todo" title="Mines 120: not started"><span class="id">Mines 120</span><span class="v"></span></div></div><div class="note"><span class="tag prog">Progress</span>Keyboard-and-mouse bot that only reads the screen: new save through the first parsnip harvest on Spring 5. Next: the Mines.</div></section><section class="rung now">
  <div class="meta"><div class="head"><span class="tier">06</span><img class="logo" src="../logos/quake.png" alt="Quake"></div>
  <div class="sub">Easy skill · episode 1, 8 maps</div>
  <div class="bar" role="img" aria-label="0/8"><span style="width:0.0%"></span></div>
@@ -135,7 +143,7 @@ footer{margin-top:28px;font-size:12.5px;color:var(--muted);display:grid;gap:6px}
  <div><h2>Super Mario Bros. · closed-loop results (60 FPS)</h2><div class="tw"><table><tr><th>Level</th><th>Frames</th><th>Seconds</th><th>Variants</th></tr><tr><td>1-1</td><td class="n">1343</td><td class="n">22.4</td><td class="n">30/30</td></tr><tr><td>1-2</td><td class="n">1347</td><td class="n">22.4</td><td class="n">5/5</td></tr><tr><td>1-3</td><td class="n">1017</td><td class="n">16.9</td><td class="n">5/5</td></tr><tr><td>1-4</td><td class="n">771</td><td class="n">12.8</td><td class="n">5/5</td></tr><tr><td>2-1</td><td class="n">1389</td><td class="n">23.1</td><td class="n">5/5</td></tr><tr><td>2-2</td><td class="n">2720</td><td class="n">45.3</td><td class="n">5/5</td></tr><tr><td>2-3</td><td class="n">1339</td><td class="n">22.3</td><td class="n">5/5</td></tr><tr><td>2-4</td><td class="n">—</td><td class="n">—</td><td class="n">best 4/5</td></tr></table></div></div>
  <div><h2>Celeste Classic · open-loop results (30 FPS)</h2><div class="tw"><table><tr><th>Room</th><th>Frames</th><th>Seconds</th></tr><tr><td>1</td><td class="n">334</td><td class="n">11.13</td></tr><tr><td>2</td><td class="n">145</td><td class="n">4.83</td></tr><tr><td>3</td><td class="n">229</td><td class="n">7.63</td></tr></table></div></div>
 </div>
-<footer><div>Rules: a closed-loop policy reads the screen pixels every frame and then chooses keys; no fixed key sequence. Games run in random mode and the referee runs the policy on 5 variants it has never seen; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better.</div><div>Game logos from Wikimedia Commons (mostly public domain; Celeste logo © Maddy Makes Games, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png). Trademarks belong to their owners and are used only to identify the games. The MiniPlat icon is original pixel art.</div></footer>
+<footer><div>Rules: a closed-loop policy reads the screen pixels every frame and then chooses keys; no fixed key sequence. Games run in random mode and the referee runs the policy on 5 variants it has never seen; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better.</div><div>Game logos from Wikimedia Commons (mostly public domain; Celeste logo © Maddy Makes Games, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png). Trademarks belong to their owners and are used only to identify the games. The MiniPlat and Stardew Valley icons are original pixel art (no freely licensed Stardew Valley logo exists).</div></footer>
 </div>
 <script>
 (function(){var r=document.documentElement,k="ladder-theme",b=document.querySelectorAll(".theme button");

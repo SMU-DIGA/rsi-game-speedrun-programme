@@ -11,8 +11,9 @@
 
 | 档 | 游戏 | 说明 | 分段 | 已通关 |
 |---|---|---|---|---|
-| 08 | Sekiro: Shadows Die Twice | 只狼：影逝二度 | 1 | 0 |
-| 07 | Minecraft | 我的世界 · 生存 | 11 | 1 |
+| 09 | Sekiro: Shadows Die Twice | 只狼：影逝二度 · Windows 实时 | 8 | 4 |
+| 08 | Minecraft | 我的世界 · 生存 | 11 | 1 |
+| 07 | Stardew Valley | 星露谷物语 1.6 · Windows 实时 | 9 | 4 |
 | 06 | Quake | 雷神之锤 | 8 | 0 |
 | 05 | Doom | 毁灭战士 · UV 难度 · 手枪开局 | 9 | 0 |
 | 04 | Celeste Classic | 蔚蓝经典版（PICO-8） | 31 | 3 |
@@ -43,4 +44,4 @@
 
 规则：闭环策略每帧读取屏幕像素再决定按键，不使用固定按键序列；游戏开启随机模式，裁判在 5 个没见过的变体上运行，全部通关才算，成绩取最慢一局。格内数字是通关帧数，越小越好。
 
-游戏标志来自 Wikimedia Commons（多为公有领域；Celeste 标志 © Maddy Makes Games，CC BY-SA 4.0：https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png），商标归各自权利人所有，仅用于标识游戏。MiniPlat 图标为原创像素画。
+游戏标志来自 Wikimedia Commons（多为公有领域；Celeste 标志 © Maddy Makes Games，CC BY-SA 4.0：https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png），商标归各自权利人所有，仅用于标识游戏。MiniPlat 与星露谷物语的图标为原创像素画（星露谷没有可自由使用的官方标志）。

@@ -8,13 +8,13 @@
 <style>
 :root{--bg:#e9edf3;--panel:#f8fafc;--ink:#14202e;--muted:#5d6b7c;--rail:#a7b3c2;--line:#d3dae3;
  --done:#1f9d6b;--done-bg:#d6f2e6;--part:#b7790a;--part-bg:#fbedcc;--try:#d2553f;--try-bg:#f9dcd5;
- --old:#3f7fc4;--old-bg:#d9e7f6;--todo-bg:#eef1f5;--accent:#2b4a7a;
+ --old:#3f7fc4;--old-bg:#d9e7f6;--live:#7b4fc4;--live-bg:#ebe1fa;--todo-bg:#eef1f5;--accent:#2b4a7a;
  --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
  --f-data:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;--logo-filter:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1621;--panel:#162131;--ink:#e6edf6;--muted:#93a2b5;--rail:#41536a;--line:#273648;
- --done:#3fcf93;--done-bg:#163b30;--part:#f0b64a;--part-bg:#3d3118;--try:#f27b65;--try-bg:#432420;--old:#79aef0;--old-bg:#1b3150;--todo-bg:#1b2738;--accent:#8fb3ec;--logo-filter:invert(1);color-scheme:dark}}
+ --done:#3fcf93;--done-bg:#163b30;--part:#f0b64a;--part-bg:#3d3118;--try:#f27b65;--try-bg:#432420;--old:#79aef0;--old-bg:#1b3150;--live:#b998f2;--live-bg:#2c2248;--todo-bg:#1b2738;--accent:#8fb3ec;--logo-filter:invert(1);color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#0f1621;--panel:#162131;--ink:#e6edf6;--muted:#93a2b5;--rail:#41536a;--line:#273648;
- --done:#3fcf93;--done-bg:#163b30;--part:#f0b64a;--part-bg:#3d3118;--try:#f27b65;--try-bg:#432420;--old:#79aef0;--old-bg:#1b3150;--todo-bg:#1b2738;--accent:#8fb3ec;--logo-filter:invert(1);color-scheme:dark}
+ --done:#3fcf93;--done-bg:#163b30;--part:#f0b64a;--part-bg:#3d3118;--try:#f27b65;--try-bg:#432420;--old:#79aef0;--old-bg:#1b3150;--live:#b998f2;--live-bg:#2c2248;--todo-bg:#1b2738;--accent:#8fb3ec;--logo-filter:invert(1);color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.55;font-size:14px}
 .wrap{max-width:1100px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -57,6 +57,7 @@ h1{font-weight:700;font-size:clamp(26px,4vw,38px);margin:0;text-wrap:balance;let
 .count{font-family:var(--f-data);font-size:12px;font-variant-numeric:tabular-nums}
 .note{font-size:13px;line-height:1.6;grid-column:1/-1;border-top:1px dashed var(--line);padding-top:10px}
 .note .tag{display:inline-block;font-size:11px;padding:0 6px;border-radius:4px;background:var(--try-bg);color:var(--try);margin-right:6px}
+.note .tag.prog{background:var(--live-bg);color:var(--live)}
 .grid{display:grid;gap:5px;align-content:start;min-width:0;grid-template-columns:repeat(var(--cols),minmax(0,1fr))}
 .cell{border-radius:5px;border:1px solid var(--line);background:var(--todo-bg);min-height:44px;padding:4px 6px;min-width:0;
  display:flex;flex-direction:column;justify-content:space-between;font-family:var(--f-data);font-variant-numeric:tabular-nums}
@@ -66,6 +67,7 @@ h1{font-weight:700;font-size:clamp(26px,4vw,38px);margin:0;text-wrap:balance;let
 .cell.part{background:var(--part-bg);border-color:var(--part)}.cell.part .v{color:var(--part)}
 .cell.try{background:var(--try-bg);border-color:var(--try)}.cell.try .v{color:var(--try);font-family:var(--f-body)}
 .cell.old{background:var(--old-bg);border-color:var(--old)}.cell.old .v{color:var(--old)}
+.cell.live{background:var(--live-bg);border-color:var(--live)}.cell.live .v{color:var(--live);font-family:var(--f-body)}
 .tables{margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:22px}
 .tables h2{font-size:16px;margin:0 0 8px}
 .tw{overflow-x:auto}
@@ -83,24 +85,30 @@ footer{margin-top:28px;font-size:12.5px;color:var(--muted);display:grid;gap:6px}
 <header>
  <div class="top"><div class="eyebrow">RSI-Game-Speedrun · 更新于 2026-11-06</div><div class="ctl"><div class="theme" role="group" aria-label="主题"><button type="button" data-t="light">浅色</button><button type="button" data-t="auto">跟随系统</button><button type="button" data-t="dark">深色</button></div><a class="lang" href="en/">English</a></div></div>
  <h1>RSI 速通天梯</h1><p class="lede">让 AI 编程智能体（Claude Code）为游戏写通关程序，并在“只有更快才保留”的自我改进循环里不断刷新成绩。每一格是一个评测分段；绿色格子是智能体写的闭环策略在 5 个没见过的随机变体上全部通关的成绩（帧数，取最慢一局）。</p>
- <div class="stats"><div class="stat"><b>13</b><small>已通关分段</small></div><div class="stat"><b>7</b><small>其中闭环全变体通关</small></div>
- <div class="stat"><b>112</b><small>天梯总分段</small></div><div class="stat"><b>8</b><small>款游戏</small></div></div>
+ <div class="stats"><div class="stat"><b>21</b><small>已通关分段</small></div><div class="stat"><b>7</b><small>其中闭环全变体通关</small></div>
+ <div class="stat"><b>128</b><small>天梯总分段</small></div><div class="stat"><b>9</b><small>款游戏</small></div></div>
  <div class="legend"><span><i style="background:var(--done-bg);border-color:var(--done)"></i>闭环通关 5/5</span>
  <span><i style="background:var(--old-bg);border-color:var(--old)"></i>开环通关（确定性 / 固定种子）</span>
+ <span><i style="background:var(--live-bg);border-color:var(--live)"></i>实机实时运行完成（Windows，单次）</span>
  <span><i style="background:var(--part-bg);border-color:var(--part)"></i>部分变体通关</span>
  <span><i style="background:var(--try-bg);border-color:var(--try)"></i>攻关中</span><span><i></i>未开始</span></div>
 </header>
-<main class="ladder"><section class="rung summit">
- <div class="meta"><div class="head"><span class="tier">08</span><img class="logo mono" src="logos/sekiro.png" alt="Sekiro: Shadows Die Twice"></div>
- <div class="sub">只狼：影逝二度 · 最后一关</div>
- <div class="bar" role="img" aria-label="0/1"><span style="width:0.0%"></span></div>
- <div class="count">0 / 1 通关</div></div>
- <div class="grid" style="--cols:6"><div class="cell todo" title="终点"><span class="id">终点</span><span class="v"></span></div></div></section><section class="rung">
- <div class="meta"><div class="head"><span class="tier">07</span><img class="logo" src="logos/minecraft.svg" alt="Minecraft"></div>
+<main class="ladder"><section class="rung summit now">
+ <div class="meta"><div class="head"><span class="tier">09</span><img class="logo mono" src="logos/sekiro.png" alt="Sekiro: Shadows Die Twice"></div>
+ <div class="sub">只狼：影逝二度 · Windows 实时 · 最后一关：新档一路到最终 Boss</div>
+ <div class="bar" role="img" aria-label="4/8"><span style="width:50.0%"></span></div>
+ <div class="count">4 / 8 通关</div></div>
+ <div class="grid" style="--cols:8"><div class="cell live" title="开场: 出生点前进、拾取信件"><span class="id">开场</span><span class="v">完成</span></div><div class="cell live" title="墙跳出坑: 两段墙跳爬出开场深坑"><span class="id">墙跳出坑</span><span class="v">完成</span></div><div class="cell live" title="苇名水库: 按参考录像检查点通过水库岩壁"><span class="id">苇名水库</span><span class="v">完成</span></div><div class="cell live" title="贴墙转角: 贴墙绕过外转角进入草丛（参考帧跟随）"><span class="id">贴墙转角</span><span class="v">完成</span></div><div class="cell todo" title="潜行草丛: 未开始"><span class="id">潜行草丛</span><span class="v"></span></div><div class="cell todo" title="悬崖与塔: 未开始"><span class="id">悬崖与塔</span><span class="v"></span></div><div class="cell todo" title="教程 Boss: 未开始"><span class="id">教程 Boss</span><span class="v"></span></div><div class="cell todo" title="最终 Boss: 未开始"><span class="id">最终 Boss</span><span class="v"></span></div></div><div class="note"><span class="tag prog">进展</span>跟随人类通关录像的参考帧（梯度方向直方图匹配，不用神经网络）：已过开场深坑、苇名水库岩壁和贴墙转角。</div></section><section class="rung">
+ <div class="meta"><div class="head"><span class="tier">08</span><img class="logo" src="logos/minecraft.svg" alt="Minecraft"></div>
  <div class="sub">我的世界 · 生存 · 里程碑一路到末影龙</div>
  <div class="bar" role="img" aria-label="1/11"><span style="width:9.1%"></span></div>
  <div class="count">1 / 11 通关</div></div>
  <div class="grid" style="--cols:6"><div class="cell old" title="原木: 402 帧"><span class="id">原木</span><span class="v">402</span></div><div class="cell todo" title="工作台: 未开始"><span class="id">工作台</span><span class="v"></span></div><div class="cell todo" title="木镐: 未开始"><span class="id">木镐</span><span class="v"></span></div><div class="cell todo" title="石镐: 未开始"><span class="id">石镐</span><span class="v"></span></div><div class="cell todo" title="铁锭: 未开始"><span class="id">铁锭</span><span class="v"></span></div><div class="cell todo" title="钻石: 未开始"><span class="id">钻石</span><span class="v"></span></div><div class="cell todo" title="下界: 未开始"><span class="id">下界</span><span class="v"></span></div><div class="cell todo" title="烈焰棒: 未开始"><span class="id">烈焰棒</span><span class="v"></span></div><div class="cell todo" title="末影之眼: 未开始"><span class="id">末影之眼</span><span class="v"></span></div><div class="cell todo" title="要塞: 未开始"><span class="id">要塞</span><span class="v"></span></div><div class="cell todo" title="末影龙: 未开始"><span class="id">末影龙</span><span class="v"></span></div></div></section><section class="rung now">
+ <div class="meta"><div class="head"><span class="tier">07</span><img class="logo" src="logos/stardew.svg" alt="Stardew Valley"><span class="gname">Stardew Valley</span></div>
+ <div class="sub">星露谷物语 1.6 · Windows 实时 · 里程碑（暂定）：从开荒到矿井底层</div>
+ <div class="bar" role="img" aria-label="4/9"><span style="width:44.4%"></span></div>
+ <div class="count">4 / 9 通关</div></div>
+ <div class="grid" style="--cols:9"><div class="cell live" title="角色: 新档 + 创建角色"><span class="id">角色</span><span class="v">完成</span></div><div class="cell live" title="种子: 屋内宝箱取 15 个防风草种子"><span class="id">种子</span><span class="v">完成</span></div><div class="cell live" title="播种: 5 块地锄地、播种、浇水"><span class="id">播种</span><span class="v">完成</span></div><div class="cell live" title="收获: 春季第 5 天 6:40 收获 5 个防风草"><span class="id">收获</span><span class="v">完成</span></div><div class="cell todo" title="矿井: 未开始"><span class="id">矿井</span><span class="v"></span></div><div class="cell todo" title="矿井 5 层: 未开始"><span class="id">矿井 5 层</span><span class="v"></span></div><div class="cell todo" title="矿井 40 层: 未开始"><span class="id">矿井 40 层</span><span class="v"></span></div><div class="cell todo" title="矿井 80 层: 未开始"><span class="id">矿井 80 层</span><span class="v"></span></div><div class="cell todo" title="矿井 120 层: 未开始"><span class="id">矿井 120 层</span><span class="v"></span></div></div><div class="note"><span class="tag prog">进展</span>纯键鼠、只看屏幕的闭环脚本：从新档一路做到春季第 5 天收获防风草。下一步进矿井。</div></section><section class="rung now">
  <div class="meta"><div class="head"><span class="tier">06</span><img class="logo" src="logos/quake.png" alt="Quake"></div>
  <div class="sub">雷神之锤 · 第 1 章 8 张图</div>
  <div class="bar" role="img" aria-label="0/8"><span style="width:0.0%"></span></div>
@@ -135,7 +143,7 @@ footer{margin-top:28px;font-size:12.5px;color:var(--muted);display:grid;gap:6px}
  <div><h2>超级马里奥兄弟 · 闭环成绩（60 FPS）</h2><div class="tw"><table><tr><th>关卡</th><th>帧数</th><th>秒</th><th>变体</th></tr><tr><td>1-1</td><td class="n">1343</td><td class="n">22.4</td><td class="n">30/30</td></tr><tr><td>1-2</td><td class="n">1347</td><td class="n">22.4</td><td class="n">5/5</td></tr><tr><td>1-3</td><td class="n">1017</td><td class="n">16.9</td><td class="n">5/5</td></tr><tr><td>1-4</td><td class="n">771</td><td class="n">12.8</td><td class="n">5/5</td></tr><tr><td>2-1</td><td class="n">1389</td><td class="n">23.1</td><td class="n">5/5</td></tr><tr><td>2-2</td><td class="n">2720</td><td class="n">45.3</td><td class="n">5/5</td></tr><tr><td>2-3</td><td class="n">1339</td><td class="n">22.3</td><td class="n">5/5</td></tr><tr><td>2-4</td><td class="n">—</td><td class="n">—</td><td class="n">最好 4/5</td></tr></table></div></div>
  <div><h2>蔚蓝经典版 · 开环成绩（30 FPS）</h2><div class="tw"><table><tr><th>房间</th><th>帧数</th><th>秒</th></tr><tr><td>1</td><td class="n">334</td><td class="n">11.13</td></tr><tr><td>2</td><td class="n">145</td><td class="n">4.83</td></tr><tr><td>3</td><td class="n">229</td><td class="n">7.63</td></tr></table></div></div>
 </div>
-<footer><div>规则：闭环策略每帧读取屏幕像素再决定按键，不使用固定按键序列；游戏开启随机模式，裁判在 5 个没见过的变体上运行，全部通关才算，成绩取最慢一局。格内数字是通关帧数，越小越好。</div><div>游戏标志来自 Wikimedia Commons（多为公有领域；Celeste 标志 © Maddy Makes Games，CC BY-SA 4.0：https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png），商标归各自权利人所有，仅用于标识游戏。MiniPlat 图标为原创像素画。</div></footer>
+<footer><div>规则：闭环策略每帧读取屏幕像素再决定按键，不使用固定按键序列；游戏开启随机模式，裁判在 5 个没见过的变体上运行，全部通关才算，成绩取最慢一局。格内数字是通关帧数，越小越好。</div><div>游戏标志来自 Wikimedia Commons（多为公有领域；Celeste 标志 © Maddy Makes Games，CC BY-SA 4.0：https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png），商标归各自权利人所有，仅用于标识游戏。MiniPlat 与星露谷物语的图标为原创像素画（星露谷没有可自由使用的官方标志）。</div></footer>
 </div>
 <script>
 (function(){var r=document.documentElement,k="ladder-theme",b=document.querySelectorAll(".theme button");
