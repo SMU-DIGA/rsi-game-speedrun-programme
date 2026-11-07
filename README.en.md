@@ -9,10 +9,10 @@
 - 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
 - 🔴 **Sekiro**: from the crawl space on to the cliff and tower (live on Windows). _(since 11-06 11:19)_
 
-- **2026-11-07 18:45** **Super Mario Bros. 3-4** (castle) cleared: 4418 frames (about 73.6 s), 5/5 unseen random variants. All 16 levels of worlds 1-4 are cleared; the 16-level recording is updated under Recordings & Results.
+- **2026-11-07 18:45** **Super Mario Bros. 3-4** (castle) cleared: 4418 frames (about 73.6 s), 5/5 unseen random variants. All 16 levels from 1-1 to 4-4 are cleared; the 16-level recording is updated under Recordings & Results.
 - **2026-11-07 17:25** **Doom E1M1**: 2 of 5 unseen random variants now reach the exit (fastest 626 frames, about 17.9 s); the other 3 get 89% of the way, so it stays unstable. **Super Mario Bros. 3-4**: 4 of 5 variants, also one short. The recording is now the 626-frame run.
 - **2026-11-07 15:42** **Doom E1M1** (Ultra-Violence, pistol start) reached the exit for the first time: 653 frames (about 18.7 s), but on only 1 of 5 unseen random variants, so it is marked unstable; the other 4 got 86%-93% of the way to the exit. Recording under Recordings & Results.
-- **2026-11-07 01:00** **Super Mario Bros. 3-4** (castle) finished for the first time, but not yet stably: 2 of 5 unseen random variants (fastest 1524 frames), so it is marked unstable. A recording of all 16 levels of worlds 1-4 back to back is under Recordings & Results.
+- **2026-11-07 01:00** **Super Mario Bros. 3-4** (castle) finished for the first time, but not yet stably: 2 of 5 unseen random variants (fastest 1524 frames), so it is marked unstable. A recording of all 16 levels from 1-1 to 4-4 back to back is under Recordings & Results.
 - **2026-11-06 20:30** **Sekiro**: a recording of the Ashina Reservoir stretch from the wall to the crawl space, including hiding under the floor until a guard's alert drops, is now under Recordings & Results (live on Windows).
 - **2026-11-06 18:05** **Super Mario Bros. 3-1** cleared: 2166 frames, 5/5. Only 3-4 is left in worlds 3 and 4.
 - **2026-11-06 16:31** **Stardew Valley**: day 5 with no human input at all, from the house down to floor 3 of the Mines (out of energy). Recording under Recordings & results (live on Windows).
