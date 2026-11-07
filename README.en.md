@@ -1,4 +1,4 @@
-# <img src="logos/emblem.svg" width="46" align="absmiddle" alt=""> Recursive Self-Improvement Game Speedrun Ladder
+# <img src="logos/emblem.svg" width="46" align="absmiddle" alt=""> Recursive Self-Improvement for Game Speedrun
 
 [中文](README.md)
 
@@ -34,7 +34,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="ladder.en.dark.svg">
-  <img alt="Recursive Self-Improvement Game Speedrun Ladder" src="ladder.en.svg">
+  <img alt="Recursive Self-Improvement for Game Speedrun · Ladder" src="ladder.en.svg">
 </picture>
 
 | Rung | Game | | Segments | Cleared |
