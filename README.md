@@ -1,6 +1,6 @@
-# <img src="logos/emblem.svg" width="46" align="absmiddle" alt=""> RSI Game Speedrun Ladder
+# <img src="logos/emblem.svg" width="46" align="absmiddle" alt=""> Recursive Self-Improvement Game Speedrun Ladder
 
-RSI 游戏速通天梯
+递归自我改进游戏速通天梯
 
 [English](README.en.md)
 
@@ -36,7 +36,7 @@ RSI 游戏速通天梯
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="ladder.dark.svg">
-  <img alt="RSI Game Speedrun Ladder · 游戏速通天梯" src="ladder.svg">
+  <img alt="Recursive Self-Improvement Game Speedrun Ladder · 游戏速通天梯" src="ladder.svg">
 </picture>
 
 | 档 | 游戏 | 说明 | 分段 | 已通关 |
