@@ -6,11 +6,10 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Doom E1M1**: reaching the exit on all 5 random variants (1 so far). _(since 11-07 14:55)_
-- 🔴 **Super Mario Bros. 3-4**: finishing on all 5 random variants (best so far 2). _(since 11-07 14:55)_
 - 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
 - 🔴 **Sekiro**: from the crawl space on to the cliff and tower (live on Windows). _(since 11-06 11:19)_
 
+- **2026-11-07 17:25** **Doom E1M1**: 2 of 5 unseen random variants now reach the exit (fastest 626 frames, about 17.9 s); the other 3 get 89% of the way, so it stays unstable. **Super Mario Bros. 3-4**: 4 of 5 variants, also one short. The recording is now the 626-frame run.
 - **2026-11-07 15:42** **Doom E1M1** (Ultra-Violence, pistol start) reached the exit for the first time: 653 frames (about 18.7 s), but on only 1 of 5 unseen random variants, so it is marked unstable; the other 4 got 86%-93% of the way to the exit. Recording under Recordings & Results.
 - **2026-11-07 01:00** **Super Mario Bros. 3-4** (castle) finished for the first time, but not yet stably: 2 of 5 unseen random variants (fastest 1524 frames), so it is marked unstable. A recording of all 16 levels of worlds 1-4 back to back is under Recordings & Results.
 - **2026-11-06 20:30** **Sekiro**: a recording of the Ashina Reservoir stretch from the wall to the crawl space, including hiding under the floor until a guard's alert drops, is now under Recordings & Results (live on Windows).
@@ -63,7 +62,7 @@
 | 3-1 | 2166 | 36.1 | 5/5 |
 | 3-2 | 1188 | 19.8 | 5/5 |
 | 3-3 | 991 | 16.5 | 5/5 |
-| 3-4 | — | — | 2/5 · Unstable |
+| 3-4 | — | — | 4/5 · Unstable |
 | 4-1 | 1425 | 23.8 | 5/5 |
 | 4-2 | 1885 | 31.4 | 5/5 |
 | 4-3 | 880 | 14.7 | 5/5 |
