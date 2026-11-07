@@ -62,7 +62,7 @@
 | 3-1 | 2166 | 36.1 | 5/5 |
 | 3-2 | 1188 | 19.8 | 5/5 |
 | 3-3 | 991 | 16.5 | 5/5 |
-| 3-4 | — | — | 4/5 · Unstable |
+| 3-4 | — | — | 4/5 |
 | 4-1 | 1425 | 23.8 | 5/5 |
 | 4-2 | 1885 | 31.4 | 5/5 |
 | 4-3 | 880 | 14.7 | 5/5 |
@@ -76,6 +76,6 @@
 | 2 | 145 | 4.83 |
 | 3 | 229 | 7.63 |
 
-Rules: the referee runs on 5 random variants never seen before; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better.
+Rules: the referee runs on 5 random variants never seen before; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better. Levels not yet finished on every variant show the pass rate (e.g. 4/5).
 
 Game logos from Wikimedia Commons (mostly public domain; Celeste logo © Maddy Makes Games, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png). Trademarks belong to their owners and are used only to identify the games. Stardew Valley logo © ConcernedApe, taken from the game's cover art. The ladder emblem is an original design.
