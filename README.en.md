@@ -8,7 +8,6 @@
 
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: past the crawl space, heading for the first mini-boss (live on Windows). _(since 11-08 18:16)_
-- 🔴 **Doom E1M1**: going for 5/5 unseen random variants (4/5 so far). _(since 11-09 12:40)_
 
 - **2026-11-09 13:11** **Stardew Valley**: one unbroken run from Mines floor 1 down to floor 6 (about 11 min 28 s, not an official score). Recording under Recordings & results (live on Windows).
 - **2026-11-09 12:05** **Doom E1M1**: 4 of 5 unseen random variants now reach the exit (fastest 505 frames, about 14.4 s), up from 2. On 40 further unseen variants it finishes 18 (up from 7), so it is not stable yet.
