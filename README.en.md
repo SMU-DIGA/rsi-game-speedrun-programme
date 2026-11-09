@@ -8,6 +8,7 @@
 
 - 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
 - 🔴 **Sekiro**: past the crawl space, heading for the first mini-boss (live on Windows). _(since 11-08 18:16)_
+- 🔴 **Doom E1M1**: going for 5/5 unseen random variants (4/5 so far). _(since 11-09 12:40)_
 
 - **2026-11-09 12:05** **Doom E1M1**: 4 of 5 unseen random variants now reach the exit (fastest 505 frames, about 14.4 s), up from 2. On 40 further unseen variants it finishes 18 (up from 7), so it is not stable yet.
 - **2026-11-08 18:25** **Stardew Valley**: from a Spring 5 save it now walks to the Mines by itself, and scored attempts at floors 1→5 have started. None has reached floor 5 yet; the furthest got to floor 3, stopped by geode item dialogs and slimes (live on Windows).
