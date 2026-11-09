@@ -8,7 +8,6 @@
 
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: past the crawl space, heading for the first mini-boss (live on Windows). _(since 11-08 18:16)_
-- 🔴 **Doom E1M2**: attempt started (Hurt Me Plenty). _(since 11-09 14:20)_
 
 - **2026-11-09 14:04** **Doom E1M1** cleared on Hurt Me Plenty: 556 frames (about 15.9 s), 5/5 unseen random variants, and all 40 further unseen variants. Ultra-Violence stays at 4/5 (18 of 40 further variants). The recording is updated under Recordings & results.
 - **2026-11-09 13:11** **Stardew Valley**: one unbroken run from Mines floor 1 down to floor 6 (about 11 min 28 s, not an official score). Recording under Recordings & results (live on Windows).
