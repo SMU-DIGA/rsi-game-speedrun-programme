@@ -6,7 +6,6 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Super Mario Bros.**: attempting 5-1 and 5-3. _(since 11-09 17:39)_
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: past the crawl space, heading for the first mini-boss (live on Windows). _(since 11-08 18:16)_
 
