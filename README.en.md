@@ -6,10 +6,11 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Stardew Valley**: going down the Mines, next target floor 5 (live on Windows). _(since 11-06 11:40)_
+- 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: past the crawl space, heading for the first mini-boss (live on Windows). _(since 11-08 18:16)_
 - 🔴 **Doom E1M1**: going for 5/5 unseen random variants (4/5 so far). _(since 11-09 12:40)_
 
+- **2026-11-09 13:11** **Stardew Valley**: one unbroken run from Mines floor 1 down to floor 6 (about 11 min 28 s, not an official score). Recording under Recordings & results (live on Windows).
 - **2026-11-09 12:05** **Doom E1M1**: 4 of 5 unseen random variants now reach the exit (fastest 505 frames, about 14.4 s), up from 2. On 40 further unseen variants it finishes 18 (up from 7), so it is not stable yet.
 - **2026-11-08 18:25** **Stardew Valley**: from a Spring 5 save it now walks to the Mines by itself, and scored attempts at floors 1→5 have started. None has reached floor 5 yet; the furthest got to floor 3, stopped by geode item dialogs and slimes (live on Windows).
 - **2026-11-07 18:45** **Super Mario Bros. 3-4** (castle) cleared: 4418 frames (about 73.6 s), 5/5 unseen random variants. All 16 levels from 1-1 to 4-4 are cleared; the 16-level recording is updated under Recordings & Results.
@@ -44,7 +45,7 @@
 |---|---|---|---|---|
 | 08 | Sekiro: Shadows Die Twice | real time on Windows | 8 | 5 |
 | 07 | Minecraft | survival | 11 | 1 |
-| 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 5 |
+| 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 6 |
 | 05 | Quake | Easy skill | 8 | 0 |
 | 04 | Doom (1993) | Ultra-Violence · pistol start | 9 | 0 |
 | 03 | Celeste Classic | PICO-8 | 31 | 3 |
