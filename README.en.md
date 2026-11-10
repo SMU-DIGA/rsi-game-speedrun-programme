@@ -7,9 +7,9 @@
 **🔴 LIVE · On Air Now**
 
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
-- 🔴 **Sekiro**: working on the stretch from the crawl space over the cliff to the tower, then on towards the tutorial boss (live on Windows). _(since 11-10 16:37)_
+- 🔴 **Sekiro**: on towards the tutorial boss (live on Windows). _(since 11-10 16:37)_
 
-- **2026-11-10 16:34** **Sekiro**: the first mini-boss, **Shigenori Yamauchi**, defeated. From Kuro's room (a save), across the yard, finished with two Deathblows. Recording under Recordings & results, together with an in-progress recording of the cliff ledge stretch (live on Windows).
+- **2026-11-10 16:34** **Sekiro**: the first mini-boss, **Shigenori Yamauchi**, defeated. From Kuro's room (a save), across the yard, finished with two Deathblows. Recording under Recordings & results, and the cliff-to-tower stretch is done too, with a recording of the cliff ledge (live on Windows).
 - **2026-11-09 14:04** **Doom E1M1** cleared on Hurt Me Plenty: 556 frames (about 15.9 s), 5/5 unseen random variants, and all 40 further unseen variants. Ultra-Violence stays at 4/5 (18 of 40 further variants). The recording is updated under Recordings & results.
 - **2026-11-09 13:11** **Stardew Valley**: one unbroken run from Mines floor 1 down to floor 6 (about 11 min 28 s, not an official score). Recording under Recordings & results (live on Windows).
 - **2026-11-09 12:05** **Doom E1M1**: 4 of 5 unseen random variants now reach the exit (fastest 505 frames, about 14.4 s), up from 2. On 40 further unseen variants it finishes 18 (up from 7), so it is not stable yet.
@@ -44,7 +44,7 @@
 
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
-| 08 | Sekiro: Shadows Die Twice | real time on Windows | 9 | 6 |
+| 08 | Sekiro: Shadows Die Twice | real time on Windows | 9 | 7 |
 | 07 | Minecraft | survival | 11 | 1 |
 | 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 6 |
 | 05 | Quake | Easy skill | 8 | 0 |
