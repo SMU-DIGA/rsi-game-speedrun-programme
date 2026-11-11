@@ -6,10 +6,11 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Super Mario Bros.**: worlds 5–8 in progress at once; 5-1, 6-1, 6-2 and 7-4 cleared, the other 12 levels under way. _(since 11-11 09:20)_
+- 🔴 **Super Mario Bros.**: worlds 5–8 in progress at once; 5-1, 6-1, 6-2, 6-3 and 7-4 cleared, the other 11 levels under way. _(since 11-11 09:20)_
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: prologue done, onwards from the Dilapidated Temple (live on Windows). _(since 11-11 10:01)_
 
+- **2026-11-11 16:35** **Super Mario Bros. 6-3** cleared: 1664 frames (about 27.7 s), 5/5 unseen random variants. 21 of 32 levels cleared.
 - **2026-11-11 13:24** **Super Mario Bros. 7-4** (the maze castle) cleared: 1228 frames (about 20.5 s), 5/5 unseen random variants; it takes the right path through every maze section without being looped back. 20 of 32 levels cleared.
 - **2026-11-11 12:11** **Super Mario Bros. 5-1** cleared: 1492 frames (about 24.9 s), 5/5 unseen random variants, the first level of world 5. 19 of 32 levels cleared.
 - **2026-11-11 10:32** **Super Mario Bros. 6-1 and 6-2** cleared: 1294 / 2362 frames (about 21.6 / 39.4 s), each 5/5 unseen random variants. Worlds 5–8 are under way; 18 of 32 levels are cleared.
@@ -56,7 +57,7 @@
 | 04 | Doom (1993) | Hurt Me Plenty · pistol start | 9 | 1 |
 | 03 | Celeste Classic | PICO-8 | 31 | 3 |
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
-| 01 | Super Mario Bros. | NES | 32 | 20 |
+| 01 | Super Mario Bros. | NES | 32 | 21 |
 
 ## Super Mario Bros. · Results (60 FPS)
 
@@ -81,6 +82,7 @@
 | 5-1 | 1492 | 24.9 | 5/5 |
 | 6-1 | 1294 | 21.6 | 5/5 |
 | 6-2 | 2362 | 39.4 | 5/5 |
+| 6-3 | 1664 | 27.7 | 5/5 |
 | 7-4 | 1228 | 20.5 | 5/5 |
 
 ## Celeste Classic · Results (30 FPS)
