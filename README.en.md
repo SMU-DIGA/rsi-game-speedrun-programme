@@ -10,7 +10,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: prologue done, onwards from the Dilapidated Temple (live on Windows). _(since 11-11 10:01)_
 
-- **2026-11-11 17:15** **Super Mario Bros. 8-1** cleared: 4030 frames (about 67.2 s), 5/5 unseen random variants, the first level of world 8. 22 of 32 levels cleared.
+- **2026-11-11 17:15** **Super Mario Bros. 8-1** cleared: 3767 frames (about 62.8 s), 5/5 unseen random variants, the first level of world 8. 22 of 32 levels cleared.
 - **2026-11-11 16:35** **Super Mario Bros. 6-3** cleared: 1664 frames (about 27.7 s), 5/5 unseen random variants. 21 of 32 levels cleared.
 - **2026-11-11 13:24** **Super Mario Bros. 7-4** (the maze castle) cleared: 1228 frames (about 20.5 s), 5/5 unseen random variants; it takes the right path through every maze section without being looped back. 20 of 32 levels cleared.
 - **2026-11-11 12:11** **Super Mario Bros. 5-1** cleared: 1492 frames (about 24.9 s), 5/5 unseen random variants, the first level of world 5. 19 of 32 levels cleared.
@@ -85,7 +85,7 @@
 | 6-2 | 2362 | 39.4 | 5/5 |
 | 6-3 | 1664 | 27.7 | 5/5 |
 | 7-4 | 1228 | 20.5 | 5/5 |
-| 8-1 | 4030 | 67.2 | 5/5 |
+| 8-1 | 3767 | 62.8 | 5/5 |
 
 ## Celeste Classic · Results (30 FPS)
 
