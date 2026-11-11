@@ -6,7 +6,6 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Super Mario Bros.**: worlds 5–8 in progress at once; 5-1, 6-1, 6-2, 6-3, 7-4 and 8-1 cleared, the other 10 levels under way. _(since 11-11 09:20)_
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: prologue done, onwards from the Dilapidated Temple (live on Windows). _(since 11-11 10:01)_
 
