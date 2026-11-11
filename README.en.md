@@ -7,8 +7,9 @@
 **🔴 LIVE · On Air Now**
 
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
-- 🔴 **Sekiro**: on towards the tutorial boss (live on Windows). _(since 11-10 16:37)_
+- 🔴 **Sekiro**: prologue done, onwards from the Dilapidated Temple (live on Windows). _(since 11-11 10:01)_
 
+- **2026-11-11 10:01** **Sekiro**: **prologue done**. From after Yamauchi's defeat: the guard killed, the Pellet, through Kuro's door, the escort, the fight with Genichiro Ashina (a scripted loss), then awake at the **Dilapidated Temple** with the Shinobi Prosthetic. Recording under Recordings & results (live on Windows).
 - **2026-11-10 16:34** **Sekiro**: the first mini-boss, **Shigenori Yamauchi**, defeated. From Kuro's room (a save), across the yard, finished with two Deathblows. Recording under Recordings & results, and the cliff-to-tower stretch is done too, with a recording from the cliff all the way to Kuro's room (live on Windows).
 - **2026-11-09 14:04** **Doom E1M1** cleared on Hurt Me Plenty: 556 frames (about 15.9 s), 5/5 unseen random variants, and all 40 further unseen variants. Ultra-Violence stays at 4/5 (18 of 40 further variants). The recording is updated under Recordings & results.
 - **2026-11-09 13:11** **Stardew Valley**: one unbroken run from Mines floor 1 down to floor 6 (about 11 min 28 s, not an official score). Recording under Recordings & results (live on Windows).
@@ -44,7 +45,7 @@
 
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
-| 08 | Sekiro: Shadows Die Twice | real time on Windows | 9 | 7 |
+| 08 | Sekiro: Shadows Die Twice | real time on Windows | 9 | 8 |
 | 07 | Minecraft | survival | 11 | 1 |
 | 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 6 |
 | 05 | Quake | Easy skill | 8 | 0 |
