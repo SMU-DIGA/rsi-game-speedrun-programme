@@ -7,8 +7,9 @@
 **🔴 LIVE · On Air Now**
 
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
-- 🔴 **Sekiro**: prologue done, onwards from the Dilapidated Temple (live on Windows). _(since 11-11 10:01)_
+- 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
+- **2026-11-12 17:27** **Sekiro**: **General Naomori Kawarada** defeated. From a Sculptor's Idol, unseen round behind him for a plunge Deathblow, then the fight until he falls. Recording under Recordings & results (live on Windows).
 - **2026-11-12 04:25** **Super Mario Bros. 5-2** cleared: 1553 frames (about 25.9 s), 5/5 unseen random variants. 24 of 32 levels cleared.
 - **2026-11-12 01:10** **Super Mario Bros. 6-4** cleared: 1377 frames (about 23.0 s), 5/5 unseen random variants. World 6 complete. 23 of 32 levels cleared.
 - **2026-11-11 17:15** **Super Mario Bros. 8-1** cleared: 3767 frames (about 62.8 s), 5/5 unseen random variants, the first level of world 8. 22 of 32 levels cleared.
@@ -52,7 +53,7 @@
 
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
-| 08 | Sekiro: Shadows Die Twice | real time on Windows | 9 | 8 |
+| 08 | Sekiro: Shadows Die Twice | real time on Windows | 10 | 9 |
 | 07 | Minecraft | survival | 11 | 1 |
 | 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 6 |
 | 05 | Quake | Easy skill | 8 | 0 |
