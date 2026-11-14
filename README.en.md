@@ -6,10 +6,11 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Super Mario Bros.**: attempting 5-3 and 8-4 (both finish 4/5 random variants, one to go). _(since 11-14 20:52)_
+- 🔴 **Super Mario Bros.**: attempting 5-3 (finishes 4/5 random variants, one to go). _(since 11-14 20:52)_
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
+- **2026-11-14 21:35** **Super Mario Bros. 8-4** (the final castle) cleared: 3793 frames (about 63.2 s), 5/5 unseen random variants, Bowser beaten. 25 of 32 levels cleared. The recording now shows this clear.
 - **2026-11-14 20:30** **Super Mario Bros. 8-2** now finishes 3/5 random variants (fastest 1843 frames) and 8-4 stays at 4/5; both are still a few variants short, and attempts are paused for now. The recording now shows the new 8-2 run.
 - **2026-11-14 18:30** **Super Mario Bros.**: recording of all 32 levels from 1-1 to 8-4 is up (for levels not yet cleared on every variant it shows a run that finished), plus one of the 16 levels of worlds 5-8, under Recordings & Results. Every one of the remaining 8 levels now finishes some random variants: 5-3 and 8-4 4/5; 5-4, 7-1 and 8-3 3/5; 7-2, 7-3 and 8-2 2/5, so all 32 levels finish at least one. 8-2 and 8-4 are being attempted now.
 - **2026-11-12 17:27** **Sekiro**: **General Naomori Kawarada** defeated. From a Sculptor's Idol, unseen round behind him for a plunge Deathblow, then the fight until he falls. Recording under Recordings & results (live on Windows).
@@ -63,7 +64,7 @@
 | 04 | Doom (1993) | Hurt Me Plenty · pistol start | 9 | 1 |
 | 03 | Celeste Classic | PICO-8 | 31 | 3 |
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
-| 01 | Super Mario Bros. | NES | 32 | 24 |
+| 01 | Super Mario Bros. | NES | 32 | 25 |
 
 ## Super Mario Bros. · Results (60 FPS)
 
@@ -100,7 +101,7 @@
 | 8-1 | 3767 | 62.8 | 5/5 |
 | 8-2 | — | — | 3/5 |
 | 8-3 | — | — | 3/5 |
-| 8-4 | — | — | 4/5 |
+| 8-4 | 3793 | 63.2 | 5/5 |
 
 ## Celeste Classic · Results (30 FPS)
 
