@@ -6,6 +6,7 @@
 
 **🔴 LIVE · On Air Now**
 
+- 🔴 **Super Mario Bros.**: attempting 5-3 and 8-4 (both finish 4/5 random variants, one to go). _(since 11-14 20:52)_
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
