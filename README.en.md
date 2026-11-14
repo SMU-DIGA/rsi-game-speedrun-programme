@@ -6,10 +6,10 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Super Mario Bros.**: attempting 8-2 and 8-4 (2/5 and 4/5 random variants finished so far). _(since 11-14 15:12)_
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
+- **2026-11-14 20:30** **Super Mario Bros. 8-2** now finishes 3/5 random variants (fastest 1843 frames) and 8-4 stays at 4/5; both are still a few variants short, and attempts are paused for now. The recording now shows the new 8-2 run.
 - **2026-11-14 18:30** **Super Mario Bros.**: recording of all 32 levels from 1-1 to 8-4 is up (for levels not yet cleared on every variant it shows a run that finished), plus one of the 16 levels of worlds 5-8, under Recordings & Results. Every one of the remaining 8 levels now finishes some random variants: 5-3 and 8-4 4/5; 5-4, 7-1 and 8-3 3/5; 7-2, 7-3 and 8-2 2/5, so all 32 levels finish at least one. 8-2 and 8-4 are being attempted now.
 - **2026-11-12 17:27** **Sekiro**: **General Naomori Kawarada** defeated. From a Sculptor's Idol, unseen round behind him for a plunge Deathblow, then the fight until he falls. Recording under Recordings & results (live on Windows).
 - **2026-11-12 04:25** **Super Mario Bros. 5-2** cleared: 1553 frames (about 25.9 s), 5/5 unseen random variants. 24 of 32 levels cleared.
@@ -97,7 +97,7 @@
 | 7-3 | — | — | 2/5 |
 | 7-4 | 1228 | 20.5 | 5/5 |
 | 8-1 | 3767 | 62.8 | 5/5 |
-| 8-2 | — | — | 2/5 |
+| 8-2 | — | — | 3/5 |
 | 8-3 | — | — | 3/5 |
 | 8-4 | — | — | 4/5 |
 
