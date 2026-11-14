@@ -10,6 +10,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
+- **2026-11-15 01:18** **Super Mario Bros. 8-3** now finishes 4/5 random variants (fastest 1548 frames); one variant left, attempts continue.
 - **2026-11-15 00:43** **Super Mario Bros. 8-2** cleared: 1859 frames (about 31.0 s), 5/5 unseen random variants. 27 of 32 levels cleared; left: 5-4, 7-1, 7-2, 7-3, 8-3. The recording now shows this clear.
 - **2026-11-14 22:17** **Super Mario Bros. 5-3** cleared: 1428 frames (about 23.8 s), 5/5 unseen random variants. 26 of 32 levels cleared; left: 5-4, 7-1, 7-2, 7-3, 8-2, 8-3. The recording now shows this clear.
 - **2026-11-14 21:35** **Super Mario Bros. 8-4** (the final castle) cleared: 3793 frames (about 63.2 s), 5/5 unseen random variants, Bowser beaten. 25 of 32 levels cleared. The recording now shows this clear.
@@ -102,7 +103,7 @@
 | 7-4 | 1228 | 20.5 | 5/5 |
 | 8-1 | 3767 | 62.8 | 5/5 |
 | 8-2 | 1859 | 31.0 | 5/5 |
-| 8-3 | — | — | 3/5 |
+| 8-3 | — | — | 4/5 |
 | 8-4 | 3793 | 63.2 | 5/5 |
 
 ## Celeste Classic · Results (30 FPS)
