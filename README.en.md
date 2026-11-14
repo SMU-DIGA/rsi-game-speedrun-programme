@@ -6,10 +6,10 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Super Mario Bros.**: pushing 5-4 and 8-3 (both at 4/5) towards 5/5; 8-2 and 7-1 are cleared. _(since 11-15 00:03)_
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
+- **2026-11-15 06:30** **Super Mario Bros.**: this round of attempts is over. 8-2 and 7-1 cleared (28 of 32 levels); 5-4 and 8-3 are up to 4/5, one variant short each; 7-2 and 7-3 stay at 2/5.
 - **2026-11-15 02:37** **Super Mario Bros. 7-1** cleared: 1643 frames (about 27.4 s), 5/5 unseen random variants. 28 of 32 levels cleared; left: 5-4, 7-2, 7-3, 8-3. The recording now shows this clear.
 - **2026-11-15 02:35** **Super Mario Bros. 5-4** now finishes 4/5 random variants (fastest 2149 frames). 5-4, 7-1 and 8-3, the levels under attack, are each one variant short now.
 - **2026-11-15 01:42** **Super Mario Bros. 7-1** now finishes 4/5 random variants (fastest 1462 frames); one variant left, attempts continue.
