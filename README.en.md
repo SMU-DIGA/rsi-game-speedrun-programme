@@ -6,6 +6,7 @@
 
 **🔴 LIVE · On Air Now**
 
+- 🔴 **Super Mario Bros.**: pushing the four 3/5 levels (5-4, 7-1, 8-2, 8-3) towards 5/5. _(since 11-15 00:03)_
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
