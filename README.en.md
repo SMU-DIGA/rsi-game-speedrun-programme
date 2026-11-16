@@ -9,6 +9,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
+- **2026-11-16 10:27** **Super Mario Bros. 7-3** cleared: 1279 frames (about 21.3 s), 5/5 unseen random variants. 31 of 32 levels cleared; only 7-2 (underwater) is left. The recording now shows this clear.
 - **2026-11-16 03:40** **Super Mario Bros. 5-4** (castle) cleared: 3857 frames (about 64.3 s), 5/5 unseen random variants. **All of world 5 is done.** 30 of 32 levels cleared; only 7-2 and 7-3 left. The recording now shows this clear.
 - **2026-11-15 22:55** **Super Mario Bros.**: this round of attempts is over. 8-3 cleared, so all of world 8 is done (29 of 32 levels); 5-4 and 7-3 are at 4/5, 7-2 at 2/5.
 - **2026-11-15 13:29** **Super Mario Bros. 7-3** goes from 2/5 to 4/5 random variants finished (fastest 1240 frames); one variant left, attempts continue.
@@ -74,7 +75,7 @@
 | 04 | Doom (1993) | Hurt Me Plenty · pistol start | 9 | 1 |
 | 03 | Celeste Classic | PICO-8 | 31 | 3 |
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
-| 01 | Super Mario Bros. | NES | 32 | 30 |
+| 01 | Super Mario Bros. | NES | 32 | 31 |
 
 ## Super Mario Bros. · Results (60 FPS)
 
@@ -106,7 +107,7 @@
 | 6-4 | 1377 | 22.9 | 5/5 |
 | 7-1 | 1643 | 27.4 | 5/5 |
 | 7-2 | — | — | 2/5 |
-| 7-3 | — | — | 4/5 |
+| 7-3 | 1279 | 21.3 | 5/5 |
 | 7-4 | 1228 | 20.5 | 5/5 |
 | 8-1 | 3767 | 62.8 | 5/5 |
 | 8-2 | 1859 | 31.0 | 5/5 |
