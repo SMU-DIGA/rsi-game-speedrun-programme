@@ -9,6 +9,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
+- **2026-11-16 23:45** **Super Mario Bros.**: attempts wrap up here, final result **31 of 32 levels cleared**. 7-2 (underwater) finishes at best 3/5 variants in one submission; each of the 5 variants has been finished by some submission, but never all 5 by one, so by the rules it is not cleared.
 - **2026-11-16 10:27** **Super Mario Bros. 7-3** cleared: 1279 frames (about 21.3 s), 5/5 unseen random variants. 31 of 32 levels cleared; only 7-2 (underwater) is left. The recording now shows this clear.
 - **2026-11-16 03:40** **Super Mario Bros. 5-4** (castle) cleared: 3857 frames (about 64.3 s), 5/5 unseen random variants. **All of world 5 is done.** 30 of 32 levels cleared; only 7-2 and 7-3 left. The recording now shows this clear.
 - **2026-11-15 22:55** **Super Mario Bros.**: this round of attempts is over. 8-3 cleared, so all of world 8 is done (29 of 32 levels); 5-4 and 7-3 are at 4/5, 7-2 at 2/5.
@@ -106,7 +107,7 @@
 | 6-3 | 1664 | 27.7 | 5/5 |
 | 6-4 | 1377 | 22.9 | 5/5 |
 | 7-1 | 1643 | 27.4 | 5/5 |
-| 7-2 | — | — | 2/5 |
+| 7-2 | — | — | 3/5 |
 | 7-3 | 1279 | 21.3 | 5/5 |
 | 7-4 | 1228 | 20.5 | 5/5 |
 | 8-1 | 3767 | 62.8 | 5/5 |
