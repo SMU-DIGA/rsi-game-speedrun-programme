@@ -79,7 +79,7 @@
 | 04 | 毁灭战士 Doom (1993) | Hurt Me Plenty 难度 · 手枪开局 | 9 | 1 |
 | 03 | 蔚蓝经典版 Celeste Classic | PICO-8 | 31 | 3 |
 | 02 | 超级马里奥兄弟：失落的关卡 Super Mario Bros.: The Lost Levels | NES ROM 版 | 16 | 1 |
-| 01 | 超级马里奥兄弟 Super Mario Bros. | NES | 32 | 平均通过率 77% |
+| 01 | 超级马里奥兄弟 Super Mario Bros. | NES | 32 | 32（平均通过率 77%） |
 
 ## 超级马里奥兄弟 · 成绩（60 FPS）
 

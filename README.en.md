@@ -77,7 +77,7 @@
 | 04 | Doom (1993) | Hurt Me Plenty · pistol start | 9 | 1 |
 | 03 | Celeste Classic | PICO-8 | 31 | 3 |
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
-| 01 | Super Mario Bros. | NES | 32 | average pass rate 77% |
+| 01 | Super Mario Bros. | NES | 32 | 32 (average pass rate 77%) |
 
 ## Super Mario Bros. · Results (60 FPS)
 
