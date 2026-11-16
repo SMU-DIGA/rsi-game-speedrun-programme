@@ -9,6 +9,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
+- **2026-11-17 01:30** **Super Mario Bros.** now shows a **large-scale pass rate**: each level's best policy is tested on **100 random variants never used before**, and the cell shows the pass rate (replacing the old “5/5 cleared”). Average over the 32 levels: **77%**; 10 levels at 100%, 15 at ≥90%; 8 below 50%, lowest 7-2 (23%) and 8-2 (27%).
 - **2026-11-16 23:45** **Super Mario Bros.**: attempts wrap up here, final result **31 of 32 levels cleared**. 7-2 (underwater) finishes at best 3/5 variants in one submission; each of the 5 variants has been finished by some submission, but never all 5 by one, so by the rules it is not cleared.
 - **2026-11-16 10:27** **Super Mario Bros. 7-3** cleared: 1279 frames (about 21.3 s), 5/5 unseen random variants. 31 of 32 levels cleared; only 7-2 (underwater) is left. The recording now shows this clear.
 - **2026-11-16 03:40** **Super Mario Bros. 5-4** (castle) cleared: 3857 frames (about 64.3 s), 5/5 unseen random variants. **All of world 5 is done.** 30 of 32 levels cleared; only 7-2 and 7-3 left. The recording now shows this clear.
@@ -76,44 +77,44 @@
 | 04 | Doom (1993) | Hurt Me Plenty · pistol start | 9 | 1 |
 | 03 | Celeste Classic | PICO-8 | 31 | 3 |
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
-| 01 | Super Mario Bros. | NES | 32 | 31 |
+| 01 | Super Mario Bros. | NES | 32 | average pass rate 77% |
 
 ## Super Mario Bros. · Results (60 FPS)
 
-| Level | Frames | Seconds | Variants |
+| Level | Pass rate | Fastest frames | Seconds |
 |---|---|---|---|
-| 1-1 | 1482 | 24.7 | 5/5 |
-| 1-2 | 1347 | 22.4 | 5/5 |
-| 1-3 | 1017 | 16.9 | 5/5 |
-| 1-4 | 771 | 12.8 | 5/5 |
-| 2-1 | 1389 | 23.1 | 5/5 |
-| 2-2 | 2720 | 45.3 | 5/5 |
-| 2-3 | 1339 | 22.3 | 5/5 |
-| 2-4 | 1264 | 21.1 | 5/5 |
-| 3-1 | 2166 | 36.1 | 5/5 |
-| 3-2 | 1188 | 19.8 | 5/5 |
-| 3-3 | 991 | 16.5 | 5/5 |
-| 3-4 | 4418 | 73.6 | 5/5 |
-| 4-1 | 1425 | 23.8 | 5/5 |
-| 4-2 | 1885 | 31.4 | 5/5 |
-| 4-3 | 880 | 14.7 | 5/5 |
-| 4-4 | 1226 | 20.4 | 5/5 |
-| 5-1 | 1492 | 24.9 | 5/5 |
-| 5-2 | 1553 | 25.9 | 5/5 |
-| 5-3 | 1428 | 23.8 | 5/5 |
-| 5-4 | 3857 | 64.3 | 5/5 |
-| 6-1 | 1294 | 21.6 | 5/5 |
-| 6-2 | 2362 | 39.4 | 5/5 |
-| 6-3 | 1664 | 27.7 | 5/5 |
-| 6-4 | 1377 | 22.9 | 5/5 |
-| 7-1 | 1643 | 27.4 | 5/5 |
-| 7-2 | — | — | 3/5 |
-| 7-3 | 1279 | 21.3 | 5/5 |
-| 7-4 | 1228 | 20.5 | 5/5 |
-| 8-1 | 3767 | 62.8 | 5/5 |
-| 8-2 | 1859 | 31.0 | 5/5 |
-| 8-3 | 1598 | 26.6 | 5/5 |
-| 8-4 | 3793 | 63.2 | 5/5 |
+| 1-1 | 100% (100/100) | 1340 | 22.3 |
+| 1-2 | 100% (100/100) | 1347 | 22.4 |
+| 1-3 | 100% (100/100) | 1017 | 16.9 |
+| 1-4 | 100% (100/100) | 769 | 12.8 |
+| 2-1 | 100% (100/100) | 1389 | 23.1 |
+| 2-2 | 40% (40/100) | 2265 | 37.8 |
+| 2-3 | 82% (82/100) | 1268 | 21.1 |
+| 2-4 | 87% (87/100) | 999 | 16.6 |
+| 3-1 | 91% (91/100) | 2085 | 34.8 |
+| 3-2 | 93% (93/100) | 1188 | 19.8 |
+| 3-3 | 72% (72/100) | 991 | 16.5 |
+| 3-4 | 45% (45/100) | 2416 | 40.3 |
+| 4-1 | 100% (100/100) | 1419 | 23.6 |
+| 4-2 | 100% (100/100) | 1885 | 31.4 |
+| 4-3 | 100% (100/100) | 880 | 14.7 |
+| 4-4 | 86% (86/100) | 1191 | 19.9 |
+| 5-1 | 99% (99/100) | 1432 | 23.9 |
+| 5-2 | 80% (80/100) | 1357 | 22.6 |
+| 5-3 | 38% (38/100) | 1162 | 19.4 |
+| 5-4 | 49% (49/100) | 2172 | 36.2 |
+| 6-1 | 100% (100/100) | 1294 | 21.6 |
+| 6-2 | 68% (68/100) | 2360 | 39.3 |
+| 6-3 | 93% (93/100) | 1599 | 26.6 |
+| 6-4 | 93% (93/100) | 1155 | 19.2 |
+| 7-1 | 39% (39/100) | 1395 | 23.2 |
+| 7-2 | 23% (23/100) | 2174 | 36.2 |
+| 7-3 | 36% (36/100) | 1239 | 20.6 |
+| 7-4 | 100% (100/100) | 1226 | 20.4 |
+| 8-1 | 64% (64/100) | 3679 | 61.3 |
+| 8-2 | 27% (27/100) | 1703 | 28.4 |
+| 8-3 | 86% (86/100) | 1586 | 26.4 |
+| 8-4 | 71% (71/100) | 3683 | 61.4 |
 
 ## Celeste Classic · Results (30 FPS)
 
@@ -123,6 +124,6 @@
 | 2 | 145 | 4.83 |
 | 3 | 229 | 7.63 |
 
-Rules: the referee runs on 5 random variants never seen before; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better. Levels not yet finished on every variant show the pass rate (e.g. 4/5).
+Rules: each Super Mario Bros. level is tested on 100 random variants never used before; the cell shows the pass rate (share of variants finished), and the fastest run's frames are kept too. Other games: the referee runs on 5 random variants never seen before; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better; levels not yet finished on every variant show the pass rate (e.g. 4/5).
 
 Game logos from Wikimedia Commons (mostly public domain; Celeste logo © Maddy Makes Games, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png). Trademarks belong to their owners and are used only to identify the games. Stardew Valley logo © ConcernedApe, taken from the game's cover art. The ladder emblem is an original design.
