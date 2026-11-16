@@ -9,6 +9,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
+- **2026-11-17 04:30** **Celeste Classic** restarted on random variants (random start timing and random seed): **rooms 1–8 all cleared**, each on 5 unseen referee variants; tested again on 100 variants never used before, the 8 rooms finish 799 of 800 (room 7 at 99%, the rest 100%). Rooms 9–19 are being attempted now.
 - **2026-11-17 01:30** **Super Mario Bros.** now shows a **large-scale pass rate**: each level's best policy is tested on **100 random variants never used before**, and the cell shows the pass rate (replacing the old “5/5 cleared”). Average over the 32 levels: **77%**; 10 levels at 100%, 15 at ≥90%; 8 below 50%, lowest 7-2 (23%) and 8-2 (27%).
 - **2026-11-16 23:45** **Super Mario Bros.**: attempts wrap up here, final result **31 of 32 levels cleared**. 7-2 (underwater) finishes at best 3/5 variants in one submission; each of the 5 variants has been finished by some submission, but never all 5 by one, so by the rules it is not cleared.
 - **2026-11-16 10:27** **Super Mario Bros. 7-3** cleared: 1279 frames (about 21.3 s), 5/5 unseen random variants. 31 of 32 levels cleared; only 7-2 (underwater) is left. The recording now shows this clear.
@@ -75,7 +76,7 @@
 | 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 6 |
 | 05 | Quake | Easy skill | 8 | 0 |
 | 04 | Doom (1993) | Hurt Me Plenty · pistol start | 9 | 1 |
-| 03 | Celeste Classic | PICO-8 | 31 | 3 |
+| 03 | Celeste Classic | PICO-8 | 31 | 8 (average pass rate 100%) |
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
 | 01 | Super Mario Bros. | NES | 32 | 32 (average pass rate 77%) |
 
@@ -118,12 +119,17 @@
 
 ## Celeste Classic · Results (30 FPS)
 
-| Room | Frames | Seconds |
-|---|---|---|
-| 1 | 334 | 11.13 |
-| 2 | 145 | 4.83 |
-| 3 | 229 | 7.63 |
+| Room | Pass rate | Fastest frames | Seconds |
+|---|---|---|---|
+| 1 | 100% (100/100) | 95 | 3.17 |
+| 2 | 100% (100/100) | 96 | 3.20 |
+| 3 | 100% (100/100) | 130 | 4.33 |
+| 4 | 100% (100/100) | 82 | 2.73 |
+| 5 | 100% (100/100) | 72 | 2.40 |
+| 6 | 100% (100/100) | 52 | 1.73 |
+| 7 | 99% (99/100) | 132 | 4.40 |
+| 8 | 100% (100/100) | 89 | 2.97 |
 
-Rules: each Super Mario Bros. level is tested on 100 random variants never used before; the cell shows the pass rate (share of variants finished), and the fastest run's frames are kept too. Other games: the referee runs on 5 random variants never seen before; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better; levels not yet finished on every variant show the pass rate (e.g. 4/5).
+Rules: each Super Mario Bros. level and each Celeste Classic room is tested on 100 random variants never used before; the cell shows the pass rate (share of variants finished), and the fastest run's frames are kept too. Other games: the referee runs on 5 random variants never seen before; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better; levels not yet finished on every variant show the pass rate (e.g. 4/5).
 
 Game logos from Wikimedia Commons (mostly public domain; Celeste logo © Maddy Makes Games, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png). Trademarks belong to their owners and are used only to identify the games. Stardew Valley logo © ConcernedApe, taken from the game's cover art. The ladder emblem is an original design.
