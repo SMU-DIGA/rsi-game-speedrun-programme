@@ -9,6 +9,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
+- **2026-11-17 07:30** **Celeste Classic**: **rooms 9–19 all cleared** (each on 5 unseen random referee variants). 19 of 31 rooms so far; on 100 variants never used before the 19 rooms finish 1891 of 1900 (room 18 at 94%; 7, 11 and 12 at 99%; the rest 100%). The last rooms, 20–31, are being attempted now.
 - **2026-11-17 04:30** **Celeste Classic** restarted on random variants (random start timing and random seed): **rooms 1–8 all cleared**, each on 5 unseen referee variants; tested again on 100 variants never used before, the 8 rooms finish 799 of 800 (room 7 at 99%, the rest 100%). Rooms 9–19 are being attempted now.
 - **2026-11-17 01:30** **Super Mario Bros.** now shows a **large-scale pass rate**: each level's best policy is tested on **100 random variants never used before**, and the cell shows the pass rate (replacing the old “5/5 cleared”). Average over the 32 levels: **77%**; 10 levels at 100%, 15 at ≥90%; 8 below 50%, lowest 7-2 (23%) and 8-2 (27%).
 - **2026-11-16 23:45** **Super Mario Bros.**: attempts wrap up here, final result **31 of 32 levels cleared**. 7-2 (underwater) finishes at best 3/5 variants in one submission; each of the 5 variants has been finished by some submission, but never all 5 by one, so by the rules it is not cleared.
@@ -76,7 +77,7 @@
 | 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 6 |
 | 05 | Quake | Easy skill | 8 | 0 |
 | 04 | Doom (1993) | Hurt Me Plenty · pistol start | 9 | 1 |
-| 03 | Celeste Classic | PICO-8 | 31 | 8 (average pass rate 100%) |
+| 03 | Celeste Classic | PICO-8 | 31 | 19 (average pass rate 100%) |
 | 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
 | 01 | Super Mario Bros. | NES | 32 | 32 (average pass rate 77%) |
 
@@ -129,6 +130,17 @@
 | 6 | 100% (100/100) | 52 | 1.73 |
 | 7 | 99% (99/100) | 132 | 4.40 |
 | 8 | 100% (100/100) | 89 | 2.97 |
+| 9 | 100% (100/100) | 87 | 2.90 |
+| 10 | 100% (100/100) | 128 | 4.27 |
+| 11 | 99% (99/100) | 91 | 3.03 |
+| 12 | 99% (99/100) | 49 | 1.63 |
+| 13 | 100% (100/100) | 102 | 3.40 |
+| 14 | 100% (100/100) | 106 | 3.53 |
+| 15 | 100% (100/100) | 71 | 2.37 |
+| 16 | 100% (100/100) | 129 | 4.30 |
+| 17 | 100% (100/100) | 97 | 3.23 |
+| 18 | 94% (94/100) | 183 | 6.10 |
+| 19 | 100% (100/100) | 65 | 2.17 |
 
 Rules: each Super Mario Bros. level and each Celeste Classic room is tested on 100 random variants never used before; the cell shows the pass rate (share of variants finished), and the fastest run's frames are kept too. Other games: the referee runs on 5 random variants never seen before; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better; levels not yet finished on every variant show the pass rate (e.g. 4/5).
 
