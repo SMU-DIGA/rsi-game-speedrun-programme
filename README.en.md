@@ -9,7 +9,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: General Kawarada defeated, onwards (live on Windows). _(since 11-12 17:27)_
 
-- **2026-11-17 13:30** **Celeste Classic: all 31 rooms cleared** (100 m to the summit, each room on 5 unseen random referee variants). The last ones were rooms 27, 30 and 31 (the summit). On 100 variants never used before the 31 rooms finish 3089 of 3100 (average 99.6%); 26 rooms at 100%, lowest room 18 (94%).
+- **2026-11-17 13:30** **Celeste Classic: all 31 rooms cleared** (100 m to the summit, each room on 5 unseen random referee variants). The last ones were rooms 27, 30 and 31 (the summit). On 100 variants never used before the 31 rooms finish 3089 of 3100 (average 99.6%); 25 rooms at 100%, lowest room 18 (94%).
 - **2026-11-17 11:40** **Celeste Classic** room 29 cleared (5/5 unseen referee variants), and room 28 is faster at 202 frames. **28 of 31** rooms so far; on 100 variants never used before they finish 2789 of 2800 (average 99.6%). Rooms 27, 30 and 31 are being attempted now.
 - **2026-11-17 10:50** **Celeste Classic** rooms 23, 24, 25, 26 and 28 cleared (each on 5 unseen referee variants). **27 of 31** rooms so far; on 100 variants never used before the 27 rooms finish 2690 of 2700 (average 99.6%). Rooms 27, 29, 30 and 31 are being attempted now.
 - **2026-11-17 09:10** **Celeste Classic** rooms 20, 21 and 22 cleared, each at 100% on 100 variants never used before. 22 of 31 rooms so far, average pass rate 99.6%. The Celeste row on the ladder now uses the same display as Mario: rooms with a finish plus the distribution of per-room pass rates. Rooms 23–31 are being attempted now.
