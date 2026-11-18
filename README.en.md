@@ -9,7 +9,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: the Chained Ogre defeated, onwards (live on Windows). _(since 11-17 14:12)_
 
-- **2026-11-18 11:20** **Minecraft**: now shown as **pass rates**. The cleared policies are tested on 100 random worlds never used before: **wood 87%** (87/100, fastest 91 ticks, about 4.6 s); crafting table, wooden pickaxe and stone pickaxe follow one by one.
+- **2026-11-18 12:27** **Minecraft**: pass rates on 100 random worlds never used before: **wood 87%** (87/100, fastest 91 ticks, about 4.6 s) and **crafting table 85%** (85/100, fastest 103 ticks, about 5.2 s); wooden and stone pickaxe follow one by one.
 - **2026-11-18 09:30** **Sekiro**: **the Chained Ogre defeated in one uninterrupted run**. From a save: a stealth Deathblow takes the first life, a wall jump onto the white wall, about 20 min of cuts from the wall top, then down for the Deathblow when his posture breaks, and the Prayer Bead. No program was restarted and nobody touched the game. The new recording replaces the two earlier clips (live on Windows).
 - **2026-11-18 03:50** **Minecraft**: the **stone pickaxe** is done. From the spawn of a random world with an empty inventory: chop a tree, craft a table and a wooden pickaxe, dig down to stone and craft a stone pickaxe, on all 5 unseen random worlds (slowest 2813 ticks, about 2 min 21 s). The first 4 milestones (wood, crafting table, wooden pickaxe, stone pickaxe) are all done.
 - **2026-11-18 01:20** **Minecraft**: the **wood, crafting table and wooden pickaxe** milestones are done. From the spawn of a random world with an empty inventory: find a tree, punch logs, craft planks and a table, then a wooden pickaxe, on all 5 unseen random worlds (slowest 1030 / 696 / 1102 ticks, about 52 / 35 / 55 s). The stone pickaxe is being attempted now.
@@ -172,7 +172,7 @@
 | Milestone | Pass rate | Fastest frames (tick) | Seconds |
 |---|---|---|---|
 | Wood | 87% (87/100) | 91 | 4.5 |
-| Table | 5/5 (referee; 100-world test running) | — | — |
+| Table | 85% (85/100) | 103 | 5.2 |
 | W. pick | 5/5 (referee; 100-world test running) | — | — |
 | S. pick | 5/5 (referee; 100-world test running) | — | — |
 
