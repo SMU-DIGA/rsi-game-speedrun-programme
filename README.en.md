@@ -9,6 +9,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: the Chained Ogre defeated, onwards (live on Windows). _(since 11-17 14:12)_
 
+- **2026-11-18 22:33** **Minecraft**: found and fixed an environment fault: when MineRL's connection to the game times out it ends the episode and returns a randomly generated observation (noise pixels, random inventory counts), which our environment had taken as the real state and scored as a finish. That is where the 128-tick iron run came from. Such runs are now marked as lost and re-run by the referee. The 14 suspiciously fast finishes in the 100-world tests (wood 8, crafting table 4, wooden pickaxe 1, iron 1) were all re-run and all passed for real, so **the pass rates are unchanged**; the fastest times now come from the re-runs: crafting table 314 ticks, wooden pickaxe 398 ticks. No accepted referee result contained such a run.
 - **2026-11-18 15:49** **Minecraft**: all 5 cleared milestones now show pass rates on 100 random worlds never used before: **wood 87%** (fastest 91 ticks), **crafting table 85%** (103), **wooden pickaxe 86%** (113), **stone pickaxe 77%** (1082, about 54 s), **iron ingot 77%** (981, about 49 s). Note: one iron run was recorded as done at 128 ticks, which cannot be its own smelting (one ingot takes 200 ticks), and a rerun in the same world did not reproduce it, cause unknown; it counts as recorded, but the fastest run shown excludes it.
 - **2026-11-18 13:35** **Minecraft**: **iron ingot** done. Starting with a stone pickaxe, a crafting table, planks, sticks and bread: dig a sky-lit shaft down to find iron ore, mine it, craft a furnace and smelt the ingot with planks as fuel; done on all 5 unseen random worlds (2569 / 981 / 7133 / 1715 / 2259 ticks, slowest about 5 min 57 s). Recording under Recordings & Results. Diamond and the Nether are being worked on.
 - **2026-11-18 13:10** **Minecraft**: clear recordings added: empty hands to wooden pickaxe (640 ticks, about 32 s) and to stone pickaxe (1260 ticks, about 63 s), both on unseen random worlds of the referee, real time. See Recordings & Results.
@@ -18,10 +19,10 @@
 - **2026-11-17 15:30** **Sekiro**: **the Chained Ogre is defeated**. A stealth Deathblow takes the first life, then about 35 min of cuts from a roof edge he cannot reach until his posture breaks, and a jump-down Deathblow; Prayer Bead. (These recordings were replaced by the uninterrupted run of 11-18.) The roof-fight program was restarted 4 times from the pause menu and its last rule came from a live hint, so this is not one uninterrupted run without help (live on Windows).
 - **2026-11-17 15:00** The policy code for every level of **Super Mario Bros.** (32 levels) and **Celeste Classic** (31 rooms) is now public: open “Show the policy code for each level” under each game on the ladder. Each file starts with a bilingual header (pass rate, how it is run, the approach, the main parts).
 - **2026-11-17 14:00** **Celeste Classic**: recording of all 31 rooms is up, from 100 m to the summit back to back, each room on a random variant never seen before (about 2 min 28 s), under Recordings & Results.
+
+<details><summary>Earlier dispatches (59)</summary>
+
 - **2026-11-17 13:30** **Celeste Classic: all 31 rooms cleared** (100 m to the summit, each room on 5 unseen random referee variants). The last ones were rooms 27, 30 and 31 (the summit). On 100 variants never used before the 31 rooms finish 3089 of 3100 (average 99.6%); 25 rooms at 100%, lowest room 18 (94%).
-
-<details><summary>Earlier dispatches (58)</summary>
-
 - **2026-11-17 11:40** **Celeste Classic** room 29 cleared (5/5 unseen referee variants), and room 28 is faster at 202 frames. **28 of 31** rooms so far; on 100 variants never used before they finish 2789 of 2800 (average 99.6%). Rooms 27, 30 and 31 are being attempted now.
 - **2026-11-17 10:50** **Celeste Classic** rooms 23, 24, 25, 26 and 28 cleared (each on 5 unseen referee variants). **27 of 31** rooms so far; on 100 variants never used before the 27 rooms finish 2690 of 2700 (average 99.6%). Rooms 27, 29, 30 and 31 are being attempted now.
 - **2026-11-17 09:10** **Celeste Classic** rooms 20, 21 and 22 cleared, each at 100% on 100 variants never used before. 22 of 31 rooms so far, average pass rate 99.6%. The Celeste row on the ladder now uses the same display as Mario: rooms with a finish plus the distribution of per-room pass rates. Rooms 23–31 are being attempted now.
@@ -174,8 +175,8 @@
 | Milestone | Pass rate | Fastest frames (tick) | Seconds |
 |---|---|---|---|
 | Wood | 87% (87/100) | 91 | 4.5 |
-| Table | 85% (85/100) | 103 | 5.2 |
-| W. pick | 86% (86/100) | 113 | 5.7 |
+| Table | 85% (85/100) | 314 | 15.7 |
+| W. pick | 86% (86/100) | 398 | 19.9 |
 | S. pick | 77% (77/100) | 1082 | 54.1 |
 | Iron | 77% (77/100) | 981 | 49.0 |
 
