@@ -89,13 +89,10 @@
 
 | 档 | 游戏 | 说明 | 分段 | 已通关 |
 |---|---|---|---|---|
-| 08 | 只狼：影逝二度 Sekiro: Shadows Die Twice | Windows 实时 | 11 | 10 |
-| 07 | 我的世界 Minecraft | 生存模式 | 11 | 4 |
-| 06 | 星露谷物语 Stardew Valley | 1.6 · Windows 实时 | 9 | 6 |
-| 05 | 雷神之锤 Quake | Easy 难度 | 8 | 0 |
-| 04 | 毁灭战士 Doom (1993) | Hurt Me Plenty 难度 · 手枪开局 | 9 | 1 |
-| 03 | 蔚蓝经典版 Celeste Classic | PICO-8 | 31 | 31（平均通过率 100%） |
-| 02 | 超级马里奥兄弟：失落的关卡 Super Mario Bros.: The Lost Levels | NES ROM 版 | 16 | 1 |
+| 05 | 只狼：影逝二度 Sekiro: Shadows Die Twice | Windows 实时 | 11 | 10 |
+| 04 | 我的世界 Minecraft | 生存模式 | 11 | 4 |
+| 03 | 星露谷物语 Stardew Valley | 1.6 · Windows 实时 | 9 | 6 |
+| 02 | 蔚蓝经典版 Celeste Classic | PICO-8 | 31 | 31（平均通过率 100%） |
 | 01 | 超级马里奥兄弟 Super Mario Bros. | NES | 32 | 32（平均通过率 77%） |
 
 ## 超级马里奥兄弟 · 成绩（60 FPS）

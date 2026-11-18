@@ -87,13 +87,10 @@
 
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
-| 08 | Sekiro: Shadows Die Twice | real time on Windows | 11 | 10 |
-| 07 | Minecraft | survival | 11 | 4 |
-| 06 | Stardew Valley | 1.6 · real time on Windows | 9 | 6 |
-| 05 | Quake | Easy skill | 8 | 0 |
-| 04 | Doom (1993) | Hurt Me Plenty · pistol start | 9 | 1 |
-| 03 | Celeste Classic | PICO-8 | 31 | 31 (average pass rate 100%) |
-| 02 | Super Mario Bros.: The Lost Levels | NES ROM | 16 | 1 |
+| 05 | Sekiro: Shadows Die Twice | real time on Windows | 11 | 10 |
+| 04 | Minecraft | survival | 11 | 4 |
+| 03 | Stardew Valley | 1.6 · real time on Windows | 9 | 6 |
+| 02 | Celeste Classic | PICO-8 | 31 | 31 (average pass rate 100%) |
 | 01 | Super Mario Bros. | NES | 32 | 32 (average pass rate 77%) |
 
 ## Super Mario Bros. · Results (60 FPS)
