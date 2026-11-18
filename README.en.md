@@ -9,7 +9,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: the Chained Ogre defeated, onwards (live on Windows). _(since 11-17 14:12)_
 
-- **2026-11-18 14:42** **Minecraft**: the first 4 milestones now show pass rates on 100 random worlds never used before: **wood 87%** (fastest 91 ticks), **crafting table 85%** (103), **wooden pickaxe 86%** (113), **stone pickaxe 77%** (fastest 1082 ticks, about 54 s). The iron ingot follows.
+- **2026-11-18 15:49** **Minecraft**: all 5 cleared milestones now show pass rates on 100 random worlds never used before: **wood 87%** (fastest 91 ticks), **crafting table 85%** (103), **wooden pickaxe 86%** (113), **stone pickaxe 77%** (1082, about 54 s), **iron ingot 77%** (981, about 49 s). Note: one iron run was recorded as done at 128 ticks, which cannot be its own smelting (one ingot takes 200 ticks), and a rerun in the same world did not reproduce it, cause unknown; it counts as recorded, but the fastest run shown excludes it.
 - **2026-11-18 13:35** **Minecraft**: **iron ingot** done. Starting with a stone pickaxe, a crafting table, planks, sticks and bread: dig a sky-lit shaft down to find iron ore, mine it, craft a furnace and smelt the ingot with planks as fuel; done on all 5 unseen random worlds (2569 / 981 / 7133 / 1715 / 2259 ticks, slowest about 5 min 57 s). Recording under Recordings & Results. Diamond and the Nether are being worked on.
 - **2026-11-18 13:10** **Minecraft**: clear recordings added: empty hands to wooden pickaxe (640 ticks, about 32 s) and to stone pickaxe (1260 ticks, about 63 s), both on unseen random worlds of the referee, real time. See Recordings & Results.
 - **2026-11-18 09:30** **Sekiro**: **the Chained Ogre defeated in one uninterrupted run**. From a save: a stealth Deathblow takes the first life, a wall jump onto the white wall, about 20 min of cuts from the wall top, then down for the Deathblow when his posture breaks, and the Prayer Bead. No program was restarted and nobody touched the game. The new recording replaces the two earlier clips (live on Windows).
@@ -91,7 +91,7 @@
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
 | 05 | Sekiro: Shadows Die Twice | real time on Windows | 11 | 10 |
-| 04 | Minecraft | survival | 11 | 5 (average pass rate 84%) |
+| 04 | Minecraft | survival | 11 | 5 (average pass rate 82%) |
 | 03 | Stardew Valley | 1.6 · real time on Windows | 9 | 6 |
 | 02 | Celeste Classic | PICO-8 | 31 | 31 (average pass rate 100%) |
 | 01 | Super Mario Bros. | NES | 32 | 32 (average pass rate 77%) |
@@ -177,7 +177,7 @@
 | Table | 85% (85/100) | 103 | 5.2 |
 | W. pick | 86% (86/100) | 113 | 5.7 |
 | S. pick | 77% (77/100) | 1082 | 54.1 |
-| Iron | 5/5 (referee; 100-world test running) | — | — |
+| Iron | 77% (77/100) | 981 | 49.0 |
 
 Rules: each Super Mario Bros. level and each Celeste Classic room is tested on 100 random variants never used before; the cell shows the pass rate (share of variants finished), and the fastest run's frames are kept too. Other games: the referee runs on 5 random variants never seen before; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better; levels not yet finished on every variant show the pass rate (e.g. 4/5).
 
