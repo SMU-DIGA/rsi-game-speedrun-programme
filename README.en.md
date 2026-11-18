@@ -9,6 +9,7 @@
 - 🔴 **Stardew Valley**: further down the Mines, floor 6 so far (live on Windows). _(since 11-09 13:11)_
 - 🔴 **Sekiro**: the Chained Ogre defeated, onwards (live on Windows). _(since 11-17 14:12)_
 
+- **2026-11-18 13:30** **Minecraft**: now shown as **pass rates**. The cleared policies are tested on 100 random worlds never used before: **wood 87%** (87/100, fastest 91 ticks, about 4.6 s); crafting table, wooden pickaxe and stone pickaxe follow one by one.
 - **2026-11-18 09:30** **Sekiro**: **the Chained Ogre defeated in one uninterrupted run**. From a save: a stealth Deathblow takes the first life, a wall jump onto the white wall, about 20 min of cuts from the wall top, then down for the Deathblow when his posture breaks, and the Prayer Bead. No program was restarted and nobody touched the game. The new recording replaces the two earlier clips (live on Windows).
 - **2026-11-18 03:50** **Minecraft**: the **stone pickaxe** is done. From the spawn of a random world with an empty inventory: chop a tree, craft a table and a wooden pickaxe, dig down to stone and craft a stone pickaxe, on all 5 unseen random worlds (slowest 2813 ticks, about 2 min 21 s). The first 4 milestones (wood, crafting table, wooden pickaxe, stone pickaxe) are all done.
 - **2026-11-18 01:20** **Minecraft**: the **wood, crafting table and wooden pickaxe** milestones are done. From the spawn of a random world with an empty inventory: find a tree, punch logs, craft planks and a table, then a wooden pickaxe, on all 5 unseen random worlds (slowest 1030 / 696 / 1102 ticks, about 52 / 35 / 55 s). The stone pickaxe is being attempted now.
@@ -18,10 +19,10 @@
 - **2026-11-17 13:30** **Celeste Classic: all 31 rooms cleared** (100 m to the summit, each room on 5 unseen random referee variants). The last ones were rooms 27, 30 and 31 (the summit). On 100 variants never used before the 31 rooms finish 3089 of 3100 (average 99.6%); 25 rooms at 100%, lowest room 18 (94%).
 - **2026-11-17 11:40** **Celeste Classic** room 29 cleared (5/5 unseen referee variants), and room 28 is faster at 202 frames. **28 of 31** rooms so far; on 100 variants never used before they finish 2789 of 2800 (average 99.6%). Rooms 27, 30 and 31 are being attempted now.
 - **2026-11-17 10:50** **Celeste Classic** rooms 23, 24, 25, 26 and 28 cleared (each on 5 unseen referee variants). **27 of 31** rooms so far; on 100 variants never used before the 27 rooms finish 2690 of 2700 (average 99.6%). Rooms 27, 29, 30 and 31 are being attempted now.
+
+<details><summary>Earlier dispatches (56)</summary>
+
 - **2026-11-17 09:10** **Celeste Classic** rooms 20, 21 and 22 cleared, each at 100% on 100 variants never used before. 22 of 31 rooms so far, average pass rate 99.6%. The Celeste row on the ladder now uses the same display as Mario: rooms with a finish plus the distribution of per-room pass rates. Rooms 23–31 are being attempted now.
-
-<details><summary>Earlier dispatches (55)</summary>
-
 - **2026-11-17 07:30** **Celeste Classic**: **rooms 9–19 all cleared** (each on 5 unseen random referee variants). 19 of 31 rooms so far; on 100 variants never used before the 19 rooms finish 1891 of 1900 (room 18 at 94%; 7, 11 and 12 at 99%; the rest 100%). The last rooms, 20–31, are being attempted now.
 - **2026-11-17 04:30** **Celeste Classic** restarted on random variants (random start timing and random seed): **rooms 1–8 all cleared**, each on 5 unseen referee variants; tested again on 100 variants never used before, the 8 rooms finish 799 of 800 (room 7 at 99%, the rest 100%). Rooms 9–19 are being attempted now.
 - **2026-11-17 01:30** **Super Mario Bros.** now shows a **large-scale pass rate**: each level's best policy is tested on **100 random variants never used before**, and the cell shows the pass rate (replacing the old “5/5 cleared”). Average over the 32 levels: **77%**; 10 levels at 100%, 15 at ≥90%; 8 below 50%, lowest 7-2 (23%) and 8-2 (27%).
@@ -165,6 +166,15 @@
 | 29 | 100% (100/100) | 77 | 2.57 |
 | 30 | 100% (100/100) | 55 | 1.83 |
 | 31 | 100% (100/100) | 32 | 1.07 |
+
+## Minecraft · Results (20 ticks/s)
+
+| Milestone | Pass rate | Fastest frames (tick) | Seconds |
+|---|---|---|---|
+| Wood | 87% (87/100) | 91 | 4.5 |
+| Table | 5/5 (referee; 100-world test running) | — | — |
+| W. pick | 5/5 (referee; 100-world test running) | — | — |
+| S. pick | 5/5 (referee; 100-world test running) | — | — |
 
 Rules: each Super Mario Bros. level and each Celeste Classic room is tested on 100 random variants never used before; the cell shows the pass rate (share of variants finished), and the fastest run's frames are kept too. Other games: the referee runs on 5 random variants never seen before; all must finish, and the slowest run is the score. Numbers are frames to finish; lower is better; levels not yet finished on every variant show the pass rate (e.g. 4/5).
 
