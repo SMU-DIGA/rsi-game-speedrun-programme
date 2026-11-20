@@ -6,9 +6,10 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Stardew Valley**: further down the Mines, floor 20 so far, next stop floor 25 (live on Windows). _(since 11-20 05:14)_
+- 🔴 **Stardew Valley**: further down the Mines, floor 25 so far, next stop floor 30 (live on Windows). _(since 11-20 11:20)_
 - 🔴 **Sekiro**: the Chained Ogre defeated, onwards (live on Windows). _(since 11-17 14:12)_
 
+- **2026-11-20 11:20** **Stardew Valley**: Mines floor 25 reached. Year 5, Fall 4, one unbroken run: it walked from the house to the Mines, took the elevator to floor 20 and went down 5 more floors on ladders in about 35 s, each ladder placed first try, at full health, reaching floor 25 at 1:20 pm. The first try (Summer 12) stopped at floor 23, whose floor number is shown in green and was not recognised, so it turned back; fixed, and this time it went through. The ladders were crafted by hand beforehand. Video under Recordings &amp; results (live on Windows).
 - **2026-11-20 05:14** **Stardew Valley**: Mines floor 20 reached. On Year 4, Fall 28 it went from the floor-10 elevator stop down to floor 15 on ladders (5 floors in about 55 s); on Year 5, Spring 11, in one unbroken run, it walked from the house to the Mines, took the elevator to floor 15 and went down 5 more floors on ladders in about 60 s at full health, reaching floor 20 at 1:40 pm. The ladders were crafted by hand beforehand, and the floor-20 chest was opened by hand. Video under Recordings &amp; results (live on Windows).
 - **2026-11-18 23:07** **Stardew Valley**: Mines floor 10 reached. One unbroken run: it reads the TV fortune every morning and sleeps bad-luck days away; on a lucky day (Year 3, Fall 28) it walked to the Mines, took the elevator to floor 5 and fought down to floor 10 (arrived 11:40 pm, about 17 min). Video under Recordings &amp; results (live on Windows).
 - **2026-11-18 22:33** **Minecraft**: found and fixed an environment fault: when MineRL's connection to the game times out it ends the episode and returns a randomly generated observation (noise pixels, random inventory counts), which our environment had taken as the real state and scored as a finish. That is where the 128-tick iron run came from. Such runs are now marked as lost and re-run by the referee. The 14 suspiciously fast finishes in the 100-world tests (wood 8, crafting table 4, wooden pickaxe 1, iron 1) were all re-run and all passed for real, so **the pass rates are unchanged**; the fastest times now come from the re-runs: crafting table 314 ticks, wooden pickaxe 398 ticks. No accepted referee result contained such a run.
@@ -18,10 +19,10 @@
 - **2026-11-18 09:30** **Sekiro**: **the Chained Ogre defeated in one uninterrupted run**. From a save: a stealth Deathblow takes the first life, a wall jump onto the white wall, about 20 min of cuts from the wall top, then down for the Deathblow when his posture breaks, and the Prayer Bead. No program was restarted and nobody touched the game. The new recording replaces the two earlier clips (live on Windows).
 - **2026-11-18 03:50** **Minecraft**: the **stone pickaxe** is done. From the spawn of a random world with an empty inventory: chop a tree, craft a table and a wooden pickaxe, dig down to stone and craft a stone pickaxe, on all 5 unseen random worlds (slowest 2813 ticks, about 2 min 21 s). The first 4 milestones (wood, crafting table, wooden pickaxe, stone pickaxe) are all done.
 - **2026-11-18 01:20** **Minecraft**: the **wood, crafting table and wooden pickaxe** milestones are done. From the spawn of a random world with an empty inventory: find a tree, punch logs, craft planks and a table, then a wooden pickaxe, on all 5 unseen random worlds (slowest 1030 / 696 / 1102 ticks, about 52 / 35 / 55 s). The stone pickaxe is being attempted now.
+
+<details><summary>Earlier dispatches (62)</summary>
+
 - **2026-11-17 15:30** **Sekiro**: **the Chained Ogre is defeated**. A stealth Deathblow takes the first life, then about 35 min of cuts from a roof edge he cannot reach until his posture breaks, and a jump-down Deathblow; Prayer Bead. (These recordings were replaced by the uninterrupted run of 11-18.) The roof-fight program was restarted 4 times from the pause menu and its last rule came from a live hint, so this is not one uninterrupted run without help (live on Windows).
-
-<details><summary>Earlier dispatches (61)</summary>
-
 - **2026-11-17 15:00** The policy code for every level of **Super Mario Bros.** (32 levels) and **Celeste Classic** (31 rooms) is now public: open “Show the policy code for each level” under each game on the ladder. Each file starts with a bilingual header (pass rate, how it is run, the approach, the main parts).
 - **2026-11-17 14:00** **Celeste Classic**: recording of all 31 rooms is up, from 100 m to the summit back to back, each room on a random variant never seen before (about 2 min 28 s), under Recordings & Results.
 - **2026-11-17 13:30** **Celeste Classic: all 31 rooms cleared** (100 m to the summit, each room on 5 unseen random referee variants). The last ones were rooms 27, 30 and 31 (the summit). On 100 variants never used before the 31 rooms finish 3089 of 3100 (average 99.6%); 25 rooms at 100%, lowest room 18 (94%).
@@ -95,7 +96,7 @@
 |---|---|---|---|---|
 | 05 | Sekiro: Shadows Die Twice | real time on Windows | 11 | 10 |
 | 04 | Minecraft | survival | 11 | 5 (average pass rate 82%) |
-| 03 | Stardew Valley | 1.6 · real time on Windows | 12 | 9 |
+| 03 | Stardew Valley | 1.6 · real time on Windows | 13 | 10 |
 | 02 | Celeste Classic | PICO-8 | 31 | 31 (average pass rate 100%) |
 | 01 | Super Mario Bros. | NES | 32 | 32 (average pass rate 77%) |
 
