@@ -6,9 +6,11 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Stardew Valley**: further down the Mines, floor 35 so far, next stop floor 40 (live on Windows). _(since 11-21 08:28)_
-- 🔴 **Sekiro**: Outskirts Wall – Stairway idol reached, onwards (live on Windows). _(since 11-20 16:13)_
+- 🔴 **Stardew Valley**: Mines floor 40 so far; the ice floors start at 41, onwards (live on Windows). _(since 11-21 12:10)_
+- 🔴 **Sekiro**: the Chained Ogre defeated from the Outskirts Wall – Stairway idol, onwards (live on Windows). _(since 11-21 11:35)_
 
+- **2026-11-21 12:10** **Stardew Valley**: Mines floor 40 reached (Year 7, Summer 18). Floors 35 to 40 took 5 ladders, none wasted. On floors 36 to 39 the floor-number box has a new colour; the bot could not read the floor and, as designed, stopped where it stood on floor 36; after that colour was added it went on from floor 36 in place, 4 floors in about 96 s to floor 40. So this was not one unbroken run; the bot gathered the stone itself, and the ladders were crafted by hand beforehand. Video of floors 36 to 40 under Recordings &amp; results (live on Windows).
+- **2026-11-21 11:35** **Sekiro**: **the Chained Ogre defeated starting from the Stairway idol**. From the bot's own save at the Outskirts Wall – Stairway idol, over the roofs and the yard to the Ogre, cuts from the low eaves only while he stands under them, and twice down for a Deathblow when his posture breaks; Prayer Bead (about 43 min of game time). After the first Deathblow he grabbed the Wolf, who died once, came back with Resurrection and returned to the eaves by himself; the fight code was edited while the run was going, but the program was not restarted and nobody touched the game. Earlier tries did not get through, so it does not work every time yet. Video under Recordings &amp; results (live on Windows).
 - **2026-11-21 08:28** **Stardew Valley**: Mines floor 35 reached (Year 7, Spring 12). Floors 31 and below are dark, and the floor number is harder to read: the run from floor 30 misread it on floor 33 and was stopped by hand, then went on from floor 33 down to floor 35 on ladders and unlocked the floor-35 elevator stop. So this was not one unbroken run, and the ladders were crafted by hand beforehand. Video of floors 33 to 35 under Recordings &amp; results (live on Windows).
 - **2026-11-21 04:02** **Stardew Valley**: Mines floor 30 reached. Year 6, Fall 28, one unbroken run: it walked from the house to the Mines, took the elevator to floor 25 and went down 5 more floors on ladders in about 35 s at full health and energy, reaching floor 30 at 12:50 pm. The first two tries stopped on floor 28 (no room to place a ladder where it landed); the third went through. The ladders were crafted by hand beforehand. Video under Recordings &amp; results (live on Windows).
 - **2026-11-20 16:13** **Sekiro**: from the Outskirts Wall – Gate Path idol to the **Outskirts Wall – Stairway idol**. From a save: dash to the gate, grapple onto the gatehouse and then the scaffold roof, then a dozen-odd grapples, jumps and wall climbs along the rocks and eaves to the idol, and rest, with no reload on the way. That day, 14 of 22 tries from the idol's save got through (about 64%). Video under Recordings &amp; results (live on Windows).
@@ -17,11 +19,11 @@
 - **2026-11-18 23:07** **Stardew Valley**: Mines floor 10 reached. One unbroken run: it reads the TV fortune every morning and sleeps bad-luck days away; on a lucky day (Year 3, Fall 28) it walked to the Mines, took the elevator to floor 5 and fought down to floor 10 (arrived 11:40 pm, about 17 min). Video under Recordings &amp; results (live on Windows).
 - **2026-11-18 22:33** **Minecraft**: found and fixed an environment fault: when MineRL's connection to the game times out it ends the episode and returns a randomly generated observation (noise pixels, random inventory counts), which our environment had taken as the real state and scored as a finish. That is where the 128-tick iron run came from. Such runs are now marked as lost and re-run by the referee. The 14 suspiciously fast finishes in the 100-world tests (wood 8, crafting table 4, wooden pickaxe 1, iron 1) were all re-run and all passed for real, so **the pass rates are unchanged**; the fastest times now come from the re-runs: crafting table 314 ticks, wooden pickaxe 398 ticks. No accepted referee result contained such a run.
 - **2026-11-18 15:49** **Minecraft**: all 5 cleared milestones now show pass rates on 100 random worlds never used before: **wood 87%** (fastest 91 ticks), **crafting table 85%** (103), **wooden pickaxe 86%** (113), **stone pickaxe 77%** (1082, about 54 s), **iron ingot 77%** (981, about 49 s). Note: one iron run was recorded as done at 128 ticks, which cannot be its own smelting (one ingot takes 200 ticks), and a rerun in the same world did not reproduce it, cause unknown; it counts as recorded, but the fastest run shown excludes it.
+
+<details><summary>Earlier dispatches (67)</summary>
+
 - **2026-11-18 13:35** **Minecraft**: **iron ingot** done. Starting with a stone pickaxe, a crafting table, planks, sticks and bread: dig a sky-lit shaft down to find iron ore, mine it, craft a furnace and smelt the ingot with planks as fuel; done on all 5 unseen random worlds (2569 / 981 / 7133 / 1715 / 2259 ticks, slowest about 5 min 57 s). Recording under Recordings & Results. Diamond and the Nether are being worked on.
 - **2026-11-18 13:10** **Minecraft**: clear recordings added: empty hands to wooden pickaxe (640 ticks, about 32 s) and to stone pickaxe (1260 ticks, about 63 s), both on unseen random worlds of the referee, real time. See Recordings & Results.
-
-<details><summary>Earlier dispatches (65)</summary>
-
 - **2026-11-18 09:30** **Sekiro**: **the Chained Ogre defeated in one uninterrupted run**. From a save: a stealth Deathblow takes the first life, a wall jump onto the white wall, about 20 min of cuts from the wall top, then down for the Deathblow when his posture breaks, and the Prayer Bead. No program was restarted and nobody touched the game. The new recording replaces the two earlier clips (live on Windows).
 - **2026-11-18 03:50** **Minecraft**: the **stone pickaxe** is done. From the spawn of a random world with an empty inventory: chop a tree, craft a table and a wooden pickaxe, dig down to stone and craft a stone pickaxe, on all 5 unseen random worlds (slowest 2813 ticks, about 2 min 21 s). The first 4 milestones (wood, crafting table, wooden pickaxe, stone pickaxe) are all done.
 - **2026-11-18 01:20** **Minecraft**: the **wood, crafting table and wooden pickaxe** milestones are done. From the spawn of a random world with an empty inventory: find a tree, punch logs, craft planks and a table, then a wooden pickaxe, on all 5 unseen random worlds (slowest 1030 / 696 / 1102 ticks, about 52 / 35 / 55 s). The stone pickaxe is being attempted now.
@@ -97,9 +99,9 @@
 
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
-| 05 | Sekiro: Shadows Die Twice | real time on Windows | 12 | 11 |
+| 05 | Sekiro: Shadows Die Twice | real time on Windows | 13 | 12 |
 | 04 | Minecraft | survival | 11 | 5 (average pass rate 82%) |
-| 03 | Stardew Valley | 1.6 · real time on Windows | 15 | 12 |
+| 03 | Stardew Valley | 1.6 · real time on Windows | 15 | 13 |
 | 02 | Celeste Classic | PICO-8 | 31 | 31 (average pass rate 100%) |
 | 01 | Super Mario Bros. | NES | 32 | 32 (average pass rate 77%) |
 
