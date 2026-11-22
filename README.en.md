@@ -6,10 +6,10 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Stardew Valley**: Mines floor 45 so far (floor 50 was reached with direct LLM help and is not counted), onwards (live on Windows). _(since 11-22 09:00)_
+- 🔴 **Stardew Valley**: Mines floor 50 so far, onwards (live on Windows). _(since 11-22 09:00)_
 - 🔴 **Sekiro**: putting together a whole game from a new save with no save loaded; from the title screen out of the opening pit in one run so far (live on Windows). _(since 11-21 15:54)_
 
-- **2026-11-22 09:00** **Stardew Valley**: Mines floor 45 reached (Year 8, Summer 14); the ice floors start at 41. Down on ladders from the floor-40 elevator stop; on floor 43 it was stopped by the LLM once over a wrong ladder count, then went on from floor 43 to floor 45. The bot gathered the stone itself; the ladders were crafted beforehand by the LLM directly. By Year 8, Winter 11 it also got to floor 50, but 4 of those floors were done by placing ladders with a one-off script run by the LLM, so floor 50 does not count as done by the bot; it is marked in progress on the ladder and has no video. Video of floors 43 to 45 under Recordings &amp; results (live on Windows).
+- **2026-11-22 09:00** **Stardew Valley**: Mines floors 45 and 50 reached (floor 45 on Year 8, Summer 14); the ice floors start at 41. Down on ladders from the floor-40 elevator stop; on floor 43 it was stopped by the LLM once over a wrong ladder count, then went on from floor 43 to floor 45. The bot gathered the stone itself; the ladders were crafted beforehand by the LLM directly. Then on Year 8, Winter 11 it reached **floor 50**: floors 45 → 46 were the bot's own run, and the next 4 floors were done by the LLM placing ladders directly with a one-off script. Videos of floors 43 to 45 and 45 to 50 under Recordings &amp; results (floors 47–50 were not recorded) (live on Windows).
 - **2026-11-21 15:54** **Sekiro**: starting on **a whole game from a new save with no save loaded**. First stretch: from the title screen, New Game, skip the opening scenes, walk the corridor in the pit and wall-jump out of it, in one run of about 2 min. This run fell back once and needed a few extra rounds; from the pit floor 5 of 6 tries got out, from the title screen this is the only run so far. Video under Recordings &amp; results (live on Windows).
 - **2026-11-21 12:10** **Stardew Valley**: Mines floor 40 reached (Year 7, Summer 18). Floors 35 to 40 took 5 ladders, none wasted. On floors 36 to 39 the floor-number box has a new colour; the bot could not read the floor and, as designed, stopped where it stood on floor 36; after that colour was added it went on from floor 36 in place, 4 floors in about 96 s to floor 40. So this was not one unbroken run; the bot gathered the stone itself, and the ladders were crafted beforehand by the LLM directly. Video of floors 36 to 40 under Recordings &amp; results (live on Windows).
 - **2026-11-21 11:35** **Sekiro**: **the Chained Ogre defeated starting from the Stairway idol**. From the bot's own save at the Outskirts Wall – Stairway idol, over the roofs and the yard to the Ogre, cuts from the low eaves only while he stands under them, and twice down for a Deathblow when his posture breaks; Prayer Bead (about 43 min of game time). After the first Deathblow he grabbed the Wolf, who died once, came back with Resurrection and returned to the eaves by himself; the LLM edited the fight code while the run was going, but the program was not restarted and neither a person nor the LLM operated the game directly. Earlier tries did not get through, so it does not work every time yet. Video under Recordings &amp; results (live on Windows).
@@ -103,7 +103,7 @@
 |---|---|---|---|---|
 | 05 | Sekiro: Shadows Die Twice | real time on Windows | 13 | 12 |
 | 04 | Minecraft | survival | 11 | 5 (average pass rate 82%) |
-| 03 | Stardew Valley | 1.6 · real time on Windows | 17 | 14 |
+| 03 | Stardew Valley | 1.6 · real time on Windows | 17 | 15 |
 | 02 | Celeste Classic | PICO-8 | 31 | 31 (average pass rate 100%) |
 | 01 | Super Mario Bros. | NES | 32 | 32 (average pass rate 77%) |
 
