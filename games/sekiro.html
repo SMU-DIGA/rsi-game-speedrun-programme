@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>只狼：影逝二度 · Recursive Self-Improvement for Game Speedrun · 游戏速通天梯</title><meta name="description" content="Recursive Self-Improvement for Game Speedrun：游戏速通天梯与最新战报。">
+<link rel="icon" href="../logos/emblem.svg">
+<link rel="alternate" hreflang="en" href="../en/games/sekiro.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
+<style>
+.gtabs{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:-14px 0 26px;padding:10px 0;background:var(--bg)}
+.gtabs a{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;text-decoration:none;color:var(--ink);border:2px solid var(--line);background:var(--panel);font-size:15px}
+.gtabs a img{width:30px;height:18px;object-fit:contain}
+.gtabs a:hover,.gtabs a:focus-visible{border-color:var(--red);color:var(--red)}
+.gtabs a[aria-current="page"]{border-color:var(--red);color:var(--red);font-weight:700;box-shadow:inset 0 -4px 0 var(--red)}
+.roadframe{width:100%;height:85vh;min-height:640px;border:2px solid var(--ink);background:#1e140e;margin-top:6px}
+@media (max-width:640px){.gtabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start}.gtabs a{white-space:nowrap;font-size:13px;padding:6px 9px}}
+.roads{margin:0 0 30px;padding:18px 20px 20px;background:var(--panel);border:3px solid var(--red);box-shadow:6px 6px 0 var(--shade)}
+.roads h2{margin:0 0 4px;font-family:var(--f-display);font-weight:400;font-size:26px;color:var(--red)}
+.roads>p{margin:0 0 14px;color:var(--muted)}
+.roadgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.road{display:grid;grid-template-columns:56px minmax(0,1fr);gap:4px 14px;align-items:center;padding:14px 16px;text-decoration:none;color:var(--ink);
+ background:var(--paper);border:2px solid var(--ink);transition:transform .12s,box-shadow .12s}
+.road:hover,.road:focus-visible{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--red);border-color:var(--red)}
+.road img{width:56px;height:auto;grid-row:span 3}
+.road b{font-size:18px}.road span{font-size:14px;color:var(--muted)}
+.road .go{font-family:var(--f-data);font-size:13px;letter-spacing:.08em;color:var(--red);text-transform:uppercase}
+.road.soon{opacity:.55;pointer-events:none;border-style:dashed}
+.rungroad{display:inline-block;margin-top:8px;padding:5px 12px;font-family:var(--f-data);font-size:13px;letter-spacing:.06em;text-decoration:none;
+ color:#fff;background:var(--red);border:2px solid var(--ink)}
+.rungroad:hover{filter:brightness(1.15)}
+/* Layout: a frontier ledger -- aged paper, wood-type headings, each game a ruled "notice" pinned along a railroad track */
+:root{--bg:#e9dcc0;--paper:#f3e8d0;--panel:#f6ecd6;--ink:#000000;--muted:#6a5641;--rule:#000000;--line:#c9b48f;
+ --red:#9e1b17;--gold:#9a7232;--rail:#5b5148;--tie:#7a5233;--shade:rgba(60,40,20,.22);
+ --done:#355e2f;--done-bg:#dfe3c4;--part:#9a6512;--part-bg:#f0dcae;--try:#9e1b17;--try-bg:#f1d2c2;
+ --old:#2c4a6b;--old-bg:#d8dccf;--live:#5e3768;--live-bg:#e6d6d8;--todo-bg:#ece0c6;--accent:#9e1b17;
+ --glow:radial-gradient(ellipse 110% 60% at 50% 0,#f6eedb 0,transparent 70%);--vignette:radial-gradient(ellipse 85% 75% at 50% 40%,transparent 55%,rgba(90,58,24,.22) 100%);--lift:linear-gradient(transparent,transparent);--foot:#000000;
+ --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .22 0 0 0 0 .12 0 0 0 .10 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+ --f-display:"Rye","Libre Baskerville",Georgia,serif;
+ --f-body:"Libre Baskerville","Noto Serif SC","Songti SC","SimSun",Georgia,serif;
+ --f-data:"Courier Prime","Courier New",ui-monospace,monospace;--logo-filter:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000000;--paper:#000000;--panel:#000000;--ink:#eadcc0;--muted:#b39d7c;--rule:#c9a25b;--line:#3a3a3a;--noise:none;
+ --red:#d0392f;--gold:#c9a25b;--rail:#8d8379;--tie:#5a5a5a;--shade:rgba(0,0,0,.5);
+ --done:#9cc283;--done-bg:#24301c;--part:#e0ac52;--part-bg:#3a2b12;--try:#ec6a5a;--try-bg:#3e1a15;
+ --old:#93b2d6;--old-bg:#1a222d;--live:#c69ad0;--live-bg:#2a1d2b;--todo-bg:#000000;--accent:#d0392f;--glow:none;--vignette:radial-gradient(ellipse 90% 80% at 50% 35%,transparent 50%,rgba(0,0,0,.6) 100%);--lift:none;--foot:#000000;--logo-filter:invert(1) sepia(.35);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#000000;--paper:#000000;--panel:#000000;--ink:#eadcc0;--muted:#b39d7c;--rule:#c9a25b;--line:#3a3a3a;--noise:none;
+ --red:#d0392f;--gold:#c9a25b;--rail:#8d8379;--tie:#5a5a5a;--shade:rgba(0,0,0,.5);
+ --done:#9cc283;--done-bg:#24301c;--part:#e0ac52;--part-bg:#3a2b12;--try:#ec6a5a;--try-bg:#3e1a15;
+ --old:#93b2d6;--old-bg:#1a222d;--live:#c69ad0;--live-bg:#2a1d2b;--todo-bg:#000000;--accent:#d0392f;--glow:none;--vignette:radial-gradient(ellipse 90% 80% at 50% 35%,transparent 50%,rgba(0,0,0,.6) 100%);--lift:none;--foot:#000000;--logo-filter:invert(1) sepia(.35);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background-color:var(--bg);background-image:var(--noise),var(--glow),var(--vignette);background-attachment:scroll,scroll,fixed;background-repeat:repeat,no-repeat,no-repeat;background-size:auto,100% 1100px,100% 100%;
+ color:var(--ink);font-family:var(--f-body);line-height:1.65;font-size:14px}
+html[lang="zh-CN"] .lede,html[lang="zh-CN"] .sub{font-style:normal}
+html[lang="zh-CN"] body{font-family:"Libre Baskerville","Noto Serif SC","Songti SC",serif}
+.wrap{max-width:1100px;margin:0 auto;padding-block:30px 0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:grid;gap:16px;margin-bottom:30px;text-align:center;justify-items:center;border-bottom:3px double var(--rule);padding-bottom:22px}
+.top{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--rule);padding-bottom:8px}
+.eyebrow{font-family:var(--f-data);font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.ctl{display:flex;gap:8px;align-items:center}
+.lang,.mode{border:1px solid var(--rule);border-radius:2px;background:transparent;color:var(--ink)}
+.lang{font-family:var(--f-data);font-size:13px;text-decoration:none;padding:2px 10px;line-height:22px;letter-spacing:.06em}
+.lang:hover,.mode:hover{background:var(--ink);color:var(--paper)}
+.lang:focus-visible,.mode:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.mode{display:inline-flex;align-items:center;justify-content:center;width:32px;height:28px;cursor:pointer;padding:0}
+.mode svg{width:17px;height:17px}.mode .moon{display:none}
+:root[data-theme="dark"] .mode .sun{display:none}:root[data-theme="dark"] .mode .moon{display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .mode .sun{display:none}:root:not([data-theme="light"]) .mode .moon{display:block}}
+.titlebar{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,22px);flex-wrap:nowrap;margin-top:6px}
+.titlebar h1{text-align:center}
+.emblem{flex:none;width:clamp(56px,7vw,84px);color:var(--ink);position:relative;top:-0.06em}.emblem svg{display:block;width:100%;height:auto}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,5.4vw,58px);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:.03em;color:var(--ink)}
+.rule{width:min(420px,70%);height:10px;margin:-4px auto 0;
+ background:linear-gradient(var(--red),var(--red)) center/100% 2px no-repeat,radial-gradient(circle,var(--red) 0 4px,transparent 4.5px) center/10px 10px no-repeat}
+.lede{margin:0;max-width:78ch;font-size:15px;color:var(--ink);font-style:italic}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.stat{padding:8px 22px;text-align:center}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--f-display);font-size:30px;font-weight:400;line-height:1.15;color:var(--red)}
+.stat small{color:var(--muted);font-size:12px;letter-spacing:.06em;white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-size:12.5px;color:var(--ink);margin:0 0 18px}
+html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+#news-h,#ladder-h,#vids-h{scroll-margin-top:64px}
+.jump{position:sticky;top:0;z-index:20;display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:-14px 0 26px;padding:10px 0;
+ background:var(--bg);box-shadow:0 0 0 100vmax var(--bg),0 1px 0 100vmax var(--rule);clip-path:inset(0 -100vmax -1px)}
+.jump a{font-family:var(--f-data);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);
+ border:1px solid var(--rule);padding:6px 14px;background:var(--paper)}
+.jump a:hover,.jump a:focus-visible{color:var(--red);border-color:var(--red)}
+.legend span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.legend i{flex:none;display:inline-block;width:14px;height:14px;border:1.5px solid var(--line);background:var(--todo-bg);transform:rotate(45deg) scale(.8)}
+.ladder{position:relative;display:grid;gap:18px;padding-left:54px;padding-bottom:12px}
+.ladder::before{content:"";position:absolute;top:-10px;bottom:0;left:4px;width:34px;
+ background:linear-gradient(90deg,transparent 4px,var(--rail) 4px 7px,transparent 7px 27px,var(--rail) 27px 30px,transparent 30px),
+ repeating-linear-gradient(180deg,var(--tie) 0 6px,transparent 6px 22px)}
+.rung{position:relative;background:var(--panel);background-image:var(--lift),var(--noise);border:1px solid var(--rule);outline:1px solid var(--rule);outline-offset:-6px;
+ padding:20px 22px;box-shadow:0 2px 0 var(--line),0 10px 22px -12px var(--shade);display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px}
+.rung::before{content:"";position:absolute;left:-30px;top:32px;width:24px;height:2px;background:var(--rule)}
+.rung::after{content:"";position:absolute;left:-36px;top:27px;width:12px;height:12px;border-radius:50%;background:var(--red);box-shadow:inset 0 0 0 2px var(--panel)}
+.rung.summit{border-width:2px;border-color:var(--red);outline-color:var(--red)}
+.rung.now .tier{background:var(--red)}
+.meta{min-width:0;display:grid;gap:6px;align-content:start}
+.head{display:flex;align-items:center;gap:12px;min-height:42px}
+.tier{flex:none;font-family:var(--f-display);font-size:14px;color:var(--paper);background:var(--ink);padding:3px 8px 1px;letter-spacing:.05em}
+.logo{display:block;height:38px;width:auto;max-width:200px;object-fit:contain;object-position:left center}
+.logo.mono{filter:var(--logo-filter)}
+.gname{font-weight:700;font-size:16px;line-height:1.35;letter-spacing:.01em}
+.gname .gen{display:block}
+.sub{font-size:13px;color:var(--muted);font-style:italic}
+.bar{height:9px;background:var(--todo-bg);border:1px solid var(--rule);margin-top:6px;position:relative}
+.bar span{display:block;height:100%;background:repeating-linear-gradient(45deg,var(--red) 0 4px,color-mix(in srgb,var(--red) 75%,#000) 4px 7px)}
+.count{font-family:var(--f-data);font-size:13px;letter-spacing:.05em}
+.vlab{margin-top:10px;font-size:12px;color:var(--muted);letter-spacing:.04em}
+.vio{display:block;width:100%;max-width:320px;height:auto;margin-top:2px;overflow:visible}
+.vio .vb{fill:var(--line);fill-opacity:.45}.vio .vm{stroke:var(--ink)}.vio .va{stroke:var(--muted)}
+.vio .vt{fill:var(--muted);font-family:var(--f-data);font-size:10px}
+.vio .vd{stroke:var(--panel);stroke-width:1}.vio .vd.hi{fill:var(--done)}.vio .vd.mid{fill:var(--part)}.vio .vd.lo{fill:var(--try)}
+.vio .vd:hover{stroke:var(--ink);stroke-width:1.5}
+.vcap{font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+details.oldnews{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+details.oldnews summary{cursor:pointer;font-size:13.5px;color:var(--muted)}
+details.oldnews summary small{font-family:var(--f-data);margin-left:6px}
+details.code{grid-column:1/-1;margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.code summary{cursor:pointer;font-size:13.5px;color:var(--ink);list-style:revert}
+details.code summary small{color:var(--muted);font-family:var(--f-data);font-size:11.5px;margin-left:6px}
+.code-intro{font-size:12.5px;color:var(--muted);margin:8px 0;line-height:1.6}
+.codebtns{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0 8px}
+.codebtns button{font-family:var(--f-data);font-size:12px;padding:3px 7px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.codebtns button:hover,.codebtns button.on{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.codebar{display:flex;justify-content:space-between;gap:10px;font-family:var(--f-data);font-size:12px;color:var(--muted);margin-bottom:4px}
+.codebar a{color:var(--muted)}
+.codebox pre{max-height:520px;overflow:auto;margin:0;padding:10px 12px;border:1px solid var(--line);background:var(--paper);font-family:var(--f-data);font-size:11.5px;line-height:1.5;white-space:pre;tab-size:4}
+.codebox pre code{font-family:inherit;color:var(--ink)}
+.note{font-size:13.5px;line-height:1.65;grid-column:1/-1;border-top:1px dashed var(--line);padding-top:12px}
+.note .tag{display:inline-block;font-family:var(--f-data);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;padding:0 7px;
+ border:1.5px solid var(--red);color:var(--red);margin-right:9px;transform:rotate(-2deg)}
+.note .tag.prog{border-color:var(--live);color:var(--live)}
+.grid{display:grid;gap:6px;align-content:start;min-width:0;grid-template-columns:repeat(var(--cols),minmax(0,1fr))}
+.cell{border:1px solid var(--line);background:var(--todo-bg);min-height:48px;padding:5px 7px;min-width:0;
+ display:flex;flex-direction:column;justify-content:space-between;font-family:var(--f-data)}
+.cell .id{font-size:11.5px;color:var(--muted);overflow-wrap:break-word;line-height:1.25}
+.cell .v{font-family:var(--f-data);font-size:14px;font-weight:700;line-height:1.25;letter-spacing:.02em}
+.cell.done{background:var(--done-bg);border-color:var(--done)}.cell.done .v{color:var(--done)}
+.cell.part{background:var(--part-bg);border-color:var(--part)}.cell.part .v{color:var(--part)}
+.cell.try{background:var(--try-bg);border-color:var(--try)}.cell.try .v{color:var(--try);font-family:var(--f-body);font-size:13px}
+.cell.old{background:var(--old-bg);border-color:var(--old)}.cell.old .v{color:var(--old)}
+.cell.hi{background:var(--done-bg);border-color:var(--done)}.cell.hi .v{color:var(--done)}
+.cell.mid{background:var(--part-bg);border-color:var(--part)}.cell.mid .v{color:var(--part)}
+.cell.lo{background:var(--try-bg);border-color:var(--try)}.cell.lo .v{color:var(--try)}
+.cell.live{background:var(--live-bg);border-color:var(--live)}.cell.live .v{color:var(--live);font-family:var(--f-body);font-size:13px}
+.cell.done .id,.cell.old .id,.cell.live .id,.cell.part .id,.cell.try .id{color:var(--ink)}
+.cell.done,.cell.old,.cell.live{box-shadow:inset 0 0 0 1px color-mix(in srgb,currentColor 0%,transparent)}
+.news{margin:0 0 34px;border:1px solid var(--rule);outline:1px solid var(--rule);outline-offset:-6px;background:var(--panel);background-image:var(--lift),var(--noise);padding:20px 24px}
+.news h2,.lh{font-family:var(--f-display);font-weight:400;font-size:24px;letter-spacing:.04em;margin:0 0 12px}
+.news h2 small,.lh small{font-family:var(--f-data);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:10px}
+.news ol{list-style:none;margin:0;padding:0;display:grid}
+.news li{display:grid;grid-template-columns:150px 44px minmax(0,1fr);gap:12px;align-items:center;padding:9px 0;border-top:1px dashed var(--line);font-size:14px}
+.news li:first-child{border-top:0}
+.news>ol>li:first-child span::before{content:"NEW";font-family:var(--f-data);font-size:10.5px;letter-spacing:.12em;color:var(--paper);background:var(--red);padding:1px 6px;margin-right:8px;vertical-align:1px}
+.news time{font-family:var(--f-data);font-size:12.5px;color:var(--muted);letter-spacing:.03em}
+.nlogo{width:44px;height:24px;object-fit:contain}.nlogo.mono{filter:var(--logo-filter)}
+.news b{color:var(--red);font-weight:700}
+.vids{margin:38px 0 0;border:1px solid var(--rule);outline:1px solid var(--rule);outline-offset:-6px;background:var(--panel);background-image:var(--lift),var(--noise);padding:20px 24px}
+.vids h2{font-family:var(--f-display);font-weight:400;font-size:24px;letter-spacing:.04em;margin:0 0 14px}
+.vids h2 small{font-family:var(--f-data);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:10px}
+.rin,.vin{position:absolute;opacity:0;pointer-events:none}
+.rtabs{display:flex;flex-wrap:nowrap;gap:2px;margin:0 0 20px;padding:0 4px;box-shadow:inset 0 -2px 0 var(--rule);
+ overflow-x:auto;overflow-y:hidden;scrollbar-width:none}.rtabs::-webkit-scrollbar{display:none}
+.rtabs label{display:inline-flex;align-items:center;gap:9px;cursor:pointer;user-select:none;flex:none;white-space:nowrap;
+ padding:9px 16px 8px 12px;font-size:14.5px;color:var(--muted);border:2px solid transparent;border-bottom:0;background:transparent}
+.rtabs label .nlogo{width:38px;height:22px;opacity:.45;transition:opacity .15s}
+.rtabs label:hover{color:var(--ink)}.rtabs label:hover .nlogo{opacity:.85}
+.vsel label{display:inline-flex;align-items:center;cursor:pointer;user-select:none;border:1px solid var(--rule);padding:3px 10px;font-size:13px;color:var(--muted)}
+.vsel label:hover{color:var(--ink)}
+.rin:focus-visible~.rtabs label,.vin:focus-visible~.vsel label{outline-offset:2px}
+.rp{display:none;grid-template-columns:minmax(0,var(--lw,480px)) minmax(0,1fr);gap:28px;align-items:stretch}
+.rl{display:flex;flex-direction:column;gap:10px;min-width:0}
+.vf{display:none;margin:0;gap:10px}
+.vsel{display:flex;flex-wrap:wrap;gap:6px}
+.vids video{width:100%;height:auto;display:block;background:#000;border:1px solid var(--rule);image-rendering:pixelated}
+.vnone{aspect-ratio:16/15;display:grid;place-items:center;border:1px dashed var(--rule);color:var(--muted);font-family:var(--f-data);letter-spacing:.1em}
+.rr{contain:size;min-height:320px;display:flex;flex-direction:column;min-width:0}
+.rtw{flex:1 1 0;min-height:0;overflow:auto;border-bottom:1px solid var(--rule)}
+.rtw thead th{position:sticky;top:0;z-index:1}
+.vids figcaption{font-size:14px;line-height:1.5;color:var(--muted)}.vids figcaption b{color:var(--red)}
+.st{font-family:var(--f-data);font-size:12px;letter-spacing:.06em;white-space:nowrap}.st-live,.st-done,.st-old{color:var(--live)}.st-try{color:var(--try);font-weight:700}.st-todo{color:var(--muted)}
+.rtw th,.rtw td:first-child,.rtw td:nth-child(2){white-space:nowrap}
+.rtw th small{font-size:10px;letter-spacing:.06em;opacity:.75;font-weight:400}
+.onairbox{margin:0 0 18px;padding:10px 16px 6px;border:1px solid var(--red);border-left:4px solid var(--red)}
+.onairbox h3{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:400;font-size:18px;letter-spacing:.04em;color:var(--red);margin:0 0 4px}
+.onairbox h3 small{font-family:var(--f-data);font-size:12px;letter-spacing:.1em;color:var(--muted)}
+.onairbox ul{list-style:none;margin:0;padding:0;display:grid}
+.onairbox li{display:grid;grid-template-columns:62px 44px minmax(0,1fr) auto;gap:12px;align-items:center;padding:7px 0;font-size:14px;border-top:1px dashed var(--line)}
+.onairbox li:first-child{border-top:0}
+.onair{display:inline-flex;align-items:center;gap:5px;font-family:var(--f-data);font-weight:700;font-size:10.5px;letter-spacing:.14em;color:#b3201b;background:#fff6ee;border:1px solid #b3201b;padding:1px 7px 1px 6px;border-radius:3px;justify-self:start;line-height:1.5}
+.onair.big{font-size:11.5px;padding:2px 8px 2px 7px}
+.onair i{position:relative;width:7px;height:7px;border-radius:50%;background:#b3201b;animation:onairdot 1.2s ease-in-out infinite}
+.onair.big i{width:7px;height:7px}
+.onair i::after{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid #b3201b;animation:onairping 1.2s ease-out infinite}
+@keyframes onairdot{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes onairping{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.4);opacity:0}}
+@keyframes onairbox{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--red) 45%,transparent)}70%,100%{box-shadow:0 0 0 10px transparent}}
+@media (prefers-reduced-motion:reduce){.onair i,.onair i::after,.onairbox{animation:none}}
+.onairbox time{font-family:var(--f-data);font-size:12px;color:var(--muted);white-space:nowrap}
+.lh{text-align:left;margin:0 0 14px;padding-bottom:6px;border-bottom:3px double var(--rule)}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;font-size:13.5px;width:100%;background:var(--panel);background-image:var(--noise)}
+th,td{padding:6px 12px;border-bottom:1px solid var(--line);text-align:left}
+th{font-family:var(--f-data);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--ink)}
+td.n{font-family:var(--f-data)}
+footer{margin-top:40px;font-size:12.5px;color:var(--paper);display:grid;gap:6px;padding-block:22px 30px;position:relative;z-index:0}
+footer::before{content:"";position:absolute;left:50%;transform:translateX(-50%);width:100vw;top:0;bottom:0;z-index:-1;background:var(--foot);background-image:var(--noise);
+ border-top:3px double var(--gold)}
+footer div{color:#e7d9bd;overflow-wrap:anywhere}
+@media (max-width:760px){
+ .rung{grid-template-columns:minmax(0,1fr);padding:18px 16px}
+ .grid{grid-template-columns:repeat(auto-fill,minmax(88px,1fr))}
+ .ladder{padding-left:40px}.ladder::before{left:0;width:30px}.rung::before{left:-22px;width:18px}.rung::after{left:-28px}
+ .emblem{width:48px}
+ .news{padding:16px}.news li{grid-template-columns:36px minmax(0,1fr);gap:4px 10px}.news time{grid-column:1/-1}.nlogo{width:36px}.onairbox{padding:10px 12px 6px}.legend{display:grid;grid-template-columns:auto auto;justify-content:center;gap:8px 18px}.legend span{white-space:normal}.jump{flex-wrap:nowrap;gap:6px;padding:8px 0}.jump a{font-size:11px;letter-spacing:.05em;padding:5px 9px;white-space:nowrap}.vids{padding:16px}.rtabs{margin:0 0 16px;padding:0 2px}.rtabs label{padding:8px 11px 7px 9px;font-size:13.5px;gap:7px}.rtabs label .nlogo{width:30px;height:18px}.rp{grid-template-columns:1fr;gap:18px}.rr{contain:none;min-height:0}.rtw{flex:none;max-height:360px}.onairbox li{grid-template-columns:auto 36px minmax(0,1fr);gap:4px 10px}.onairbox time{grid-column:1/-1}
+ .stat{padding:6px 12px;flex:1 1 45%}.stat:nth-child(3){border-left:0}
+}
+
+
+#rec-sekiro:checked~.rpanels .rp-sekiro{display:grid}#rec-sekiro:checked~.rtabs label[for=rec-sekiro]{color:var(--red);font-weight:700;background:var(--panel);border-color:var(--rule);box-shadow:inset 0 4px 0 var(--red);padding-bottom:10px}#rec-sekiro:checked~.rtabs label[for=rec-sekiro] .nlogo{opacity:1}#v-sekiro-0:checked~.vstack .vf-sekiro-0{display:grid}#v-sekiro-0:checked~.vsel label[for=v-sekiro-0]{border-color:var(--red);color:var(--red);font-weight:700;box-shadow:inset 0 -3px 0 var(--red)}#v-sekiro-1:checked~.vstack .vf-sekiro-1{display:grid}#v-sekiro-1:checked~.vsel label[for=v-sekiro-1]{border-color:var(--red);color:var(--red);font-weight:700;box-shadow:inset 0 -3px 0 var(--red)}#v-sekiro-2:checked~.vstack .vf-sekiro-2{display:grid}#v-sekiro-2:checked~.vsel label[for=v-sekiro-2]{border-color:var(--red);color:var(--red);font-weight:700;box-shadow:inset 0 -3px 0 var(--red)}</style></head><body><div class="wrap">
+<header>
+ <div class="top"><div class="eyebrow">游戏速通天梯 · 更新于 2026-11-22</div><div class="ctl"><button type="button" class="mode" id="mode" aria-label="切换浅色 / 深色" title="切换浅色 / 深色"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a.6.6 0 0 0-.8-.7A9.5 9.5 0 1 0 21.2 15.4a.6.6 0 0 0-.7-.8z"/></svg></button><a class="lang" href="../en/games/sekiro.html">English</a></div></div>
+ <div class="titlebar"><div class="emblem"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 124" role="img" aria-label="RSI Game Speedrun Ladder"><rect x="51" y="2" width="18" height="7" rx="1.5" fill="currentColor"/><rect x="56.5" y="9" width="7" height="7" fill="currentColor"/><rect x="88" y="17" width="8" height="5" rx="1" transform="rotate(40 92 19.5)" fill="currentColor"/><circle cx="60" cy="68" r="52" fill="none" stroke="currentColor" stroke-width="4.5"/><circle cx="60" cy="68" r="40" fill="none" stroke="#c9a25b" stroke-width="1.4" stroke-dasharray="2 2.6"/><line x1="60.00" y1="25.50" x2="60.00" y2="19.50" stroke="currentColor" stroke-width="1.6"/><line x1="64.81" y1="22.25" x2="65.07" y2="19.77" stroke="currentColor" stroke-width="0.7"/><line x1="69.56" y1="23.01" x2="70.08" y2="20.56" stroke="currentColor" stroke-width="0.7"/><line x1="74.21" y1="24.25" x2="74.99" y2="21.87" stroke="currentColor" stroke-width="0.7"/><line x1="78.71" y1="25.98" x2="79.73" y2="23.69" stroke="currentColor" stroke-width="0.7"/><line x1="81.25" y1="31.19" x2="84.25" y2="26.00" stroke="currentColor" stroke-width="1.6"/><line x1="87.04" y1="30.79" x2="88.51" y2="28.76" stroke="currentColor" stroke-width="0.7"/><line x1="90.78" y1="33.82" x2="92.45" y2="31.96" stroke="currentColor" stroke-width="0.7"/><line x1="94.18" y1="37.22" x2="96.04" y2="35.55" stroke="currentColor" stroke-width="0.7"/><line x1="97.21" y1="40.96" x2="99.24" y2="39.49" stroke="currentColor" stroke-width="0.7"/><line x1="96.81" y1="46.75" x2="102.00" y2="43.75" stroke="currentColor" stroke-width="1.6"/><line x1="102.02" y1="49.29" x2="104.31" y2="48.27" stroke="currentColor" stroke-width="0.7"/><line x1="103.75" y1="53.79" x2="106.13" y2="53.01" stroke="currentColor" stroke-width="0.7"/><line x1="104.99" y1="58.44" x2="107.44" y2="57.92" stroke="currentColor" stroke-width="0.7"/><line x1="105.75" y1="63.19" x2="108.23" y2="62.93" stroke="currentColor" stroke-width="0.7"/><line x1="102.50" y1="68.00" x2="108.50" y2="68.00" stroke="currentColor" stroke-width="1.6"/><line x1="105.75" y1="72.81" x2="108.23" y2="73.07" stroke="currentColor" stroke-width="0.7"/><line x1="104.99" y1="77.56" x2="107.44" y2="78.08" stroke="currentColor" stroke-width="0.7"/><line x1="103.75" y1="82.21" x2="106.13" y2="82.99" stroke="currentColor" stroke-width="0.7"/><line x1="102.02" y1="86.71" x2="104.31" y2="87.73" stroke="currentColor" stroke-width="0.7"/><line x1="96.81" y1="89.25" x2="102.00" y2="92.25" stroke="currentColor" stroke-width="1.6"/><line x1="97.21" y1="95.04" x2="99.24" y2="96.51" stroke="currentColor" stroke-width="0.7"/><line x1="94.18" y1="98.78" x2="96.04" y2="100.45" stroke="currentColor" stroke-width="0.7"/><line x1="90.78" y1="102.18" x2="92.45" y2="104.04" stroke="currentColor" stroke-width="0.7"/><line x1="87.04" y1="105.21" x2="88.51" y2="107.24" stroke="currentColor" stroke-width="0.7"/><line x1="81.25" y1="104.81" x2="84.25" y2="110.00" stroke="currentColor" stroke-width="1.6"/><line x1="78.71" y1="110.02" x2="79.73" y2="112.31" stroke="currentColor" stroke-width="0.7"/><line x1="74.21" y1="111.75" x2="74.99" y2="114.13" stroke="currentColor" stroke-width="0.7"/><line x1="69.56" y1="112.99" x2="70.08" y2="115.44" stroke="currentColor" stroke-width="0.7"/><line x1="64.81" y1="113.75" x2="65.07" y2="116.23" stroke="currentColor" stroke-width="0.7"/><line x1="60.00" y1="110.50" x2="60.00" y2="116.50" stroke="currentColor" stroke-width="1.6"/><line x1="55.19" y1="113.75" x2="54.93" y2="116.23" stroke="currentColor" stroke-width="0.7"/><line x1="50.44" y1="112.99" x2="49.92" y2="115.44" stroke="currentColor" stroke-width="0.7"/><line x1="45.79" y1="111.75" x2="45.01" y2="114.13" stroke="currentColor" stroke-width="0.7"/><line x1="41.29" y1="110.02" x2="40.27" y2="112.31" stroke="currentColor" stroke-width="0.7"/><line x1="38.75" y1="104.81" x2="35.75" y2="110.00" stroke="currentColor" stroke-width="1.6"/><line x1="32.96" y1="105.21" x2="31.49" y2="107.24" stroke="currentColor" stroke-width="0.7"/><line x1="29.22" y1="102.18" x2="27.55" y2="104.04" stroke="currentColor" stroke-width="0.7"/><line x1="25.82" y1="98.78" x2="23.96" y2="100.45" stroke="currentColor" stroke-width="0.7"/><line x1="22.79" y1="95.04" x2="20.76" y2="96.51" stroke="currentColor" stroke-width="0.7"/><line x1="23.19" y1="89.25" x2="18.00" y2="92.25" stroke="currentColor" stroke-width="1.6"/><line x1="17.98" y1="86.71" x2="15.69" y2="87.73" stroke="currentColor" stroke-width="0.7"/><line x1="16.25" y1="82.21" x2="13.87" y2="82.99" stroke="currentColor" stroke-width="0.7"/><line x1="15.01" y1="77.56" x2="12.56" y2="78.08" stroke="currentColor" stroke-width="0.7"/><line x1="14.25" y1="72.81" x2="11.77" y2="73.07" stroke="currentColor" stroke-width="0.7"/><line x1="17.50" y1="68.00" x2="11.50" y2="68.00" stroke="currentColor" stroke-width="1.6"/><line x1="14.25" y1="63.19" x2="11.77" y2="62.93" stroke="currentColor" stroke-width="0.7"/><line x1="15.01" y1="58.44" x2="12.56" y2="57.92" stroke="currentColor" stroke-width="0.7"/><line x1="16.25" y1="53.79" x2="13.87" y2="53.01" stroke="currentColor" stroke-width="0.7"/><line x1="17.98" y1="49.29" x2="15.69" y2="48.27" stroke="currentColor" stroke-width="0.7"/><line x1="23.19" y1="46.75" x2="18.00" y2="43.75" stroke="currentColor" stroke-width="1.6"/><line x1="22.79" y1="40.96" x2="20.76" y2="39.49" stroke="currentColor" stroke-width="0.7"/><line x1="25.82" y1="37.22" x2="23.96" y2="35.55" stroke="currentColor" stroke-width="0.7"/><line x1="29.22" y1="33.82" x2="27.55" y2="31.96" stroke="currentColor" stroke-width="0.7"/><line x1="32.96" y1="30.79" x2="31.49" y2="28.76" stroke="currentColor" stroke-width="0.7"/><line x1="38.75" y1="31.19" x2="35.75" y2="26.00" stroke="currentColor" stroke-width="1.6"/><line x1="41.29" y1="25.98" x2="40.27" y2="23.69" stroke="currentColor" stroke-width="0.7"/><line x1="45.79" y1="24.25" x2="45.01" y2="21.87" stroke="currentColor" stroke-width="0.7"/><line x1="50.44" y1="23.01" x2="49.92" y2="20.56" stroke="currentColor" stroke-width="0.7"/><line x1="55.19" y1="22.25" x2="54.93" y2="19.77" stroke="currentColor" stroke-width="0.7"/><line x1="49" y1="48" x2="49" y2="100" stroke="currentColor" stroke-width="3.6"/><line x1="71" y1="48" x2="71" y2="100" stroke="currentColor" stroke-width="3.6"/><line x1="49" y1="92" x2="71" y2="92" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/><line x1="49" y1="80" x2="71" y2="80" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/><line x1="49" y1="68" x2="71" y2="68" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/><line x1="49" y1="56" x2="71" y2="56" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/><polygon points="60.00,27.00 62.23,32.93 68.56,33.22 63.61,37.17 65.29,43.28 60.00,39.80 54.71,43.28 56.39,37.17 51.44,33.22 57.77,32.93" fill="#c9a25b" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M60 68 L88 46" stroke="#b3211b" stroke-width="2.4" stroke-linecap="round"/><circle cx="60" cy="68" r="3.4" fill="#b3211b"/></svg></div><h1>Recursive Self-Improvement<br>for Game Speedrun</h1></div><div class="rule" aria-hidden="true"></div>
+ <div class="stats"><div class="stat"><b>119</b><small>已通关分段</small></div><div class="stat"><b>35</b><small>其中随机变体全部通关</small></div>
+ <div class="stat"><b>125</b><small>天梯总分段</small></div><div class="stat"><b>5</b><small>款游戏</small></div><div class="stat"><b>77%</b><small>马里奥平均通过率</small></div></div>
+</header>
+<nav class="gtabs" aria-label="页面导航"><a href="../">总览</a><a href="../games/sekiro.html" aria-current="page"><img src="../logos/sekiro.png" alt="" class="nlogo mono">只狼</a><a href="../games/minecraft.html"><img src="../logos/minecraft.svg" alt="" class="nlogo">我的世界</a><a href="../games/stardew.html"><img src="../logos/stardew.png" alt="" class="nlogo">星露谷物语</a><a href="../games/celeste.html"><img src="../logos/celeste.png" alt="" class="nlogo">蔚蓝经典版</a><a href="../games/mario.html"><img src="../logos/mario.png" alt="" class="nlogo">超级马里奥兄弟</a></nav><div class="onairbox" aria-label="LIVE"><ul><li><span class="onair"><i aria-hidden="true"></i>LIVE</span><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：从新档开始的整局流程（同一个游戏世界）已<b>击败鬼庭刑部雅孝</b>，继续往苇名城里走（Windows 实机）。</span><time>开始于 11-27 00:43</time></li></ul></div><main class="ladder"><section class="rung summit now">
+ <div class="meta"><div class="head"><span class="tier">05</span><img class="logo mono" src="../logos/sekiro.png" alt="Sekiro: Shadows Die Twice"></div>
+ <div class="gname">只狼：影逝二度<span class="gen">Sekiro: Shadows Die Twice</span></div>
+ <div class="sub">Windows 实时 · 最后一关：新档一路到最终 Boss</div>
+ <div class="bar" role="img" aria-label="20/21"><span style="width:95.2%"></span></div>
+ <div class="count">20 / 21 通关</div></div>
+ <div class="grid" style="--cols:5"><div class="cell live" title="开场: 出生点前进、拾取信件"><span class="id">开场</span><span class="v">完成</span></div><div class="cell live" title="墙跳出坑: 两段墙跳爬出开场深坑"><span class="id">墙跳出坑</span><span class="v">完成</span></div><div class="cell live" title="苇名水库: 通过水库岩壁"><span class="id">苇名水库</span><span class="v">完成</span></div><div class="cell live" title="贴墙转角: 贴墙绕过外转角进入草丛"><span class="id">贴墙转角</span><span class="v">完成</span></div><div class="cell live" title="潜行草丛: 钻进草丛，等守卫对话结束，走到爬行通道"><span class="id">潜行草丛</span><span class="v">完成</span></div><div class="cell live" title="悬崖与塔: 沿悬崖挂边横移、翻上崖顶，到达塔"><span class="id">悬崖与塔</span><span class="v">完成</span></div><div class="cell live" title="山内重则: 从九郎的房间（存档）出发，穿过庭院，击败山内重则"><span class="id">山内重则</span><span class="v">完成</span></div><div class="cell live" title="序章完成: 击杀守卫、拿药丸、进九郎的门，与苇名弦一郎剧情战后来到荒废寺"><span class="id">序章完成</span><span class="v">完成</span></div><div class="cell live" title="河原田直盛: 从鬼佛（存档）出发，绕路潜行到其身后，下落忍杀后正面交战，击败河原田直盛"><span class="id">河原田直盛</span><span class="v">完成</span></div><div class="cell live" title="赤鬼: 从存档出发一次不间断运行：潜行忍杀打掉第一段生命，蹬墙跳上白墙，在墙顶攻击至架势满后跳下忍杀，击败赤鬼"><span class="id">赤鬼</span><span class="v">完成</span></div><div class="cell live" title="阶梯鬼佛: 从城门路鬼佛（存档）出发，钩上门楼和屋顶，一路钩索绕行到外城墙·阶梯鬼佛（22 次中 14 次成功）"><span class="id">阶梯鬼佛</span><span class="v">完成</span></div><div class="cell live" title="阶梯鬼佛→赤鬼: 从阶梯鬼佛（机器人自己的存档）出发，经屋顶和院子到赤鬼处，在屋檐上作战，两次跳下忍杀击败赤鬼（中途死亡一次、回生；不是每次都成功）"><span class="id">阶梯鬼佛→赤鬼</span><span class="v">完成</span></div><div class="cell live" title="新档→赤鬼: 同一个游戏世界从“新游戏”一路打到击败赤鬼（经河原田直盛、阶梯鬼佛）；各段分开运行，段间只读机器人自己存的档，没有人或 LLM 直接操作游戏"><span class="id">新档→赤鬼</span><span class="v">完成</span></div><div class="cell live" title="葫芦种子·桥下谷: 同一个世界里，把葫芦种子交给艾玛（药葫芦 2 次），再穿过山内典膳的院子到达桥下谷鬼佛；操作都是机器人的输入，各步由 LLM 逐个下达，步间游戏暂停"><span class="id">葫芦种子·桥下谷</span><span class="v">完成</span></div><div class="cell live" title="大蛇谷岩架: 从桥下谷鬼佛连续空中钩索下到大蛇谷，再不停留地穿过草丛钩上神社岩架（后一段从练习存档出发，4 次中 1 次）；操作都是机器人的输入，各步由 LLM 逐个下达"><span class="id">大蛇谷岩架</span><span class="v">完成</span></div><div class="cell live" title="大蛇草台: 从神社岩架穿过洞穴，跳上大蛇身下的草台（从练习存档出发；最后一跳由 LLM 逐步下达时成功一次，自动 7 次都没成功）；操作都是机器人的输入"><span class="id">大蛇草台</span><span class="v">完成</span></div><div class="cell live" title="刺中大蛇之眼: 大蛇谷一次跑通：从机器人自己的存档出发，穿过草丛、洞穴和草台，贴墙横移、爬到轿子，刺中大蛇的眼睛（脚本自己跑完，当天 7 次完整尝试中第 1 次成功）"><span class="id">刺中大蛇之眼</span><span class="v">完成</span></div><div class="cell live" title="过大蛇·城门要塞: 刺眼之后穿过洞穴、连续钩索上城墙，到达苇名城·城门要塞鬼佛并存档（到刺眼后墙后缺口为止脚本自动跑，之后由 LLM 逐步下达）；操作都是机器人的输入"><span class="id">过大蛇·城门要塞</span><span class="v">完成</span></div><div class="cell live" title="刑部战场: 从城门要塞鬼佛冲过士兵院子到刑部战场，一条命令 6 次中 5 次"><span class="id">刑部战场</span><span class="v">完成</span></div><div class="cell live" title="鬼庭刑部: 机器人用 LLM 写好的战斗脚本打完整场 435 秒，击败鬼庭刑部雅孝（马上忍杀）；战斗中没有人或 LLM 操作"><span class="id">鬼庭刑部</span><span class="v">完成</span></div><div class="cell todo" title="最终 Boss: 未开始"><span class="id">最终 Boss</span><span class="v"></span></div></div><div class="note"><span class="tag prog">进展</span>已过开场深坑、苇名水库岩壁、贴墙转角，潜行穿过草丛到达爬行通道。从九郎的房间（存档）出发，已击败第一个中 Boss 山内重则；悬崖到塔这一段也已打通。之后经九郎的门、与苇名弦一郎的剧情战，到达荒废寺，序章完成。之后从鬼佛（存档）出发击败河原田直盛，又在一次不间断的运行中击败了赤鬼（潜行忍杀后蹬墙跳上白墙，在墙顶战斗）。之后从城门路鬼佛走到阶梯鬼佛，再从阶梯鬼佛出发，在屋檐上作战再次击败赤鬼。之后把这些串成从新档开始的整局：同一个游戏世界从“新游戏”一路打到击败赤鬼，段与段之间只读机器人自己存的档；之后在同一个世界里继续，过了大蛇，到达苇名城·城门要塞鬼佛，正在打刑部。说明：没有任何人类操作；注明“LLM”的地方是负责这个游戏的 LLM 直接介入（例如运行途中改代码）。</div></section></main><section class="vids" aria-labelledby="vids-h"><h2 id="vids-h">录像与数据 <small>通关回放与成绩</small></h2><div class="rec"><input type="radio" name="rec" id="rec-sekiro" class="rin" checked><div class="rtabs" role="tablist"><label for="rec-sekiro"><img src="../logos/sekiro.png" alt="" class="nlogo mono">只狼</label></div><div class="rpanels"><div class="rp rp-sekiro" style="--lw:640px"><div class="rl"><input type="radio" name="v-sekiro" id="v-sekiro-0" class="vin" checked><input type="radio" name="v-sekiro" id="v-sekiro-1" class="vin"><input type="radio" name="v-sekiro" id="v-sekiro-2" class="vin"><div class="vstack"><figure class="vf vf-sekiro-0"><figcaption><b>新档 → 击败赤鬼（同一个世界，4 倍速）</b> · 同一个游戏世界从标题画面的“新游戏”一路打到击败赤鬼：深坑、水库岩壁、九郎的房间、山内重则、弦一郎剧情战、荒废寺、苇名外城鬼佛、城门路鬼佛、河原田直盛、阶梯鬼佛、赤鬼。录像里的每个操作都是机器人自己做的，没有人或 LLM 直接操作游戏。各段由不同的脚本分两天运行，段与段之间读的都是机器人自己存的档（新档之后没有用任何事先准备的存档）；途中有死亡、回生和读档重试。录像由各段成功那次的屏幕录像拼成；当时没有录像的几段，从同一个存档重跑到同一个结果补录，左上角标注“re-recorded”。原速约 81 分钟，这里是 4 倍速（Windows 实机，约 20 分钟）</figcaption><video controls preload="metadata" playsinline poster="../videos/sekiro-newgame-to-ogre.jpg"><source src="../videos/sekiro-newgame-to-ogre.mp4" type="video/mp4"></video></figure><figure class="vf vf-sekiro-1"><figcaption><b>赤鬼之后 → 击败鬼庭刑部（同一个世界，2 倍速）</b> · 接着“新档 → 赤鬼”那段：葫芦种子交给艾玛、山内典膳的院子、桥下谷鬼佛、下到大蛇谷、神社岩架、大蛇身下的草台、刺中大蛇的眼睛、过大蛇到城门要塞鬼佛、上刑部战场上方的屋顶，最后是击败鬼庭刑部的整场战斗（435 秒）。10 段录像按顺序连成一段（每段左下角有标题）。操作都是机器人的输入：有的段由脚本自己跑，有的段由 LLM 看画面后一步一步下达（各段的具体情况见新闻）；刑部战由 LLM 写好的战斗脚本打完，战斗中没有人或 LLM 操作（Windows 实机，2 倍速约 18 分钟）</figcaption><video controls preload="metadata" playsinline poster="../videos/sekiro-ogre-to-gyoubu.jpg"><source src="../videos/sekiro-ogre-to-gyoubu.mp4" type="video/mp4"></video></figure><figure class="vf vf-sekiro-2"><figcaption><b>击败鬼庭刑部雅孝（最后 90 秒）</b> · 同一个世界，从城门要塞鬼佛的存档出发，机器人自己冲到战场后开打，整场 435 秒全由机器人的战斗脚本打完（脚本由 LLM 写好，战斗中没有人或 LLM 操作）。录像是最后 90 秒：最后一次喝葫芦、第二次打崩架势、马上忍杀，“忍杀”字样和“击败鬼庭刑部雅孝”成就（Windows 实机）</figcaption><video controls preload="metadata" playsinline poster="../videos/sekiro-gyoubu-win.jpg"><source src="../videos/sekiro-gyoubu-win.mp4" type="video/mp4"><source src="../videos/sekiro-gyoubu-win.webm" type="video/webm"></video></figure></div><div class="vsel"><label for="v-sekiro-0">新档 → 击败赤鬼（同一个世界，4 倍速）</label><label for="v-sekiro-1">赤鬼之后 → 击败鬼庭刑部（同一个世界，2 倍速）</label><label for="v-sekiro-2">击败鬼庭刑部雅孝（最后 90 秒）</label></div></div><div class="rr"><div class="rtw"><table><thead><tr><th>里程碑</th><th>状态</th><th>说明</th></tr></thead><tbody><tr><td>开场</td><td><span class="st st-live">完成</span></td><td>出生点前进、拾取信件</td></tr><tr><td>墙跳出坑</td><td><span class="st st-live">完成</span></td><td>两段墙跳爬出开场深坑</td></tr><tr><td>苇名水库</td><td><span class="st st-live">完成</span></td><td>通过水库岩壁</td></tr><tr><td>贴墙转角</td><td><span class="st st-live">完成</span></td><td>贴墙绕过外转角进入草丛</td></tr><tr><td>潜行草丛</td><td><span class="st st-live">完成</span></td><td>钻进草丛，等守卫对话结束，走到爬行通道</td></tr><tr><td>悬崖与塔</td><td><span class="st st-live">完成</span></td><td>沿悬崖挂边横移、翻上崖顶，到达塔</td></tr><tr><td>山内重则</td><td><span class="st st-live">完成</span></td><td>从九郎的房间（存档）出发，穿过庭院，击败山内重则</td></tr><tr><td>序章完成</td><td><span class="st st-live">完成</span></td><td>击杀守卫、拿药丸、进九郎的门，与苇名弦一郎剧情战后来到荒废寺</td></tr><tr><td>河原田直盛</td><td><span class="st st-live">完成</span></td><td>从鬼佛（存档）出发，绕路潜行到其身后，下落忍杀后正面交战，击败河原田直盛</td></tr><tr><td>赤鬼</td><td><span class="st st-live">完成</span></td><td>从存档出发一次不间断运行：潜行忍杀打掉第一段生命，蹬墙跳上白墙，在墙顶攻击至架势满后跳下忍杀，击败赤鬼</td></tr><tr><td>阶梯鬼佛</td><td><span class="st st-live">完成</span></td><td>从城门路鬼佛（存档）出发，钩上门楼和屋顶，一路钩索绕行到外城墙·阶梯鬼佛（22 次中 14 次成功）</td></tr><tr><td>阶梯鬼佛→赤鬼</td><td><span class="st st-live">完成</span></td><td>从阶梯鬼佛（机器人自己的存档）出发，经屋顶和院子到赤鬼处，在屋檐上作战，两次跳下忍杀击败赤鬼（中途死亡一次、回生；不是每次都成功）</td></tr><tr><td>新档→赤鬼</td><td><span class="st st-live">完成</span></td><td>同一个游戏世界从“新游戏”一路打到击败赤鬼（经河原田直盛、阶梯鬼佛）；各段分开运行，段间只读机器人自己存的档，没有人或 LLM 直接操作游戏</td></tr><tr><td>葫芦种子·桥下谷</td><td><span class="st st-live">完成</span></td><td>同一个世界里，把葫芦种子交给艾玛（药葫芦 2 次），再穿过山内典膳的院子到达桥下谷鬼佛；操作都是机器人的输入，各步由 LLM 逐个下达，步间游戏暂停</td></tr><tr><td>大蛇谷岩架</td><td><span class="st st-live">完成</span></td><td>从桥下谷鬼佛连续空中钩索下到大蛇谷，再不停留地穿过草丛钩上神社岩架（后一段从练习存档出发，4 次中 1 次）；操作都是机器人的输入，各步由 LLM 逐个下达</td></tr><tr><td>大蛇草台</td><td><span class="st st-live">完成</span></td><td>从神社岩架穿过洞穴，跳上大蛇身下的草台（从练习存档出发；最后一跳由 LLM 逐步下达时成功一次，自动 7 次都没成功）；操作都是机器人的输入</td></tr><tr><td>刺中大蛇之眼</td><td><span class="st st-live">完成</span></td><td>大蛇谷一次跑通：从机器人自己的存档出发，穿过草丛、洞穴和草台，贴墙横移、爬到轿子，刺中大蛇的眼睛（脚本自己跑完，当天 7 次完整尝试中第 1 次成功）</td></tr><tr><td>过大蛇·城门要塞</td><td><span class="st st-live">完成</span></td><td>刺眼之后穿过洞穴、连续钩索上城墙，到达苇名城·城门要塞鬼佛并存档（到刺眼后墙后缺口为止脚本自动跑，之后由 LLM 逐步下达）；操作都是机器人的输入</td></tr><tr><td>刑部战场</td><td><span class="st st-live">完成</span></td><td>从城门要塞鬼佛冲过士兵院子到刑部战场，一条命令 6 次中 5 次</td></tr><tr><td>鬼庭刑部</td><td><span class="st st-live">完成</span></td><td>机器人用 LLM 写好的战斗脚本打完整场 435 秒，击败鬼庭刑部雅孝（马上忍杀）；战斗中没有人或 LLM 操作</td></tr><tr><td>最终 Boss</td><td><span class="st st-todo">未开始</span></td><td></td></tr></tbody></table></div></div></div></div></div></section><section class="news" aria-labelledby="news-h"><h2 id="news-h">战报 <small>19</small></h2><ol><li><time>2026-11-27 07:21</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：机器人<b>第二次击败鬼庭刑部</b>，这次 284 秒（第一次 435 秒）。现在每场都从城门要塞存档重新开始连续打，赢了由战斗脚本自己从画面上认出来；每场胜利都逐帧核对过（Windows 实机）。</span></li><li><time>2026-11-27 00:43</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼：击败鬼庭刑部雅孝！</b>同一个新档世界，从城门要塞鬼佛出发，机器人自己冲到战场，用 LLM 写好的战斗脚本打完整场 435 秒（一阶段 279 秒、二阶段 156 秒），最后在马上忍杀。战斗中没有人或 LLM 操作。录像（最后 90 秒和整场 2 倍速）见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-24 09:15</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：同一个世界<b>过了大蛇</b>：刺眼之后穿过洞穴、连续钩索上城墙，<b>到达苇名城·城门要塞鬼佛</b>并存档（到刺眼后墙后缺口为止由脚本自动跑，之后由 LLM 查看画面后逐步下达）。之后从鬼佛冲过士兵院子，<b>站上刑部战场上方的屋顶</b>（4 次中 1 次）；冲到刑部战场现在一条命令 6 次中 5 次成功。第一次和鬼庭形部雅孝交手输了，之后 7 场测量战斗也都输了，刑部的生命最多掉了 9%：要赢得像速通玩家一样一刀一刀弹开，还缺一个出刀前的提示。画面上的操作都是机器人的输入。录像见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-23 16:35</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：<b>大蛇谷一次跑通，刺中大蛇的眼睛</b>。同一个世界，从机器人自己在落草前约 40 秒存的档出发，脚本一次跑完约 3 分钟：草丛、神社岩架、洞穴、跳上草台、蹲着从大蛇身下走过、贴墙沿窄岩架横移、爬到轿子，刺中大蛇眼睛。全程没有人或 LLM 直接操作游戏；这是当天 7 次完整尝试中第一次成功。从轿子往苇名城鬼佛的路还没走通。录像见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-23 14:04</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：在大蛇谷里继续往前：从神社岩架跑到洞口的紫色残影处，穿过洞穴，沿着土丘<b>跳上大蛇身下的草台</b>，蹲在高草里没被发现。这一段从练习存档出发；最后这一跳是 LLM 一步一步下达时成功的一次，自动跑的 7 次都没跳上去（雾里从洞口看不到草台，停下来看又会被大蛇咬死）。画面上的操作都是机器人的输入。录像见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-23 12:50</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：同一个世界继续往刑部方向走。从桥下谷鬼佛顺着峡谷连续空中钩索，<b>下到大蛇谷</b>（2 次中 2 次）；在草丛里停留会被大蛇咬死，于是改成落地不停、冲刺起跳钩上空中钩点，<b>站上神社岩架</b>（从练习存档出发，4 次中 1 次）。另外在山内典膳的院子里从松树上下落忍杀了一个士兵（6 次中 4 次），但之后的正面战都输了，山内典膳本人还没碰到。画面上的操作都是机器人的输入，各步由 LLM 逐个下达，步间游戏暂停。录像见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-23 10:37</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：同一个新档世界继续往下：回荒废寺把<b>葫芦种子交给艾玛</b>（药葫芦增加到 2 次），再穿过山内典膳的院子（途中死亡一次、回生）和木桥，到达<b>桥下谷（Underbridge Valley）鬼佛</b>。画面上的操作都是机器人的输入；这两段由 LLM 一步一步下达，步与步之间游戏暂停。山内典膳还没打过。两段录像见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-22 23:05</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：<b>从新档一路打到击败赤鬼，同一个游戏世界</b>。从标题画面选“新游戏”开始，经深坑、九郎的房间、山内重则、弦一郎剧情战、荒废寺、城门路鬼佛，击败河原田直盛，再到阶梯鬼佛，第二次尝试击败赤鬼。各段由不同脚本分两天运行，段与段之间读的都是机器人自己存的档（新档之后没有用任何事先准备的存档），途中有死亡、回生和读档重试；录像里每个操作都是机器人自己做的，没有人或 LLM 直接操作游戏。全程录像（4 倍速，约 20 分钟，部分段落为补录）见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-21 15:54</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：开始串<b>从新档开始、不读存档的整局流程</b>。第一段：从标题画面选新游戏，跳过开场剧情，走过深坑里的通道，蹬墙跳爬出深坑，一次运行约 2 分钟。这次中途掉回去一次，多跳了几轮；从坑底开始测 6 次成功 5 次，从标题画面开始目前只有这一次。录像见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-21 11:35</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：<b>从阶梯鬼佛出发击败赤鬼</b>。从机器人自己在“外城墙·阶梯”鬼佛留下的存档出发，经屋顶和院子来到赤鬼处，在低处屋檐上只在它站到檐下时出刀，两次架势条满后跳下忍杀，拿到念珠（约 43 分钟游戏时间）。中途第一次忍杀后被抓住死了一次，用回生复活后自己回到屋檐；运行途中 LLM 修改过战斗代码，但程序没有重启，也没有人或 LLM 直接操作游戏。之前几次尝试没有成功，所以还不是每次都能做到。录像见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-20 16:13</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：从“外城墙·城门路”鬼佛走到<b>“外城墙·阶梯”鬼佛</b>。从存档出发，冲到门前钩上门楼、再钩上脚手架屋顶，然后沿岩壁和屋檐十几次钩索、跳跃、蹬墙攀爬，到鬼佛前休息，中途不读档。当天从鬼佛存档出发 22 次尝试成功 14 次（约 64%）。录像见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-18 09:30</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：<b>一次不间断地击败赤鬼</b>。从存档出发，潜行忍杀打掉第一段生命，蹬墙跳上白墙，在墙顶攻击约 20 分钟，架势条满后跳下忍杀，拿到念珠。中途没有重启程序，也没有人或 LLM 直接操作游戏。新录像替换了之前的两段（Windows 实机）。</span></li><li><time>2026-11-17 15:30</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：<b>击败赤鬼</b>。先潜行忍杀打掉第一段生命，再从它够不到的屋檐上攻击约 35 分钟，架势条满后跳下忍杀，拿到念珠。（这两段录像已由 11-18 一次不间断运行的录像替换。）屋顶战斗的程序中途从暂停处重启过 4 次，最后一条规则来自现场提示，不是一次不间断、无人帮助的运行（Windows 实机）。</span></li><li><time>2026-11-12 17:27</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：击败 Boss <b>河原田直盛</b>。从鬼佛出发，不被发现地绕到他身后下落忍杀，再正面交战将其击败。录像见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-11 10:01</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：<b>序章完成</b>。从击败山内重则之后出发，击杀守卫、拿到药丸、进九郎的门，护送后与苇名弦一郎交战（剧情必败），醒来到达<b>荒废寺</b>并拿到忍义手。录像见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-10 16:34</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：击败第一个中 Boss <b>山内重则</b>。从九郎的房间（存档）出发，穿过庭院，两次忍杀将其击败。录像见“录像与数据”，悬崖到塔这一段也已打通，从悬崖一路到九郎房间的录像一并放上（Windows 实机）。</span></li><li><time>2026-11-06 20:30</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：苇名水库从墙边到爬行通道这一段加上了录像：被守卫发现后会躲到地板下等警报解除。见“录像与数据”（Windows 实机）。</span></li><li><time>2026-11-06 11:19</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：从贴墙转角钻进草丛，等守卫对话结束，一路走到爬行通道（Windows 实机）。</span></li><li><time>2026-11-05 23:16</time><img src="../logos/sekiro.png" alt="" class="nlogo mono"><span><b>只狼</b>：过开场深坑、苇名水库岩壁和贴墙转角（Windows 实机）。</span></li></ol></section>
+<footer><div>规则：超级马里奥兄弟的每关和蔚蓝经典版的每个房间都在 100 个从未用过的随机变体上测试，格内为通过率（通过的变体占比），另记最快一局的帧数。其它游戏：裁判在 5 个没见过的随机变体上运行，全部通关才算，成绩取最慢一局；格内数字是通关帧数，越小越好，还没有全部通过的写通过率（如 4/5）。</div><div>游戏标志来自 Wikimedia Commons（多为公有领域；Celeste 标志 © Maddy Makes Games，CC BY-SA 4.0：https://commons.wikimedia.org/wiki/File:Celeste_video_game_logo.png），商标归各自权利人所有，仅用于标识游戏。星露谷物语标志 © ConcernedApe，取自游戏封面。天梯徽章为原创设计。</div></footer>
+</div>
+<script>
+(function(){var r=document.documentElement,k="ladder-theme",m=window.matchMedia("(prefers-color-scheme: dark)");
+function cur(){return r.getAttribute("data-theme")||(m.matches?"dark":"light");}
+try{var v=localStorage.getItem(k);if(v==="light"||v==="dark")r.setAttribute("data-theme",v);}catch(e){}
+document.getElementById("mode").addEventListener("click",function(){var n=cur()==="dark"?"light":"dark";r.setAttribute("data-theme",n);
+try{localStorage.setItem(k,n);}catch(e){}});})();
+document.querySelectorAll(".codebtns button").forEach(function(b){b.addEventListener("click",function(){
+var box=b.closest("details").querySelector(".codebox"),pre=box.querySelector("code"),raw=box.querySelector(".coderaw");
+b.parentNode.querySelectorAll("button").forEach(function(o){o.classList.toggle("on",o===b);});
+box.querySelector(".codename").textContent=b.textContent;pre.textContent="…";raw.href=b.dataset.src;raw.hidden=false;
+fetch(b.dataset.src).then(function(r){return r.text();}).then(function(tx){pre.textContent=tx;box.querySelector("pre").scrollTop=0;})
+.catch(function(){pre.textContent="";});});});
+</script></body></html>
