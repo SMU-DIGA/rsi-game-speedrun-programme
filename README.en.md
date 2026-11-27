@@ -11,9 +11,10 @@
 
 **🔴 LIVE · On Air Now**
 
-- 🔴 **Minecraft**: from the world spawn into the End (about 1 world in 30 so far); now working on the Ender Dragon. _(since 11-27 09:55)_
+- 🔴 **Minecraft**: from the world spawn into the End (about 1 world in 30), and in an evaluation starting at the End arrival **the first Ender Dragon kill** (1 of 8 fresh worlds); now raising the rate and joining the two parts into one run. _(since 11-28 02:00)_
 - 🔴 **Sekiro**: the whole game from a new save (one game world) has **beaten Gyoubu Masataka Oniwa**; on into Ashina Castle (live on Windows). _(since 11-27 00:43)_
 
+- **2026-11-28 02:00** **Minecraft: the first Ender Dragon kill!** An evaluation on an unseen random world (seed 10315), starting at the arrival in the End with 16 hp, iron armour, 8 beds, a bow and 64 arrows, all ten end crystals standing. The bot read each crystal tower's height from its silhouette at a distance and shot the crystals at those heights; then it dug a hideout and a bait spot by the fountain, waited for the dragon to perch and set off beds when its eyes showed (185 → 89 → 39 → 21 → 0). The dragon died at tick 28581 (about 24 min), 617 xp. Judged as before: the dragon really dead and its xp reaching the player. 1 of the 8 fresh worlds in this evaluation; the policies were written and debugged by the LLM directly, and neither a person nor the LLM operated the game during the run. Spawn to dragon in a single run is not done yet. Video under Recordings &amp; results.
 - **2026-11-27 15:34** **Sekiro**: the bot **beat Gyoubu a seventh time** (301 s, version 46, attacking setup). The branch also started a campaign mode: after a death the bot respawns at the idol and fights again without loading a save. Neither a person nor the LLM operated the game during the fight; the win was checked frame by frame (live on Windows).
 - **2026-11-27 15:01** **Sekiro**: the bot **beat Gyoubu a sixth time** (409 s, fight script version 46). Neither a person nor the LLM operated the game during the fight; the win was checked frame by frame (live on Windows).
 - **2026-11-27 15:55** **Sekiro**: <a href="https://SMU-DIGA.github.io/rsi-game-speedrun-programme/en/games/sekiro.html#les-h">what we learned</a>: how the Gyoubu fixes were found (ten minutes of key tests beat three days of statistics; the cliff skip is a dead end), calibrating readings against recordings, events you can see instead of timers, and why attacking wins. Cross-game lessons are on <a href="https://SMU-DIGA.github.io/rsi-game-speedrun-programme/en/#cross-h">the overview</a>. The bot has also rested at the Ashina Castle Gate idol.
@@ -23,10 +24,10 @@
 - **2026-11-27 11:30** **Sekiro**: the bot **beat Gyoubu a third time** (431 s). The LLM changed the fight script from the fight logs: the rope attack is cut in two halves around Gyoubu's answer 3.6-3.8 s after the rope's flash, which is guarded; the 1.0-3.4 s after the flash are the calmest, so a low Wolf drinks there (6 of 6); near walls it sprints away. Neither a person nor the LLM operated the game during the fight; the win was checked frame by frame (live on Windows).
 - **2026-11-27 10:30** **Stardew Valley**: a <a href="https://SMU-DIGA.github.io/rsi-game-speedrun-programme/milestones/stardew.html#en">floor-by-floor milestone chart</a> of the Mines, floors 10 → 120: the in-game date and real time of each elevator floor, whether the LLM or the program placed the staircases, and the problems each stretch exposed and fixed.
 - **2026-11-27 09:55** **Minecraft: first run from the world spawn into the End!** On an unseen random world the bot threw eyes of ender to find the stronghold, dug in, found the portal room, filled the frame and jumped in, with the Ender Dragon's bar on screen; 10240 ticks (about 8.5 min) in all. The policies were written by the LLM directly; neither a person nor the LLM operated the game during the run; the start inventory is what a speedrun usually holds at this point (16 eyes of ender etc.). The whole chain currently succeeds in about 1 world in 30. Next: the Ender Dragon. Video under Recordings &amp; results.
+
+<details><summary>Earlier dispatches (99)</summary>
+
 - **2026-11-27 07:21** **Sekiro**: the bot **beat Gyoubu a second time**, in 284 s this time (435 s the first). Fights now run as a series, each from the Gate Fortress save; the fight script recognises a win on the screen itself, and every win was checked frame by frame (live on Windows).
-
-<details><summary>Earlier dispatches (98)</summary>
-
 - **2026-11-27 04:31** **Stardew Valley: floor 120, the bottom of the Mines — goal reached!** (Year 18, Spring 18) The program's own dash 115 → 120 took just 36 s. Since floor 75 every staircase was crafted and placed by the program; before each dash and on any wrong floor number it paused for the LLM's screenshot check. Opening the floor-120 chest, leaving the mine, and clearing blocking trees a few times were done by the LLM operating the game directly. Video under Recordings &amp; results (live on Windows).
 - **2026-11-27 00:43** **Sekiro: Gyoubu Masataka Oniwa defeated!** In the same new-save world, from the Gate Fortress idol, the bot ran to the field and played the whole 435-s fight with a fight script the LLM had written (phase 1 279 s, phase 2 156 s), ending with a Deathblow on the horse. Neither a person nor the LLM operated the game during the fight. Videos (the last 90 s and the whole fight at 2x) under Recordings &amp; results (live on Windows).
 - **2026-11-26 19:33** **Stardew Valley**: Mines **floor 115** reached (Year 17, Summer 20), by the program's own dash 110 → 115 in about 2 min at full health; a misread label on floor 114 was caught by the program's per-floor check and the LLM confirmed it from a screenshot. While gathering, trees blocked the farm exit and the LLM cut through once by operating the game directly. Video under Recordings &amp; results (live on Windows).
@@ -136,7 +137,7 @@
 | Rung | Game | | Segments | Cleared |
 |---|---|---|---|---|
 | 05 | Sekiro: Shadows Die Twice | real time on Windows | 21 | 20 |
-| 04 | Minecraft | survival | 12 | 7 (average pass rate 82%) |
+| 04 | Minecraft | survival | 12 | 8 (average pass rate 82%) |
 | 03 | Stardew Valley | 1.6 · real time on Windows | 29 | 29 |
 | 02 | Celeste Classic | PICO-8 | 31 | 31 (average pass rate 100%) |
 | 01 | Super Mario Bros. | NES | 32 | 32 (average pass rate 77%) |
