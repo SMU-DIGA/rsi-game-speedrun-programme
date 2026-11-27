@@ -189,6 +189,17 @@ code { font-family: ui-monospace, Consolas, monospace; font-size: .9em; backgrou
     </div>
   </section>
 
+  <section>
+    <div class="sec-title"><h2 data-t="lessH"></h2></div>
+    <p class="src" data-t="lessSub" style="margin-top:0"></p>
+    <div class="frame open">
+      <div><h3 data-t="lessA"></h3><ul data-t="lessAl"></ul></div>
+      <div><h3 data-t="lessB"></h3><ul data-t="lessBl"></ul></div>
+      <div><h3 data-t="lessC"></h3><ul data-t="lessCl"></ul></div>
+      <div><h3 data-t="lessD"></h3><ul data-t="lessDl"></ul></div>
+    </div>
+  </section>
+
   <p class="src" data-t="src"></p>
 </div>
 
@@ -224,6 +235,28 @@ const T = {
              "农场东口的树会重新长出来，把路堵死（d719、d764、d796 都是 LLM 直接操作砍开的）。",
              "傍晚偶尔 30 秒内走不回电梯，绕路后在大厅晕倒。"],
     openBl: ["弯刀在 d794 被打晕时丢了，现在没有剑。", "没有回血的食物，金币 9g。", "背包只有 12 格，经常被纤维、蘑菇、苔藓塞满。"],
+    lessH: "心得（给以后的 RSI 探索）",
+    lessSub: "约 800 个游戏日、两条线（冲矿井、和 Abigail 交朋友）攒下来的经验，已写进仓库的 <code>docs/SCREEN_BOT_LESSONS.md</code> 和每个 RSI agent 都会读到的 <code>docs/AGENT_PLAYBOOK.md</code>。",
+    lessA: "只读屏幕",
+    lessAl: ["决策只用屏幕信息和公开资料（Wiki、攻略、视频）；从游戏文件里解出来的地图、日程都不能用。",
+             "判断标准：一个只看屏幕、可以查攻略的玩家能不能知道这件事。",
+             "到新地方先由 LLM 一步一步走一遍并录像，再拼成路线图交给程序。"],
+    lessB: "感知",
+    lessBl: ["录像拼的路线图会随季节、天气、昼夜失效：春天的镇上地图在夏天只匹配到 0.28。",
+             "雨点会骗光流测距，雨天位置会漂；多用地标重新定位。",
+             "认人要几种颜色同时出现才算（单色在货架上误报 13/16）；背影颜色不一样，要分别测。",
+             "送礼、卖东西前先悬停核对名字：把树液当黄玉送出去，好感 −40。"],
+    lessC: "控制与流程",
+    lessCl: ["最小步长必须小于“到位”容差：52 像素一步对 18 像素容差，在床边抖了一分钟，夜夜睡不上。",
+             "交互只在相邻一格：要站在门前、点门那一格；节日上右键无效，按动作键才行。",
+             "目标打不开时先看是不是被挡住：出货箱被松树盖住，砍掉才能用。",
+             "游戏日历会让目标消失：节日锁店、周三休息、出门就有过场。凡是赶时间的动作都先读游戏钟。"],
+    lessD: "运维",
+    lessDl: ["一条命令只做一件游戏动作，看画面只用截图脚本（三次误启动走路脚本）。",
+             "思考时暂停游戏；脚本结束时一定暂停。",
+             "长时间运行会吃内存：每晚存档后重启游戏（1.9 GB → 0.95 GB），重活一次只跑一个。",
+             "卡住时先加一行逐步日志，往往一眼就能看出原因。",
+             "关键节点停下来，由 LLM 看截图确认后再继续；项目负责人也常一句话给出更好的办法（“砍掉障碍”“卖东西换钱”）。"],
     src: "dNNN 是程序的出门日编号（一次“休息 → 出门”算一个），后缀 d 是冲层，s 是冲层后接着挖石头。资料来自 <code>stardew/EXPERIENCE.md</code> 和 <code>stardew-mines</code> 分支的提交记录。100 层的原笔记写的是“第 16 年冬 5”，按前后顺序应为第 15 年冬 5，这里按后者写。",
   },
   en: {
@@ -255,6 +288,28 @@ const T = {
              "Trees grow back over the farm's east exit and block it (d719, d764 and d796 were all cut open by the LLM operating the game directly).",
              "Now and then the evening walk back to the elevator gives up after 30 s; after the detour the farmer passes out in the hall."],
     openBl: ["The Cutlass was lost in the d794 knock-out; there is no sword now.", "No healing food, and 9g.", "Only 12 backpack slots, often filled with fiber, mushrooms and moss."],
+    lessH: "Lessons for later RSI work",
+    lessSub: "Collected over about 800 in-game days on two lines of work (the mines dash and making friends with Abigail). They are in the repo's <code>docs/SCREEN_BOT_LESSONS.md</code> and in <code>docs/AGENT_PLAYBOOK.md</code>, which every RSI agent reads.",
+    lessA: "Screen only",
+    lessAl: ["Decide from the screen and public knowledge (wikis, guides, videos) only; maps and schedules pulled out of the game's files are off limits.",
+             "The test: could a player who sees only the screen, and may look things up, know this?",
+             "Have the LLM walk a new place once, step by step, while recording, then stitch the recording into a route map for the program."],
+    lessB: "Perception",
+    lessBl: ["Route maps stitched from recordings expire with season, weather and time of day: the spring town map scored 0.28 in summer.",
+             "Raindrops fool optical-flow odometry; positions drift in rain. Re-anchor on landmarks.",
+             "Recognise a person by several colours at once (one colour gave 13 false hits in 16 frames on shop shelves); the back view has other colours, test it too.",
+             "Hover and read an item's name before a gift or a sale: sap given as \"topaz\" cost −40 friendship."],
+    lessC: "Control and flow",
+    lessCl: ["The smallest step must be smaller than the \"arrived\" tolerance: 52 px steps against an 18 px tolerance jittered at the bed for a minute, every night.",
+             "Interaction works only from the adjacent tile: stand at the door and click its tile. At a festival a right-click did nothing; the action key worked.",
+             "When something will not open, look for what blocks it: the shipping bin was buried under a pine and worked once the tree was cut.",
+             "The calendar moves targets: festivals lock shops, Wednesdays close them, cutscenes start at the door. Read the game clock before any time-critical step."],
+    lessD: "Operations",
+    lessDl: ["One game-driving action per command; look with a screenshot-only script (a walk script was launched by mistake three times).",
+             "Pause the game while thinking; every script ends by pausing.",
+             "Long runs eat memory: restart the game after the nightly save (1.9 GB → 0.95 GB) and run one heavy job at a time.",
+             "When stuck, add one log line per step first; the cause is often obvious at once.",
+             "Stop at key points for the LLM to check the screenshot; the project lead often knows a better way (\"cut the obstacle\", \"sell things for money\")."],
     src: "dNNN is the program's run-day number (one rest → go-out cycle); suffix d is a dash, s is stone digging after a dash. Sources: <code>stardew/EXPERIENCE.md</code> and the commit history of the <code>stardew-mines</code> branch. The original note for floor 100 says “Winter 5, Year 16”; by the order of events it must be Winter 5, Year 15, which is used here.",
   },
 };
