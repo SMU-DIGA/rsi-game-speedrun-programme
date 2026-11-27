@@ -6,6 +6,23 @@
 <link rel="alternate" hreflang="zh-CN" href="../../games/mario.html">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
 <style>
+.road2{margin:34px 0;padding:22px 24px;background:var(--panel);border:2px solid var(--rule);box-shadow:5px 5px 0 var(--shade)}
+.road2 h2{margin:0 0 6px;font-family:var(--f-display);font-weight:400;font-size:28px}
+.rlede{margin:0 0 12px;color:var(--muted)}
+.rleg{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;margin-bottom:6px}.rleg i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px;border:1px solid var(--ink)}
+.rchart{width:100%;height:auto;margin:4px 0 18px}.rchart .rg{stroke:var(--line);stroke-dasharray:3 5}.rchart .rt{font:12px var(--f-data);fill:var(--muted)}
+.rchart .rp_{fill:none;stroke:var(--ink);stroke-width:2.2}.rchart .rd{stroke:var(--ink);stroke-width:1.5}.rchart .rl_{fill:var(--ink);font-weight:700}
+.rzone{margin-top:22px}.rzone h3{margin:0;font-family:var(--f-display);font-weight:400;font-size:22px;border-bottom:2px solid var(--rule);padding-bottom:4px}
+.rzone h3 small{font-family:var(--f-data);font-size:13px;color:var(--muted);margin-left:8px}.rzone>p{margin:6px 0 10px;color:var(--muted)}
+.rms{display:grid;grid-template-columns:64px minmax(0,1fr);gap:4px 14px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.rf{font-family:var(--f-display);font-size:30px;line-height:1;text-align:center;padding-top:2px}
+.rgoal{background:linear-gradient(90deg,var(--live-bg,rgba(201,162,91,.18)),transparent)}.rgoal .rf{color:var(--red)}
+.rmeta{font-size:14px;color:var(--muted)}.rmeta b{color:var(--ink)}.rgo{color:var(--red)!important}
+.rw{display:inline-block;padding:0 6px;border:1.5px solid;font-size:12.5px;font-family:var(--f-data)}
+.rms ul{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:4px}.rms li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:baseline;font-size:15px}
+.rk{font-family:var(--f-data);font-size:12px;padding:0 5px;border:1.5px solid;white-space:nowrap}
+.rsrc{margin-top:18px;font-size:13px;color:var(--muted)}
+@media (max-width:640px){.road2{padding:14px}.rms{grid-template-columns:44px minmax(0,1fr)}.rf{font-size:22px}}
 .gtabs{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:-14px 0 26px;padding:10px 0;background:var(--bg)}
 .gtabs a{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;text-decoration:none;color:var(--ink);border:2px solid var(--line);background:var(--panel);font-size:15px}
 .gtabs a img{width:30px;height:18px;object-fit:contain}
