@@ -2,6 +2,10 @@
 
 [中文](README.md)
 
+## How we got here, step by step
+
+- **[Stardew Valley: Mines floor 1 → 120](https://SMU-DIGA.github.io/rsi-game-speedrun-programme/milestones/stardew.html#en)** — How each elevator floor was reached over 23 days: in-game date, real time, whether the LLM or the program placed the staircases, and every pitfall and fix on the way.
+
 ## Dispatches
 
 **🔴 LIVE · On Air Now**

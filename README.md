@@ -4,6 +4,10 @@
 
 [English](README.en.md)
 
+## 一步一步打到这里
+
+- **[星露谷物语：矿井 1 → 120 层](https://SMU-DIGA.github.io/rsi-game-speedrun-programme/milestones/stardew.html#zh)** — 23 天里每个电梯层是怎么下去的：游戏里哪天、现实里什么时候、楼梯是 LLM 放的还是程序自己冲的，每一段踩过的坑和修复。
+
 ## 战报
 
 **🔴 LIVE · 正在攻关**
