@@ -1,0 +1,507 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>矿井 120 层里程碑</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=ZCOOL+QingKe+HuangYou&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+/* Layout: a farm-game mine read top to bottom - wooden sign, item hotbar of totals, a pixel cross-section of the shaft,
+   then one parchment panel per mine zone with a row per elevator floor. One deliberate look (cave + parchment), no theme swap. */
+:root {
+  --cave: #1e140e;        /* page ground: cave rock */
+  --cave-ink: #f3dcb0;    /* text on the cave */
+  --cave-dim: #c4a072;
+  --paper: #fbe5b4;       /* parchment panels */
+  --paper-2: #f3d395;
+  --ink: #3b210e;         /* text on parchment, all outlines */
+  --ink-dim: #7a5432;
+  --wood: #b7642a;
+  --wood-lt: #dc8c48;
+  --wood-dk: #7c3b14;
+  --btn: #e9a24c;         /* elevator button */
+  --early: #4f86b8;       /* dug down / early scripted dashes */
+  --hand: #d4762a;        /* staircases placed by hand */
+  --prog: #3d9a45;        /* the program dashed on its own */
+  --earth: #9a6a3c;
+  --ice: #5aa6cf;
+  --lava: #d9472b;
+  --gold: #f5c542;
+  --f-pix: "Pixelify Sans", "ZCOOL QingKe HuangYou", "Microsoft YaHei", sans-serif;
+  --f-display: "ZCOOL QingKe HuangYou", "Microsoft YaHei", "PingFang SC", sans-serif;
+  --f-body: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--cave); color: var(--cave-ink); font-family: var(--f-body); font-size: 15px; line-height: 1.65;
+  background-repeat: repeat; image-rendering: pixelated; }
+.wrap { max-width: 1000px; margin: 0 auto; padding-block: 32px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 36px; }
+h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
+img.px { image-rendering: pixelated; display: inline-block; vertical-align: middle; flex: none; }
+
+/* wooden frame around parchment */
+.frame { background: var(--paper);
+  background-image: repeating-linear-gradient(0deg, rgba(122,84,50,.05) 0 2px, transparent 2px 6px);
+  color: var(--ink); border: 6px solid var(--wood); border-top-color: var(--wood-lt); border-bottom-color: var(--wood-dk);
+  outline: 3px solid var(--ink); box-shadow: inset 0 0 0 3px var(--wood-dk), 0 8px 0 rgba(0,0,0,.45); }
+.frame.dark { background: #2a1a10; background-image: none; color: var(--cave-ink); }
+
+/* sign */
+.sign { padding: 26px 28px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 28px; align-items: center; }
+.eyebrow { font-family: var(--f-pix); font-size: 13px; letter-spacing: .08em; color: var(--ink-dim); }
+h1 { font-family: var(--f-pix); font-size: clamp(38px, 7vw, 64px); line-height: 1.05; color: var(--ink);
+  text-shadow: 3px 3px 0 var(--paper-2); margin-top: 4px; }
+.lede { margin: 12px 0 0; max-width: 58ch; color: var(--ink); }
+.datebox { border: 4px solid var(--ink); background: var(--paper-2); padding: 10px 16px; text-align: center; min-width: 168px;
+  box-shadow: inset 0 0 0 3px var(--btn); }
+.datebox .d1 { font-family: var(--f-display); font-size: 22px; line-height: 1.2; }
+.datebox .d2 { font-family: var(--f-pix); font-size: 15px; color: var(--ink-dim); }
+.datebox .d3 { font-family: var(--f-pix); font-size: 13px; margin-top: 4px; color: var(--prog); font-weight: 600; }
+
+/* hotbar of totals */
+.hotbar { display: flex; flex-wrap: wrap; gap: 10px; padding: 10px; background: var(--wood);
+  border: 4px solid var(--ink); box-shadow: inset 0 3px 0 var(--wood-lt), inset 0 -3px 0 var(--wood-dk), 0 8px 0 rgba(0,0,0,.45); }
+.hot { flex: 1 1 170px; display: flex; align-items: center; gap: 12px; min-width: 0; }
+.slot { width: 56px; height: 56px; flex: none; display: grid; place-items: center; background: #f2c98a;
+  border: 3px solid var(--ink); box-shadow: inset 3px 3px 0 #c98f4e, inset -2px -2px 0 #ffe2b0; }
+.hot b { display: block; font-family: var(--f-pix); font-weight: 600; font-size: 26px; line-height: 1.05; color: #fff4d8;
+  text-shadow: 2px 2px 0 var(--ink); font-variant-numeric: tabular-nums; }
+.hot span { font-size: 12.5px; color: #ffe8bf; line-height: 1.35; display: block; }
+
+/* section titles on the cave */
+.sec-title { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+.sec-title h2 { font-family: var(--f-pix); font-size: 28px; color: var(--cave-ink); text-shadow: 3px 3px 0 #000; }
+.sec-title p { margin: 0; color: var(--cave-dim); font-size: 14px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; color: var(--cave-ink); margin-bottom: 12px; }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.sq { width: 12px; height: 12px; border: 2px solid #000; display: inline-block; }
+.chart-box { overflow-x: auto; padding: 0; }
+.chart-box svg { display: block; min-width: 720px; width: 100%; height: auto; }
+.chart-note { font-size: 13px; color: var(--cave-dim); margin: 14px 0 0; max-width: 75ch; }
+
+/* zone panels */
+.zone-sign { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+.plank { font-family: var(--f-display); font-size: 26px; line-height: 1; padding: 10px 18px 8px; color: #fff4d8;
+  background: var(--zc); border: 3px solid #000; text-shadow: 2px 2px 0 rgba(0,0,0,.55);
+  box-shadow: inset 0 3px 0 rgba(255,255,255,.25), inset 0 -3px 0 rgba(0,0,0,.25), 0 5px 0 rgba(0,0,0,.5); }
+.plank small { font-family: var(--f-pix); font-size: 15px; margin-left: 10px; opacity: .9; }
+.zone-sign p { margin: 0; color: var(--cave-dim); font-size: 14px; flex: 1 1 260px; }
+.zone.earth { --zc: var(--earth); } .zone.ice { --zc: var(--ice); } .zone.lava { --zc: var(--lava); }
+.strata { height: 18px; border: 3px solid var(--ink); border-bottom: 0; background-size: auto 100%; image-rendering: pixelated; }
+.zone .frame { padding: 4px 22px; }
+
+.ms { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 0 20px; padding: 18px 0; border-bottom: 2px dashed rgba(122,84,50,.35); }
+.ms:last-child { border-bottom: 0; }
+.ebtn { width: 70px; height: 54px; display: grid; place-items: center; background: var(--btn); color: var(--ink);
+  border: 3px solid var(--ink); box-shadow: inset 3px 3px 0 #ffd08a, inset -3px -3px 0 #b8702a;
+  font-family: var(--f-pix); font-weight: 600; font-size: 26px; line-height: 1; }
+.ms.goal { background: linear-gradient(90deg, rgba(245,197,66,.38), rgba(245,197,66,.08)); margin-inline: -22px; padding-inline: 22px; }
+.ms.goal .ebtn { background: var(--gold); box-shadow: inset 3px 3px 0 #fff0a8, inset -3px -3px 0 #c8951e; }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; font-size: 13px; color: var(--ink-dim); }
+.meta .game { font-family: var(--f-display); font-size: 19px; color: var(--ink); line-height: 1.2; }
+.meta .pix { font-family: var(--f-pix); font-size: 14px; font-variant-numeric: tabular-nums; }
+.chip { font-size: 12px; line-height: 1.5; padding: 1px 8px; color: #fff; border: 2px solid var(--ink); white-space: nowrap; }
+.chip.early { background: var(--early); } .chip.hand { background: var(--hand); } .chip.prog { background: var(--prog); }
+.ribbon { font-family: var(--f-pix); font-weight: 600; font-size: 13px; padding: 1px 8px; background: var(--lava); color: #fff4d8;
+  border: 2px solid var(--ink); }
+ul.items { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 7px; }
+ul.items li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; min-width: 0; }
+ul.items li img { margin-top: 3px; }
+ul.items li span { min-width: 0; }
+code { font-family: ui-monospace, Consolas, monospace; font-size: .9em; background: rgba(122,84,50,.15); padding: 0 3px; }
+.keys { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--cave-ink); }
+.keys span { display: inline-flex; gap: 7px; align-items: center; }
+
+.open { padding: 22px 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px 32px; }
+.open h3 { font-family: var(--f-display); font-size: 20px; }
+.open ul { margin: 8px 0 0; padding-left: 1.2em; }
+.open li { margin-bottom: 5px; }
+.src { font-size: 13px; color: var(--cave-dim); max-width: 80ch; margin: 0; }
+
+@media (max-width: 600px) {
+  .sign { grid-template-columns: 1fr; padding: 20px; }
+  .zone .frame { padding: 4px 14px; }
+  .ms { grid-template-columns: 1fr; gap: 10px; }
+  .ms.goal { margin-inline: -14px; padding-inline: 14px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .glow { animation: glow 1.6s steps(4) infinite alternate; }
+  @keyframes glow { from { opacity: .35; } to { opacity: 1; } }
+}
+</style>
+</head><body>
+
+<style>
+.lang { justify-self: end; display: flex; border: 3px solid var(--ink); box-shadow: 0 5px 0 rgba(0,0,0,.45); }
+.lang a { font-family: var(--f-pix); font-weight: 600; font-size: 15px; line-height: 1; padding: 9px 16px 8px; text-decoration: none;
+  color: #fff4d8; background: var(--wood-dk); text-shadow: 2px 2px 0 rgba(0,0,0,.5); }
+.lang a + a { border-left: 3px solid var(--ink); }
+.lang a[aria-current="true"] { background: var(--wood-lt); color: var(--ink); text-shadow: none; box-shadow: inset 0 3px 0 #f2b072; }
+.lang a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+</style>
+
+<div class="wrap">
+  <nav class="lang" aria-label="Language / 语言">
+    <a href="#zh" data-lang="zh" lang="zh">中文</a><a href="#en" data-lang="en" lang="en">EN</a>
+  </nav>
+
+  <header class="frame sign">
+    <div>
+      <div class="eyebrow" data-t="eyebrow"></div>
+      <h1 data-t="h1"></h1>
+      <p class="lede" data-t="lede"></p>
+    </div>
+    <div class="datebox">
+      <div class="d2" data-t="dbA"></div>
+      <div class="d1" data-t="dbB"></div>
+      <div class="d2" data-t="dbC"></div>
+      <div class="d3" data-t="dbD"></div>
+    </div>
+  </header>
+
+  <div class="hotbar">
+    <div class="hot"><div class="slot" data-icon="ladder"></div><div><b data-t="s1b"></b><span data-t="s1"></span></div></div>
+    <div class="hot"><div class="slot" data-icon="clock"></div><div><b data-t="s2b"></b><span data-t="s2"></span></div></div>
+    <div class="hot"><div class="slot" data-icon="calendar"></div><div><b data-t="s3b"></b><span data-t="s3"></span></div></div>
+    <div class="hot"><div class="slot" data-icon="pick"></div><div><b data-t="s4b"></b><span data-t="s4"></span></div></div>
+    <div class="hot"><div class="slot" data-icon="note"></div><div><b>509</b><span data-t="s5"></span></div></div>
+  </div>
+
+  <section>
+    <div class="sec-title"><h2 data-t="chartH"></h2><p data-t="chartSub"></p></div>
+    <div class="legend">
+      <span><i class="sq" style="background:var(--early)"></i><span data-t="lgEarly"></span></span>
+      <span><i class="sq" style="background:var(--hand)"></i><span data-t="lgHand"></span></span>
+      <span><i class="sq" style="background:var(--prog)"></i><span data-t="lgProg"></span></span>
+    </div>
+    <div class="frame dark chart-box"><svg id="chart" viewBox="0 0 960 452" role="img"></svg></div>
+    <p class="chart-note" data-t="chartNote"></p>
+  </section>
+
+  <div class="keys" id="keys"></div>
+  <div id="zones" style="display:grid;gap:40px"></div>
+
+  <section>
+    <div class="sec-title"><h2 data-t="openH"></h2></div>
+    <div class="frame open">
+      <div><h3 data-t="openA"></h3><ul data-t="openAl"></ul></div>
+      <div><h3 data-t="openB"></h3><ul data-t="openBl"></ul></div>
+    </div>
+  </section>
+
+  <p class="src" data-t="src"></p>
+</div>
+
+<script>
+/* ---------- text, both languages ---------- */
+const T = {
+  zh: {
+    doc: "矿井 120 层里程碑",
+    eyebrow: "STARDEW VALLEY · 矿井机器人 · stardew-mines",
+    h1: "矿井 120 层",
+    lede: "机器人从第 10 层一路冲到第 120 层。每到一个新的电梯层记一行：游戏里是哪天、现实里是什么时候、楼梯是谁放的，以及这一段发现并修掉的问题。",
+    dbA: "到底那天", dbB: "第 18 年 · 春 18", dbC: "出门日 d809", dbD: "★ 目标达成 ★",
+    s1b: "120 层", s1: "矿井最底层",
+    s2b: "23 天", s2: "现实时间 11/04 → 11/27",
+    s3b: "15 年", s3: "游戏时间 第 3 年秋 → 第 18 年春",
+    s4b: "10 次", s4: "程序自己冲层（75 → 120）",
+    s5: "次代码提交",
+    chartH: "一路往下", chartSub: "横轴是现实时间，纵轴越往下越深",
+    lgEarly: "挖下去 / 早期脚本冲层", lgHand: "楼梯有 LLM 放的", lgProg: "程序全程自己冲层",
+    chartNote: "每个点按该里程碑的提交时间画，比实际到达稍晚；15 层没有单独的提交，按 11/19 中午估。底色是矿井的三段：土层、冰层、岩浆层。",
+    aria: "层数随现实时间的变化：11 月 18 日 10 层，11 月 27 日 120 层",
+    entrance: "矿井入口", floorAxis: "层",
+    n50: "50–70 层：楼梯由 LLM 放", n75: "75 层：程序接手，全程自己冲", n95: "95 层：审批流程上线", n120: "120 层 · 11/27 04:31",
+    kinds: { fail: "失败", fix: "修复", get: "收获", note: "记录" },
+    who: { early: "挖下去 / 早期脚本", hand: "LLM 放楼梯", prog: "程序自己冲" },
+    real: "现实", approx: "约 11/19", goal: "目标达成",
+    zones: [
+      ["土层", "1–39 层", "梯子冲层定型；层数框的颜色一段一个样，读不出就丢梯子。"],
+      ["冰层", "40–79 层", "50–70 层的楼梯是 LLM 放的；75 层起交给程序。"],
+      ["岩浆层", "80–120 层", "程序自己冲层；95 层起每次开冲和层数异常都要 LLM 确认。"]],
+    openH: "还没解决的", openA: "程序", openB: "背包",
+    openAl: ["120 层没有电梯，冲到底之后由 LLM 直接操作从上楼梯离开。",
+             "农场东口的树会重新长出来，把路堵死（d719、d764、d796 都是 LLM 直接操作砍开的）。",
+             "傍晚偶尔 30 秒内走不回电梯，绕路后在大厅晕倒。"],
+    openBl: ["弯刀在 d794 被打晕时丢了，现在没有剑。", "没有回血的食物，金币 9g。", "背包只有 12 格，经常被纤维、蘑菇、苔藓塞满。"],
+    src: "dNNN 是程序的出门日编号（一次“休息 → 出门”算一个），后缀 d 是冲层，s 是冲层后接着挖石头。资料来自 <code>stardew/EXPERIENCE.md</code> 和 <code>stardew-mines</code> 分支的提交记录。100 层的原笔记写的是“第 16 年冬 5”，按前后顺序应为第 15 年冬 5，这里按后者写。",
+  },
+  en: {
+    doc: "Mines Floor 120 Milestones",
+    eyebrow: "STARDEW VALLEY · MINING BOT · stardew-mines",
+    h1: "Floor 120",
+    lede: "A bot pushed the mines from floor 10 all the way down to floor 120. One row for each new elevator floor: the in-game date, the real-world time, who placed the staircases, and the problems that stretch exposed and fixed.",
+    dbA: "Reached the bottom", dbB: "Spring 18 · Year 18", dbC: "Run day d809", dbD: "★ GOAL REACHED ★",
+    s1b: "Floor 120", s1: "the bottom of the mines",
+    s2b: "23 days", s2: "real time, Nov 4 → Nov 27",
+    s3b: "15 years", s3: "in game, Fall Y3 → Spring Y18",
+    s4b: "10 dashes", s4: "by the program alone (75 → 120)",
+    s5: "code commits",
+    chartH: "The way down", chartSub: "Real time across, depth going down",
+    lgEarly: "Dug down / early scripted dash", lgHand: "Some staircases placed by the LLM", lgProg: "The program dashed on its own",
+    chartNote: "Each point sits at the commit that recorded the milestone, a little after the floor was reached; floor 15 has no commit of its own and is placed at noon on Nov 19. The background shows the three parts of the mines: earth, ice and lava.",
+    aria: "Floor reached over real time: floor 10 on Nov 18, floor 120 on Nov 27",
+    entrance: "Mine entrance", floorAxis: "Floor",
+    n50: "50–70: staircases by the LLM", n75: "75: the program takes over", n95: "95: approval checkpoints", n120: "120 · Nov 27 04:31",
+    kinds: { fail: "Failure", fix: "Fix", get: "Loot", note: "Note" },
+    who: { early: "Dug / early script", hand: "Placed by the LLM", prog: "Program alone" },
+    real: "Real", approx: "≈ Nov 19", goal: "Goal reached",
+    zones: [
+      ["Earth", "Floors 1–39", "The staircase dash took shape. The floor number changed colour every few floors, and every colour it couldn't read cost staircases."],
+      ["Ice", "Floors 40–79", "Staircases on 50–70 were placed by the LLM; from 75 the program took over."],
+      ["Lava", "Floors 80–120", "The program dashed on its own; from 95 every dash start and every odd floor number waited for the LLM's OK."]],
+    openH: "Still open", openA: "The program", openB: "The backpack",
+    openAl: ["Floor 120 has no elevator; after the dash the LLM leaves by the up-ladder, operating the game directly.",
+             "Trees grow back over the farm's east exit and block it (d719, d764 and d796 were all cut open by the LLM operating the game directly).",
+             "Now and then the evening walk back to the elevator gives up after 30 s; after the detour the farmer passes out in the hall."],
+    openBl: ["The Cutlass was lost in the d794 knock-out; there is no sword now.", "No healing food, and 9g.", "Only 12 backpack slots, often filled with fiber, mushrooms and moss."],
+    src: "dNNN is the program's run-day number (one rest → go-out cycle); suffix d is a dash, s is stone digging after a dash. Sources: <code>stardew/EXPERIENCE.md</code> and the commit history of the <code>stardew-mines</code> branch. The original note for floor 100 says “Winter 5, Year 16”; by the order of events it must be Winter 5, Year 15, which is used here.",
+  },
+};
+
+/* ---------- milestones: [kind, 中文, English] ---------- */
+const MS = [
+  {f:10, g:["第 3 年秋 28","Fall 28, Y3"], d:"", t:"2026-11-18T22:45", w:"early", wl:["一层层挖下去","Dug down floor by floor"], items:[
+    ["note","运气“非常好”的一天，从 5 层一路挖到 10 层。","A “very lucky” day: dug from floor 5 straight down to 10."],
+    ["fix","被打晕后脚本以为还在矿里：黑屏 + 无层数框连续 3 次就按晕倒处理。","After a knock-out the script thought it was still in the mine: three looks in a row of a black screen with no floor label now count as passed out."],
+    ["fix","升级提示框一个位置点了 529 次没点掉，卡了一整晚：点不掉就换位置，并存截图。","A level-up dialog was clicked 529 times at one spot and stuck the whole night: click elsewhere when it won't close, and keep a screenshot."]]},
+  {f:15, g:["第 4 年秋 28","Fall 28, Y4"], d:"", t:"2026-11-19T12:00", approx:true, w:"early", wl:["第一次梯子冲层 · 55 秒","First staircase dash · 55 s"], items:[
+    ["note","做法定型：坐电梯到最深层，落地放梯子、踩下去，连放 5 个到下一个电梯层。","The method settled: ride to the deepest elevator floor, place a staircase on landing, step down, five in a row to the next elevator floor."],
+    ["fix","落地头几秒梯子放不下：4 秒后重试，砸一块石头换位置，每层最多 10 次。","Staircases would not go down in the first seconds after landing: retry after 4 s, break a rock and move, up to 10 tries a floor."]]},
+  {f:20, g:["第 5 年春 11","Spring 11, Y5"], d:"", t:"2026-11-20T05:14", w:"early", wl:["梯子冲层 · 约 60 秒","Staircase dash · ~60 s"], items:[
+    ["get","20 层宝箱：钢制小剑（LLM 直接操作开）。","Floor 20 chest: Steel Smallsword (opened by the LLM)."],
+    ["fail","20 层是宝箱层，布局不同，“走到电梯前”连试 3 次失败，LLM 直接操作走两步。","Floor 20 is a chest floor with its own layout; “walk to the elevator” failed three times, two steps by the LLM."]]},
+  {f:25, g:["第 5 年秋 4","Fall 4, Y5"], d:"", t:"2026-11-20T11:20", w:"early", wl:["梯子冲层 · 约 35 秒","Staircase dash · ~35 s"], items:[
+    ["fail","夏 12 第一次：23 层层数是绿色的，颜色条件差 1 没认出，判“走丢”爬回大厅，丢 3 个梯子。","Summer 12, first try: the floor-23 number is green and missed the colour rule by 1; read as “lost”, it climbed back to the hall and 3 staircases were gone."],
+    ["fix","放宽绿色范围。颜色边界不能只凭一个样本定。","Widened the green range. A colour boundary can't come from a single sample."],
+    ["fail","26 层起暗层的数字更暗，第三次因为层数颜色白丢时间 → 阈值 125 → 100。","From floor 26 the dark floors' digits are darker still, the third time a label colour wasted a day → threshold 125 → 100."]]},
+  {f:30, g:["第 6 年秋 28","Fall 28, Y6"], d:"d296", t:"2026-11-21T04:02", w:"early", wl:["梯子冲层 · 35 秒","Staircase dash · 35 s"], items:[
+    ["fail","d271 第一次冲 30 层：5 个梯子全没了，一层没推进。剑也在 d258 被打晕时丢了。","d271, the first dash to 30: all 5 staircases gone, not one floor gained. The sword had been lost in the d258 knock-out too."],
+    ["fail","夏 5 第二次：停在 28 层。","Summer 5, second try: stopped on floor 28."],
+    ["note","第三次成功。到 30 层后坐不上电梯，在 30 层等到凌晨 2 点（不影响解锁）。","The third try made it. The elevator on 30 couldn't be reached, so it waited there until 2 am (the floor still unlocked)."]]},
+  {f:35, g:["第 7 年春 12","Spring 12, Y7"], d:"d315", t:"2026-11-21T08:28", w:"early", wl:["梯子冲层","Staircase dash"], items:[
+    ["fail","31–39 层是黑暗层，层数字越来越暗；d311 读不出，判“迷路”爬了出去，白费 1 个梯子。","Floors 31–39 are dark and the number gets dimmer; d311 couldn't read it, judged itself lost and climbed out, 1 staircase wasted."],
+    ["fix","调阈值；冲层时“迷路”不再撤退，原地停。","Thresholds adjusted; in a dash “lost” no longer retreats, the bot stays put."],
+    ["fix","电梯面板是每行 5 个的网格，原来按单列读成“3 个按钮”，改成逐格读。","The elevator panel is a grid of 5 a row; read as one column it gave “3 buttons”. Now it is read cell by cell."]]},
+  {f:40, g:["第 7 年夏 18","Summer 18, Y7"], d:"d329", t:"2026-11-21T12:10", w:"early", wl:["梯子冲层 · 续跑 96 秒","Staircase dash · 96 s resume"], items:[
+    ["fail","36–39 层是棕底暖白字，40 层起是青色字；d328 停在 36 层。","Floors 36–39 show warm white on brown, 40 and up cyan; d328 stopped on 36."],
+    ["fix","补两条颜色规则，从 36 层原地续跑，96 秒连下 4 层。读不出层数时先停别动，比乱走便宜得多。","Two colour rules added and the run resumed from 36 in place: 4 floors in 96 s. Stopping when the number can't be read is far cheaper than guessing a way."]]},
+  {f:45, g:["第 8 年夏 14","Summer 14, Y8"], d:"d377", t:"2026-11-22T02:38", w:"early", wl:["梯子冲层","Staircase dash"], items:[
+    ["fail","凭图标猜着合成，做出来一个熔炉（25 石头），石头不够 5 个梯子，多挖一天。","Crafted by guessing at an icon and made a Furnace (25 stone); not enough left for 5 staircases, one more day of digging."],
+    ["fix","冰层电梯门的模板；楼梯数量计数修正。","A template for the ice-floor elevator door; the staircase count fixed."]]},
+  {f:50, g:["第 8 年冬 11","Winter 11, Y8"], d:"d398", t:"2026-11-22T09:00", w:"hand", wl:["后 4 层由 LLM 的一次性脚本放","Last 4 floors by the LLM's one-off script"], items:[
+    ["fail","冰层的蓝石头被当成飞虫，冲层被打断；后 4 层是 LLM 用一次性脚本放下去的。","Blue ice rocks were taken for flies and broke off the dash; the LLM placed the last 4 floors with a one-off script."],
+    ["fix","冰层关掉飞虫识别（46 层的误判）。","Fly detection off on ice floors (the misread on 46)."],
+    ["get","Tundra Boots。","Tundra Boots."]]},
+  {f:55, g:["第 9 年夏 16","Summer 16, Y9"], d:"d421", t:"2026-11-22T15:29", w:"hand", wl:["51–55 由 LLM 放","51–55 by the LLM"], items:[
+    ["fail","程序在 51 层卡住，51 → 55 由 LLM 放。","The program got stuck on 51; 51 → 55 were placed by the LLM."],
+    ["fix","放楼梯时脚下是冰石头：先清掉再试。","An ice rock on the staircase tile: clear it, then try again."],
+    ["fail","d415 撤退花了 150 秒，过了 2 点在矿里晕倒丢东西 → 收工时间 690 → 640。","d415's retreat took 150 s; it passed out in the mine after 2 am and lost items → quitting time 690 → 640."]]},
+  {f:60, g:["第 10 年夏 9","Summer 9, Y10"], d:"d463", t:"2026-11-23T03:39", w:"hand", wl:["LLM 放 · 5 层 0 掉血","By the LLM · 5 floors, no damage"], items:[
+    ["fail","55 层之后 6 天的石头从第 6 格被当垃圾扔掉 → 认石头图标，哪格都不扔。","For 6 days after floor 55 the stone in slot 6 was binned as junk → stone is known by its icon and never binned, whatever the slot."],
+    ["fix","樱桃炸弹炸石头（4 铜矿 + 1 煤）；修了“把炸弹当吃的”和“往北放、炸开电梯门”。","Cherry bombs for rocks (4 copper ore + 1 coal); fixed “bombs taken for food” and “a bomb placed north opens the elevator door”."],
+    ["fail","run_days 因为 BOMB_KEY=None 退出，只好由 LLM 放楼梯。","run_days quit on BOMB_KEY=None, so the staircases were placed by the LLM."],
+    ["get","60 层宝箱：水晶匕首。","Floor 60 chest: Crystal Dagger."]]},
+  {f:65, g:["第 10 年冬 17","Winter 17, Y10"], d:"d488", t:"2026-11-23T10:54", w:"hand", wl:["LLM 放","By the LLM"], items:[
+    ["fail","石头数被剑挡住一半，读成 498，实际 493，只够 4 个楼梯。","The stone count was half hidden by the sword: read as 498, really 493, enough for only 4 staircases."],
+    ["fix","在 62 层砸冰石头补石料，在暂停菜单里当场做第 5 个。","Broke ice rocks on 62 for stone and crafted the 5th staircase on the spot in the pause menu."]]},
+  {f:70, g:["第 11 年夏 16","Summer 16, Y11"], d:"d511", t:"2026-11-23T17:17", w:"hand", wl:["LLM 放 · 第一次边放边录","By the LLM · first dash filmed live"], items:[
+    ["fix","怪窝层（层数旁有骷髅）一到就爬回去，重进第 5 层。","Infested floors (a skull beside the number): climb straight back and re-enter floor 5."],
+    ["fix","炸弹用完后每层还试两次 → 当天不再放，省下 100 秒。","With the bombs gone it still tried twice per floor → no more bombs that day, 100 s saved."],
+    ["fail","学会新配方后制作页重排，楼梯配方挪了位置，按老位置点没做出东西。","A new recipe re-flowed the crafting page; the staircase moved, and a click at the old spot made nothing."],
+    ["get","70 层宝箱：Master Slingshot。","Floor 70 chest: Master Slingshot."]]},
+  {f:75, g:["第 12 年冬 24","Winter 24, Y12"], d:"d581", t:"2026-11-24T12:53", w:"prog", wl:["程序第一次全程自己冲","The program's first full dash"], items:[
+    ["note","用户：“你可以做第一次，确定是对的就交给程序。”从这里起楼梯由程序做、由程序放。","The user: “Do it once yourself; when it's right, hand it to the program.” From here the program crafts and places the staircases."],
+    ["fix","stairs.py：按图找楼梯配方，读格子上的数字记数量（d553 记账 4 个、实际 3 个）。","stairs.py finds the recipe by its picture and reads the count printed on the slot (d553: the record said 4, the bag held 3)."],
+    ["fail","d535 在 71 层打了 40 秒假怪，73 层被蝙蝠打到 0.32 撤退 → 落地第一件事放楼梯。","d535 fought a non-monster for 40 s on 71, and bats took it down to 0.32 on 73 → place the staircase first thing on landing."],
+    ["fail","d560 冰层人物定位偏 40 px，72 层被打晕，3 个楼梯全丢 → 先试屏幕中心三格。","d560: on ice floors the farmer was located 40 px off; knocked out on 72, all 3 staircases lost → try the three tiles around the screen centre first."],
+    ["fix","层数改成按数字读（1181 张截图全对）；75 层电梯门被水晶挡住 → 用镐敲开。","Floor numbers read as digits (all 1181 screenshots right); a crystal blocked the floor-75 elevator door → break it with the pickaxe."]]},
+  {f:80, g:["第 13 年夏 27","Summer 27, Y13"], d:"d604", t:"2026-11-24T19:15", w:"prog", wl:["每层约 20 秒 · 到底血 0.11","~20 s a floor · HP 0.11 at the end"], items:[
+    ["fail","“身边已经有梯子”其实是试吃时选中楼梯右键放出来的，石头日每天早上也丢一个 → 试吃跳过楼梯格。","“A ladder right beside me” was the food probe right-clicking with the staircase selected; one was lost every stone morning too → the probe skips the staircase slot."],
+    ["fix","石头日只挖第 5 层，不再往下走丢。","Stone days dig only floor 5 and never wander down and get lost."]]},
+  {f:85, g:["第 14 年春 9","Spring 9, Y14"], d:"d626", t:"2026-11-25T01:11", w:"prog", wl:["77 秒 · 满血","77 s · full HP"], items:[
+    ["fail","80 层起层数是红字，停在 80 层等 LLM → 加红字规则（非矿井 67 帧 0 误认）。","From 80 the floor number is red; it stopped on 80 waiting for the LLM → red rule added (0 misreads on 67 non-mine frames)."],
+    ["fix","晚上只砸出生点 8 格内的石头，识别改用 OpenCV（210 → 104 ms）：一天石头 25 → 45–52 块。","Evenings take only rocks within 8 tiles of the spawn, and detection moved to OpenCV (210 → 104 ms): stone per day 25 → 45–52."]]},
+  {f:90, g:["第 14 年夏 17","Summer 17, Y14"], d:"d642", t:"2026-11-25T05:42", w:"prog", wl:["58 秒 · 到底血 0.78","58 s · HP 0.78 at the end"], items:[
+    ["fail","电梯层“上楼”误判，层数减成 -1，程序报错，人留在矿里 2 点晕倒 → 第 0 层原地再爬。","An “up” misread on the elevator floor took the count to -1; the program crashed and the farmer passed out in the mine at 2 am → on floor 0, just climb again."],
+    ["fix","换图时走不回电梯：爬梯子回大厅再坐下来。","When the walk back to the elevator fails: climb to the hall and ride down again."]]},
+  {f:95, g:["第 15 年夏 13","Summer 13, Y15"], d:"d698", t:"2026-11-25T21:09", w:"prog", wl:["约 2 分钟 · 开始审批","~2 min · approvals begin"], items:[
+    ["fail","56 个游戏日，丢了 9 个楼梯。d657d 面板 19 个按钮只认出 14 个，坐到了 65 层，4 个楼梯放错地方。","56 game days and 9 staircases lost. d657d read 14 of 19 panel buttons, rode to 65, and 4 staircases went down in the wrong place."],
+    ["fix","按按钮的橙色找格子；冲层前层数必须等于记录的最深层。","Buttons found by their orange colour; a dash starts only when the floor number equals the recorded deepest floor."],
+    ["fix","审批流程上线（用户要求）：冲层起点、每层层数不对时暂停，等 LLM 看截图回 go / stop / manual。","Approval checkpoints (the user's request): at the dash start and whenever a floor number is off, the game pauses until the LLM checks the screenshot and answers go / stop / manual."],
+    ["fail","d664 楼梯格偏 2 px 认不出，被当空格扔掉 2 个 → 上下各试 2 px；看不见就不做、不扔。","d664: the staircase slot sat 2 px off, went unseen, and 2 staircases were binned → look ±2 px; unseen means no crafting and no binning."],
+    ["fail","d683d 91 层三格各试 15 秒，被打晕，17 份沙拉没吃 → 每试一格前血 < 0.6 先吃。","d683d spent 15 s on each of three tiles on 91 and was knocked out with 17 salads uneaten → eat before each try when HP < 0.6."],
+    ["note","卖矿得 3929g，买了 17 份沙拉；Robin 的石头 100g 一块，太贵没买。","Sold ore for 3929g and bought 17 salads; Robin's stone was 100g each, too expensive."]]},
+  {f:100, g:["第 15 年冬 5","Winter 5, Y15"], d:"d715", t:"2026-11-26T02:00", w:"prog", wl:["约 2 分钟 · 满血 · 0 丢失","~2 min · full HP · nothing lost"], items:[
+    ["fail","d710 撤退时梯子下面有块石头，够不着，在矿里过夜 → 往上走不动就用镐敲。","d710: a rock under the up-ladder kept it out of reach, a night in the mine → when blocked going up, swing the pickaxe at the tile above."],
+    ["fix","“100” 的字比别的宽，把按钮切成两块，面板读成 20 个 → 先做闭运算再找按钮。","The wide “100” label split its button in two and the panel read as 20 → a morphological closing before finding buttons."]]},
+  {f:105, g:["第 16 年秋 15","Fall 15, Y16"], d:"d746", t:"2026-11-26T10:48", w:"prog", wl:["约 1.5 分钟 · 满血","~1.5 min · full HP"], items:[
+    ["fail","d729 104 层血 0.22 时“吃”的是树液，被打晕，16 份沙拉全丢 → 连着吃到 ≥ 0.6；放楼梯先每格只放，第二轮才用镐。","d729 on 104 at HP 0.22 “ate” sap, was knocked out and lost all 16 salads → keep eating until ≥ 0.6; the first pass only places, the pickaxe comes in the second."],
+    ["fail","d722 撤退撞开电梯面板，点到 35 层过夜 → 面板开着先关。","d722: a retreat bumped the elevator panel open, a click hit “35”, a night on 35 → close an open panel first."],
+    ["note","查了 81–119 层的怪（熔岩蝙蝠、熔岩蟹、Shadow Brute、Squid Kid）：冲层不打怪，少站着不动。","Looked up the monsters of 81–119 (Lava Bat, Lava Crab, Shadow Brute, Squid Kid): a dash doesn't fight; standing still is the danger."]]},
+  {f:110, g:["第 17 年春 5","Spring 5, Y17"], d:"d760", t:"2026-11-26T14:51", w:"prog", wl:["约 2 分钟 · 14 个游戏日","~2 min · 14 game days"], items:[
+    ["fail","110 层的层数框是暗红底，读不出，落地报“lost”并请求撤退；LLM 看截图回 manual。","The floor-110 label has a dark-red background and wasn't read: “lost” on landing and a retreat request; the LLM checked the screenshot and answered manual."],
+    ["fix","加暗红底规则；循环脚本补上“LLM 接管”结束词（之前回 manual 后一直卡着）。","Dark-red rule added; the loop script learned the “LLM takeover” end word (it hung after a manual answer)."],
+    ["get","110 层宝箱：太空靴，已穿上。","Floor 110 chest: Space Boots, now worn."]]},
+  {f:115, g:["第 17 年夏 20","Summer 20, Y17"], d:"d777", t:"2026-11-26T19:33", w:"prog", wl:["约 2 分钟 · 满血","~2 min · full HP"], items:[
+    ["fail","114 层读成“1”，被逐层核对拦下 → 暗红规则放宽，90–114 的截图全部读对。","Floor 114 read as “1” and the per-floor check caught it → dark-red rule widened; every confirm screenshot from 90 to 114 reads right."],
+    ["fail","LLM 用 sed 改循环脚本，<code>\\|</code> 被当成“或”，弄坏三行（d761 没做楼梯） → 以后用 Python 字符串替换。","The LLM edited the loop script with sed and <code>\\|</code> meant “or”, mangling three lines (d761 crafted nothing) → script edits by Python string replace now."],
+    ["fix","坐电梯回大厅没看到黑屏也算到了；农场东口看不见人时也照样砍树。","The elevator ride to the hall counts even without the black fade; the farm's east exit gets cut even when the farmer is hidden."],
+    ["fix","d752、d771 傍晚走不回电梯 → 傍晚只砸不比自己更远的石头，慢慢挪回电梯旁。","d752 and d771 couldn't walk back to the elevator in the evening → late in the day only rocks no farther from the spawn than the farmer, drifting back."]]},
+  {f:120, g:["第 18 年春 18","Spring 18, Y18"], d:"d809", t:"2026-11-27T04:31", w:"prog", wl:["36 秒 · 血 1.0 → 0.73","36 s · HP 1.0 → 0.73"], goal:true, items:[
+    ["fail","d792 把 5 层读成 58，以为下了两层，在矿里晕倒 → 层数只认“原来 + 1”。","d792 read floor 5 as 58, thought it had gone down two floors, and passed out in the mine → a floor change counts only as old + 1."],
+    ["fail","d794d 每层落地先整理背包 14 秒，人站在怪中间，118 层被打晕，丢了弯刀 → 冲层不整理背包，落地到放楼梯 17 秒 → 1 秒。","d794d spent 14 s sorting the backpack on every landing among monsters, was knocked out on 118 and lost the Cutlass → no sorting in a dash; landing to staircase 17 s → 1 s."],
+    ["note","120 层没有电梯：LLM 直接操作开宝箱拿到骷髅钥匙，从上楼梯“Leave the mine”回大厅。","Floor 120 has no elevator: the LLM opened the chest for the Skull Key and left by the up-ladder (“Leave the mine”)."],
+    ["get","电梯面板 0–120 共 25 个按钮全部解锁。","All 25 elevator buttons, 0 to 120, unlocked."]]},
+];
+const ZK = [{k:"earth", lo:0, hi:39}, {k:"ice", lo:40, hi:79}, {k:"lava", lo:80, hi:120}];
+const KIND_ICON = {fail:"skull", fix:"check", get:"chest", note:"note"};
+
+/* ---------- pixel sprites (drawn here, 1 char = 1 pixel) ---------- */
+const PAL = { k:"#3b210e", w:"#f4ecd8", g:"#62c046", c:"#c97a32", C:"#8f4a1c", y:"#f5c542", p:"#fbe9c0", r:"#d94a3a",
+  l:"#dfe7ec", m:"#8796a4", h:"#a0602c" };
+const SPR = {
+  skull: ["..kkkkk..", ".kwwwwwk.", "kwwwwwwwk", "kwkkwkkwk", "kwkkwkkwk", "kwwwkwwwk", ".kwwwwwk.", "..kwkwk..", "..kkkkk.."],
+  check: [".......kk", "......kgk", ".....kgk.", ".kk.kgk..", "kgkkgk...", ".kggk....", "..kgk....", "...k....."],
+  chest: [".kkkkkkkk.", "kcccccccck", "kcCCCCCCck", "kkkkyykkkk", "kccckyyck.", "kcccyycck.", "kCCCCCCCCk", "kkkkkkkkkk"],
+  note: ["kkkkkkk..", "kpppppkk.", "kpkkkpkpk", "kpppppppk", "kpkkkkkpk", "kpppppppk", "kpkkkkkpk", "kpppppppk", "kkkkkkkkk"],
+  ladder: ["k.....k", "khhhhhk", "k.....k", "k.....k", "khhhhhk", "k.....k", "k.....k", "khhhhhk", "k.....k"],
+  pick: [".kkkkkkkkk.", "kmllllllmmk", "kmk.khk.kmk", ".k..khk..k.", "....khk....", "....khk....", "....khk....", "....khk....", "....kkk...."],
+  calendar: ["kkkkkkkkk", "krrrrrrrk", "kkkkkkkkk", "kpppppppk", "kpkpkpkpk", "kpppppppk", "kpkpkpkpk", "kpppppppk", "kkkkkkkkk"],
+  clock: ["..kkkkk..", ".kpppppk.", "kpppkpppk", "kpppkpppk", "kpppkkkpk", "kpppppppk", "kpppppppk", ".kpppppk.", "..kkkkk.."],
+};
+const SP = {};
+for (const [n, rows] of Object.entries(SPR)) {
+  const w = Math.max(...rows.map(r => r.length)), h = rows.length;
+  const cv = document.createElement("canvas"); cv.width = w; cv.height = h;
+  const cx = cv.getContext("2d");
+  rows.forEach((r, y) => [...r].forEach((ch, x) => { if (PAL[ch]) { cx.fillStyle = PAL[ch]; cx.fillRect(x, y, 1, 1); } }));
+  SP[n] = { src: cv.toDataURL(), w, h };
+}
+const img = (n, s = 2, alt = "") => `<img class="px" src="${SP[n].src}" width="${SP[n].w * s}" height="${SP[n].h * s}" alt="${alt}">`;
+document.querySelectorAll("[data-icon]").forEach(el => el.innerHTML = img(el.dataset.icon, 4));
+
+/* ---------- pixel textures for the mine zones ---------- */
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+  t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const TEX = {
+  grass: [["#5aa53c", 4], ["#4a9332", 3], ["#6cb848", 2], ["#3d7f2a", 1]],
+  earth: [["#7d5230", 5], ["#6e4628", 4], ["#8c5e37", 3], ["#5f3b21", 2], ["#a3896c", .35]],
+  ice:   [["#4b8db5", 5], ["#5c9ec4", 4], ["#3b7aa3", 3], ["#77b6d8", 2], ["#cdeaf6", .35]],
+  lava:  [["#6e1f13", 5], ["#842816", 4], ["#5a180e", 3], ["#a3311b", 2], ["#ff9a2b", .35], ["#ffd34a", .15]],
+  cave:  [["#22170f", 6], ["#1d130c", 5], ["#281b12", 3], ["#30211a", .6]],
+};
+const texCache = {};
+function texture(kind, w, h, seed) {
+  const key = [kind, w, h, seed].join();
+  if (texCache[key]) return texCache[key];
+  const cv = document.createElement("canvas"); cv.width = w; cv.height = h;
+  const cx = cv.getContext("2d"), r = rng(seed), pal = TEX[kind], tot = pal.reduce((a, p) => a + p[1], 0);
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    let v = r() * tot, i = 0; while (v > pal[i][1]) { v -= pal[i][1]; i++; }
+    cx.fillStyle = pal[i][0]; cx.fillRect(x, y, 1, 1);
+  }
+  return texCache[key] = cv.toDataURL();
+}
+document.body.style.backgroundImage = `url(${texture("cave", 24, 24, 7)})`;
+document.body.style.backgroundSize = "96px 96px";
+
+/* ---------- render one language ---------- */
+function render(lang) {
+  const L_ = T[lang], li = lang === "zh" ? 1 : 2;
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+  document.title = L_.doc;
+  document.querySelectorAll(".lang a").forEach(a => a.setAttribute("aria-current", a.dataset.lang === lang ? "true" : "false"));
+  document.querySelectorAll("[data-t]").forEach(el => {
+    const v = L_[el.dataset.t];
+    el.innerHTML = Array.isArray(v) ? v.map(x => `<li>${x}</li>`).join("") : v;
+  });
+  const fmt = m => m.approx ? L_.approx
+    : lang === "zh" ? m.t.slice(5, 10).replace("-", "/") + " " + m.t.slice(11, 16)
+    : `Nov ${+m.t.slice(8, 10)} ${m.t.slice(11, 16)}`;
+
+  document.getElementById("keys").innerHTML = Object.entries(KIND_ICON).map(([k, n]) => `<span>${img(n, 2)}${L_.kinds[k]}</span>`).join("");
+
+  const zbox = document.getElementById("zones");
+  zbox.innerHTML = "";
+  ZK.forEach((z, zi) => {
+    const [name, range, desc] = L_.zones[zi];
+    let rows = "";
+    for (const m of MS.filter(m => m.f >= z.lo && m.f <= z.hi)) {
+      rows += `<article class="ms${m.goal ? " goal" : ""}">
+        <div><div class="ebtn">${m.f}</div></div>
+        <div style="min-width:0">
+          <div class="meta"><span class="game">${m.g[li - 1]}</span>${m.d ? `<span class="pix">${m.d}</span>` : ""}
+            <span class="pix">${L_.real} ${fmt(m)}</span><span class="chip ${m.w}">${L_.who[m.w]}</span><span>${m.wl[li - 1]}</span>
+            ${m.goal ? `<span class="ribbon">${L_.goal}</span>` : ""}</div>
+          <ul class="items">${m.items.map(it => `<li>${img(KIND_ICON[it[0]], 2, L_.kinds[it[0]])}<span>${it[li]}</span></li>`).join("")}</ul>
+        </div></article>`;
+    }
+    const sec = document.createElement("section");
+    sec.className = "zone " + z.k;
+    sec.innerHTML = `<div class="zone-sign"><div class="plank">${name}<small>${range}</small></div><p>${desc}</p></div>
+      <div class="strata" style="background-image:url(${texture(z.k, 160, 3, 11 + zi)})"></div>
+      <div class="frame">${rows}</div>`;
+    zbox.appendChild(sec);
+  });
+
+  /* chart: a cross-section of the shaft */
+  const svg = document.getElementById("chart");
+  svg.setAttribute("aria-label", L_.aria);
+  const W = 960, H = 452, L = 56, R = 84, Tp = 40, B = 52, PX = 6;
+  const t0 = Date.parse("2026-11-18T00:00"), t1 = Date.parse("2026-11-27T12:00");
+  const X = t => L + (Date.parse(t) - t0) / (t1 - t0) * (W - L - R);
+  const Y = f => Tp + f / 120 * (H - Tp - B);
+  const IW = W - L - R;
+  let s = "";
+  const band = (kind, y0, y1, seed) => `<image href="${texture(kind, Math.ceil(IW / PX), Math.ceil((y1 - y0) / PX), seed)}" x="${L}" y="${y0}" width="${IW}" height="${y1 - y0}" preserveAspectRatio="none" style="image-rendering:pixelated"/>`;
+  s += band("grass", Tp - 12, Tp, 3);
+  s += band("earth", Y(0), Y(40), 4) + band("ice", Y(40), Y(80), 5) + band("lava", Y(80), Y(120), 6);
+  s += `<rect x="${L}" y="${Tp}" width="${IW}" height="${Y(120) - Tp}" fill="#000" opacity=".22"/>`;
+  s += `<rect x="${L}" y="${Tp - 12}" width="${IW}" height="${Y(120) - Tp + 12}" fill="none" stroke="#000" stroke-width="3"/>`;
+  s += `<text x="${L + 6}" y="${Tp - 18}" font-size="13" fill="#bfe39a" font-family="var(--f-body)">${L_.entrance}</text>`;
+  ZK.forEach((z, zi) => {
+    const yc = (Y(z.lo) + Y(Math.min(z.hi + 1, 120))) / 2;
+    s += `<rect x="${W - R + 10}" y="${yc - 22}" width="64" height="44" fill="var(--${z.k})" stroke="#000" stroke-width="3"/>`
+      + `<text x="${W - R + 42}" y="${yc - 3}" text-anchor="middle" font-size="16" fill="#fff4d8" font-family="var(--f-display)">${L_.zones[zi][0]}</text>`
+      + `<text x="${W - R + 42}" y="${yc + 15}" text-anchor="middle" font-size="12" fill="#fff4d8" font-family="var(--f-pix)">${z.lo === 0 ? 1 : z.lo}–${z.hi}</text>`;
+  });
+  for (let f = 0; f <= 120; f += 20) s += `<line x1="${L}" x2="${L + IW}" y1="${Y(f)}" y2="${Y(f)}" stroke="#fff" stroke-opacity=".16" stroke-dasharray="6 6"/>`
+    + `<text x="${L - 10}" y="${Y(f) + 5}" text-anchor="end" font-size="14" fill="var(--cave-ink)" font-family="var(--f-pix)">${f}</text>`;
+  s += `<text x="${L - 10}" y="${Tp - 18}" text-anchor="end" font-size="12" fill="var(--cave-dim)" font-family="var(--f-body)">${L_.floorAxis}</text>`;
+  for (let d = 18; d <= 27; d++) {
+    const x = X(`2026-11-${d}T00:00`);
+    s += `<line x1="${x}" x2="${x}" y1="${Tp}" y2="${Y(120)}" stroke="#fff" stroke-opacity=".12" stroke-dasharray="3 6"/>`
+      + `<text x="${x}" y="${H - B + 30}" text-anchor="middle" font-size="14" fill="var(--cave-ink)" font-family="var(--f-pix)">${lang === "zh" ? "11/" + d : "Nov " + d}</text>`;
+  }
+  let p = `M${X(MS[0].t)},${Y(MS[0].f)}`;
+  for (let i = 1; i < MS.length; i++) p += ` H${X(MS[i].t)} V${Y(MS[i].f)}`;
+  s += `<path d="${p}" fill="none" stroke="#1a0d05" stroke-width="7"/><path d="${p}" fill="none" stroke="#ffe9b0" stroke-width="2.5"/>`;
+  const at = f => MS.find(m => m.f === f);
+  const tw = txt => [...txt].reduce((a, ch) => a + (/[⺀-鿿＀-￯]/.test(ch) ? 13 : 7.3), 0);
+  const note = (f, txt, dx, dy) => {
+    const m = at(f), x = X(m.t), y = Y(m.f), w = tw(txt) + 18, bx = x + dx - w, by = y + dy - 13;
+    return `<line x1="${x}" y1="${y}" x2="${x + dx}" y2="${y + dy}" stroke="#ffe9b0" stroke-width="2"/>`
+      + `<rect x="${bx}" y="${by}" width="${w}" height="26" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>`
+      + `<text x="${bx + w / 2}" y="${by + 18}" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="var(--f-body)" font-weight="500">${txt}</text>`;
+  };
+  s += note(50, L_.n50, -20, 40) + note(75, L_.n75, -20, 40) + note(95, L_.n95, -20, 36) + note(120, L_.n120, -45, 8);
+  const COL = {early: "var(--early)", hand: "var(--hand)", prog: "var(--prog)"};
+  for (const m of MS) {
+    const x = X(m.t), y = Y(m.f), r = m.goal ? 8 : 5.5;
+    if (m.goal) s += `<rect class="glow" x="${x - 14}" y="${y - 14}" width="28" height="28" fill="var(--gold)" opacity=".6"/>`;
+    s += `<rect x="${x - r}" y="${y - r}" width="${2 * r}" height="${2 * r}" fill="${m.goal ? "var(--gold)" : COL[m.w]}" stroke="#000" stroke-width="2.5"><title>${m.f} · ${m.g[li - 1]}${m.d ? " · " + m.d : ""} · ${L_.real} ${fmt(m)}</title></rect>`
+      + `<text x="${x - r - 5}" y="${y + 5}" text-anchor="end" font-size="13" font-weight="600" fill="#fff4d8" stroke="#1a0d05" stroke-width="3" paint-order="stroke" font-family="var(--f-pix)">${m.f}</text>`;
+  }
+  svg.innerHTML = s;
+}
+
+function pick() {
+  const h = location.hash.slice(1);
+  if (h === "zh" || h === "en") return h;
+  return /^zh/i.test(navigator.language || "zh") ? "zh" : "en";
+}
+render(pick());
+addEventListener("hashchange", () => render(pick()));
+</script>
+</body></html>
