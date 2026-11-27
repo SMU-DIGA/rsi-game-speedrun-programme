@@ -4,7 +4,7 @@
 
 ## How we got here, step by step
 
-- **[Sekiro: from the well to Gyoubu](https://SMU-DIGA.github.io/rsi-game-speedrun-programme/milestones/sekiro.html#en)** — Three weeks, twelve stages, 46 versions of the fight script: when each stage was reached, what went wrong and how it was fixed, and the four kills of Gyoubu.
+- **[Sekiro: from the well to Gyoubu](https://SMU-DIGA.github.io/rsi-game-speedrun-programme/milestones/sekiro.html#en)** — Three weeks, twelve stages, 46 versions of the fight script: when each stage was reached, what went wrong and how it was fixed, and every kill of Gyoubu.
 - **[Stardew Valley: Mines floor 1 → 120](https://SMU-DIGA.github.io/rsi-game-speedrun-programme/milestones/stardew.html#en)** — How each elevator floor was reached over 23 days: in-game date, real time, whether the LLM or the program placed the staircases, and every pitfall and fix on the way.
 
 ## Dispatches
@@ -14,6 +14,7 @@
 - 🔴 **Minecraft**: from the world spawn into the End (about 1 world in 30 so far); now working on the Ender Dragon. _(since 11-27 09:55)_
 - 🔴 **Sekiro**: the whole game from a new save (one game world) has **beaten Gyoubu Masataka Oniwa**; on into Ashina Castle (live on Windows). _(since 11-27 00:43)_
 
+- **2026-11-27 13:29** **Sekiro**: the bot **beat Gyoubu a fifth time, in only 220 s and without dying** (fastest before: 284 s). It is the first fight of an attacking style the LLM built: pressure after every landed rope string, finishing from 0.75 of his posture bar, firecracker chains from 0.6. The whole fight is under Recordings &amp; results (live on Windows).
 - **2026-11-27 13:15** **Sekiro**: the bot **beat Gyoubu a fourth time** (415 s, the same fight script). Also new: <a href="https://SMU-DIGA.github.io/rsi-game-speedrun-programme/en/games/sekiro.html#road-h">the step-by-step story from the well to Gyoubu</a>, with the problem and fix at each of twelve stages and the twelve problems of the Gyoubu fight (live on Windows).
 - **2026-11-27 11:30** **Sekiro**: the bot **beat Gyoubu a third time** (431 s). The LLM changed the fight script from the fight logs: the rope attack is cut in two halves around Gyoubu's answer 3.6-3.8 s after the rope's flash, which is guarded; the 1.0-3.4 s after the flash are the calmest, so a low Wolf drinks there (6 of 6); near walls it sprints away. Neither a person nor the LLM operated the game during the fight; the win was checked frame by frame (live on Windows).
 - **2026-11-27 10:30** **Stardew Valley**: a <a href="https://SMU-DIGA.github.io/rsi-game-speedrun-programme/milestones/stardew.html#en">floor-by-floor milestone chart</a> of the Mines, floors 10 → 120: the in-game date and real time of each elevator floor, whether the LLM or the program placed the staircases, and the problems each stretch exposed and fixed.
@@ -23,10 +24,10 @@
 - **2026-11-27 00:43** **Sekiro: Gyoubu Masataka Oniwa defeated!** In the same new-save world, from the Gate Fortress idol, the bot ran to the field and played the whole 435-s fight with a fight script the LLM had written (phase 1 279 s, phase 2 156 s), ending with a Deathblow on the horse. Neither a person nor the LLM operated the game during the fight. Videos (the last 90 s and the whole fight at 2x) under Recordings &amp; results (live on Windows).
 - **2026-11-26 19:33** **Stardew Valley**: Mines **floor 115** reached (Year 17, Summer 20), by the program's own dash 110 → 115 in about 2 min at full health; a misread label on floor 114 was caught by the program's per-floor check and the LLM confirmed it from a screenshot. While gathering, trees blocked the farm exit and the LLM cut through once by operating the game directly. Video under Recordings &amp; results (live on Windows).
 - **2026-11-26 14:51** **Stardew Valley**: Mines **floor 110** reached (Year 17, Spring 5), by the program's own dash 105 → 110 in about 2 min, after only 14 game days of gathering (31 last time). On floor 110 the program could not read the dark-red floor label; the LLM confirmed it from a screenshot and, operating the game directly, opened the chest (Space Boots); the label rule has been added. Video under Recordings &amp; results (live on Windows).
+
+<details><summary>Earlier dispatches (94)</summary>
+
 - **2026-11-26 10:48** **Stardew Valley**: Mines **floor 105** reached (Year 16, Fall 15), again by the program's own dash: floors 100 → 105 in about 1.5 min at full health; it paused for the LLM's confirmation before the dash. During the 31 days of gathering, the farm's east exit was blocked by trees and the LLM cleared it once by operating the game directly; during the dash neither a person nor the LLM operated the game. Video under Recordings &amp; results (live on Windows).
-
-<details><summary>Earlier dispatches (93)</summary>
-
 - **2026-11-26 02:23** **Stardew Valley**: Mines **floor 100** reached (Year 16, Winter 5), again by the program's own dash: floors 95 → 100 in about 2 min at full health; it paused for the LLM's confirmation before the dash (the LLM only checks a screenshot and answers go). Neither a person nor the LLM operated the game during the dash. Video under Recordings &amp; results (live on Windows).
 - **2026-11-25 21:09** **Stardew Valley**: Mines **floor 95** reached (Year 15, Summer 13), again by the program's own dash: floors 90 → 95 in about 2 min at full health; the program now pauses for the LLM's confirmation before a dash (the LLM only checks a screenshot and answers go; it does not operate the game). Neither a person nor the LLM operated the game during the dash. Video under Recordings &amp; results (live on Windows).
 - **2026-11-25 05:42** **Stardew Valley**: Mines **floor 90** reached (Year 14, Summer 17), again by the program's own dash: floors 85 → 90 in about 58 s, every red lava-floor number read correctly, 78% health left on floor 90; neither a person nor the LLM operated the game. Video under Recordings &amp; results (live on Windows).
